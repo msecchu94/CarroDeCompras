@@ -31,9 +31,10 @@ namespace WebApp.Controllers
             {
                 Usuario = User.Identity.Name
             };
-            var getIdUsuario = _usuarioBLL.ObtenerUsuario(usuarioDTO);
 
+            var getIdUsuario = _usuarioBLL.ObtenerUsuario(usuarioDTO);
             var getPedidos = _pedidoBLL.ObtenerPedidos(getIdUsuario.Id);
+
             var pedidoModel = Mapper.Map<IEnumerable<PedidoModel>>(getPedidos);
 
             return View(pedidoModel);
@@ -72,7 +73,6 @@ namespace WebApp.Controllers
             }
             catch (Exception)
             {
-
                 return Json(new { Success = false });
             }
 

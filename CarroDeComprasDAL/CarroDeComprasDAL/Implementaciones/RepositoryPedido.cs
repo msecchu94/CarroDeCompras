@@ -58,24 +58,19 @@ namespace CarroDeComprasDAL.Implementaciones
             return res;
         }
 
-        public IEnumerable<PedidoBE> ObtenerPedidos(int id)
+        public IEnumerable<PedidoBE> ObtenerPedidos(int idUsuario)
         {
             PedidoBE pedido = new PedidoBE();
-
 
             // ObtenerPedidos codigo cliente 
 
             string getCodigoCliente = @"Select Codigo FROM Clientes WHERE IdUsuario=@IdUsuario";
-
-            var getcodigoCliente = ConnectionString.Query<int>(getCodigoCliente, param: new { IdUsuario = id });
-
+            var getcodigoCliente = ConnectionString.Query<int>(getCodigoCliente, param: new { IdUsuario = idUsuario });
 
             // obtener numeros pedidos por codigo cliente
 
             string getNumeroPedido = @"Select NumeroPedido,CodigoCliente,Fecha,Observacion FROM Pedidos WHERE CodigoCliente=@CodigoCliente";
-
             var getpedidos = ConnectionString.Query<PedidoBE>(getNumeroPedido, param: new { CodigoCliente = getcodigoCliente });
-
 
             ////obtener detalles por numero pedidos
 
@@ -106,11 +101,11 @@ namespace CarroDeComprasDAL.Implementaciones
 
                     };
 
-                }, param: new { NumeroPedido = getpedidos.Select(x => x.NumeroPedido) },splitOn: "Split").ToList();
+                }, param: new { NumeroPedido = getpedidos.Select(x => x.NumeroPedido) }, splitOn: "Split").ToList();
 
-            
             foreach (var item in getpedidos)
             {
+
                 item.DetallesPedido = pedido.DetallesPedido.Where(d => d.NumeroPedido == item.NumeroPedido).ToList();
 
             }
