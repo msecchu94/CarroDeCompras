@@ -18,7 +18,7 @@ namespace WebApp.App_Start
             {
                 config.CreateMap<MarcaBE,MarcaDTO>();
                 config.CreateMap<ProductoBE,ProductoDTO>();
-                config.CreateMap<DetallePedidoBE,DetallePedidoDTO>().ForMember(x=>x.ProductoDTO,y=>y.MapFrom(z=>z.Producto));
+                config.CreateMap<DetallePedidoBE,DetallePedidoDTO>().ForMember(x=>x.ProductoDTO,y=>y.MapFrom(z=>z.ProductoBE));
                 config.CreateMap<PedidoBE, PedidoDTO>();
 
                 config.CreateMap<MarcaDTO,Marca>();
@@ -28,7 +28,7 @@ namespace WebApp.App_Start
 
                 config.CreateMap<MarcaDTO, MarcaBE>();
                 config.CreateMap<ProductoDTO, ProductoBE>();
-                config.CreateMap<DetallePedidoDTO, DetallePedidoBE>().ForMember(x => x.Producto, y => y.MapFrom(z => z.ProductoDTO));
+                config.CreateMap<DetallePedidoDTO, DetallePedidoBE>().ForMember(x => x.ProductoBE, y => y.MapFrom(z => z.ProductoDTO));
                 config.CreateMap<PedidoDTO, PedidoBE>();
 
                 config.CreateMap<Marca, MarcaDTO>();

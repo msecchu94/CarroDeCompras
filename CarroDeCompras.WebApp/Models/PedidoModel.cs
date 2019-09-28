@@ -47,27 +47,16 @@ namespace WebApp.Models
 
         public int Cantidad { get; set; }
 
-        public int CodigoProducto => Producto?.Codigo ?? 0;
+        public int CodigoProducto { get { if (Producto != null) { return Producto.Codigo; } else { return 0; } } }
 
-        public decimal PrecioUnitario => Producto?.PrecioUnitario ?? 0;
+        public decimal PrecioUnitario { get { if (Producto != null) { return Producto.PrecioUnitario; } else { return 0; } } }
 
         public Producto Producto { get; set; }
 
         [Column(TypeName = "decimal(18,2)")]
         [DataType(DataType.Currency)]
         public decimal SubTotal
-        {
-            get
-            {
-
-                if (Producto != null)
-                {
-                    return Producto.PrecioUnitario * Cantidad;
-                }
-                else { return 0; }
-
-            }
-        }
+        { get { if (Producto != null) { return Producto.PrecioUnitario * Cantidad; } else { return 0; } } }
     }
 
 }

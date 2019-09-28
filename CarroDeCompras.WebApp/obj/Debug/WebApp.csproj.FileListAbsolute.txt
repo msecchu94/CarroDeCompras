@@ -2134,3 +2134,6 @@ E:\CarroDeCompras\CarroDeCompras.WebApp\bin\AutoMapper.dll
 E:\CarroDeCompras\CarroDeCompras.WebApp\bin\AutoMapper.xml
 I:\CarroDeCompras\CarroDeCompras.WebApp\bin\AutoMapper.dll
 I:\CarroDeCompras\CarroDeCompras.WebApp\bin\AutoMapper.xml
+C:\Users\MAXI SECCHI\Repos\CarroDeCompras\CarroDeCompras.WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
+C:\Users\MAXI SECCHI\Repos\CarroDeCompras\CarroDeCompras.WebApp\obj\Debug\WebApp.dll
+C:\Users\MAXI SECCHI\Repos\CarroDeCompras\CarroDeCompras.WebApp\obj\Debug\WebApp.pdb

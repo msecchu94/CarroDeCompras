@@ -43,22 +43,12 @@ namespace CarroDeComprasCommon.Entidad
 
         public int Cantidad { get; set; }
 
-        public int CodigoProducto => Producto?.Codigo ?? 0;
 
-        public decimal PrecioUnitario => Producto?.PrecioUnitario ?? 0;
+        public ProductoBE ProductoBE { get; set; }
 
-        public ProductoBE Producto { get; set; }
+        public int CodigoProducto { get { if (ProductoBE != null) { return ProductoBE.Codigo; } else { return 0; } } }
 
-        public decimal SubTotal
-        {
-            get
-            {
-                if (Producto != null)
-                {
-                    return Producto.PrecioUnitario * Cantidad;
-                }
-                else { return 0; }
-            }
-        }
+        public decimal PrecioUnitario { get { if (ProductoBE != null) { return ProductoBE.PrecioUnitario; } else { return 0; } } }
+        public decimal SubTotal { get { if (ProductoBE != null) { return ProductoBE.PrecioUnitario * Cantidad; } else { return 0; } } }
     }
 }

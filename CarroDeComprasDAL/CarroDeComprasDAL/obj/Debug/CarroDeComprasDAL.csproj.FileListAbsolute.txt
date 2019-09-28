@@ -350,3 +350,5 @@ E:\CarroDeCompras\CarroDeComprasDAL\CarroDeComprasDAL\bin\Debug\AutoMapper.dll
 E:\CarroDeCompras\CarroDeComprasDAL\CarroDeComprasDAL\bin\Debug\AutoMapper.xml
 I:\CarroDeCompras\CarroDeComprasDAL\CarroDeComprasDAL\bin\Debug\AutoMapper.dll
 I:\CarroDeCompras\CarroDeComprasDAL\CarroDeComprasDAL\bin\Debug\AutoMapper.xml
+C:\Users\MAXI SECCHI\Repos\CarroDeCompras\CarroDeComprasDAL\CarroDeComprasDAL\obj\Debug\CarroDeComprasDAL.csprojResolveAssemblyReference.cache
+C:\Users\MAXI SECCHI\Repos\CarroDeCompras\CarroDeComprasDAL\CarroDeComprasDAL\obj\Debug\CarroDeComprasDAL.dll

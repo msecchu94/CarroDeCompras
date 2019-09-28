@@ -55,7 +55,7 @@ namespace CarroDeComprasDAL.Implementaciones
                              return new DetallePedidoBE
                              {
                                  Cantidad = carro.Cantidad,
-                                 Producto = producto
+                                 ProductoBE = producto
                              };
 
                          }, param: new { IdUsuario = IdUsuario }, splitOn: "Split");

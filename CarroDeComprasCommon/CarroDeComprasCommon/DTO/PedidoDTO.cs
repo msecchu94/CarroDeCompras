@@ -42,22 +42,12 @@ namespace CarroDeComprasCommon.DTO
 
         public int Cantidad { get; set; }
 
-        public int CodigoProducto => ProductoDTO?.Codigo ?? 0;
 
-        public decimal PrecioUnitario => ProductoDTO?.PrecioUnitario ?? 0;
+        public int CodigoProducto { get { if (ProductoDTO != null) { return ProductoDTO.Codigo; } else { return 0; } } }
+        public decimal PrecioUnitario { get { if (ProductoDTO != null) { return ProductoDTO.PrecioUnitario; } else { return 0; } } }
 
         public ProductoDTO ProductoDTO { get; set; }
 
-        public decimal SubTotal
-        {
-            get
-            {
-                if (ProductoDTO != null)
-                {
-                    return ProductoDTO.PrecioUnitario * Cantidad;
-                }
-                else { return 0; }
-            }
-        }
+        public decimal SubTotal { get { if (ProductoDTO != null) { return ProductoDTO.PrecioUnitario * Cantidad; } else { return 0; } } }
     }
 }
