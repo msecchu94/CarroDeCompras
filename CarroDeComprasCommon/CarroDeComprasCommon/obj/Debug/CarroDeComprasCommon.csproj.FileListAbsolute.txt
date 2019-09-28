@@ -1,0 +1,65 @@
+D:\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\CarroDeComprasCommon.dll
+D:\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\CarroDeComprasCommon.pdb
+D:\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.csproj.CoreCompileInputs.cache
+D:\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.dll
+D:\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.pdb
+I:\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\CarroDeComprasCommon.dll
+I:\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\CarroDeComprasCommon.pdb
+I:\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.csprojResolveAssemblyReference.cache
+I:\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.dll
+I:\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.pdb
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\CarroDeComprasCommon.dll
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\CarroDeComprasCommon.pdb
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.dll
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.pdb
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\CarroDeComprasCommon.dll
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\CarroDeComprasCommon.pdb
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.dll
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.pdb
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.csprojResolveAssemblyReference.cache
+D:\ProyectoExtrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\CarroDeComprasCommon.dll
+D:\ProyectoExtrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\CarroDeComprasCommon.pdb
+D:\ProyectoExtrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.csproj.CoreCompileInputs.cache
+D:\ProyectoExtrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.dll
+D:\ProyectoExtrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.pdb
+D:\ProyectoExtrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.csprojAssemblyReference.cache
+E:\ProyectoExtrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\CarroDeComprasCommon.dll
+E:\ProyectoExtrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\CarroDeComprasCommon.pdb
+E:\ProyectoExtrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.csprojAssemblyReference.cache
+E:\ProyectoExtrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.csproj.CoreCompileInputs.cache
+E:\ProyectoExtrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.dll
+E:\ProyectoExtrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.pdb
+I:\ProyectoExtrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\CarroDeComprasCommon.dll
+I:\ProyectoExtrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\CarroDeComprasCommon.pdb
+I:\ProyectoExtrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.dll
+I:\ProyectoExtrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.pdb
+I:\ProyectoExtrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.csprojResolveAssemblyReference.cache
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\CarroDeComprasCommon.dll
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\CarroDeComprasCommon.pdb
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.csprojAssemblyReference.cache
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.csproj.CoreCompileInputs.cache
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.dll
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.pdb
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.csprojResolveAssemblyReference.cache
+E:\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\CarroDeComprasCommon.dll
+E:\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\CarroDeComprasCommon.pdb
+E:\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.csprojAssemblyReference.cache
+E:\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.csproj.CoreCompileInputs.cache
+E:\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.dll
+E:\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.pdb
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\AutoMapper.dll
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\AutoMapper.xml
+E:\Proyectos\extrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\CarroDeComprasCommon.dll
+E:\Proyectos\extrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\CarroDeComprasCommon.pdb
+E:\Proyectos\extrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\AutoMapper.dll
+E:\Proyectos\extrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\AutoMapper.xml
+E:\Proyectos\extrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.csprojAssemblyReference.cache
+E:\Proyectos\extrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.csproj.CoreCompileInputs.cache
+E:\Proyectos\extrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.csproj.CopyComplete
+E:\Proyectos\extrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.dll
+E:\Proyectos\extrados\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.pdb
+I:\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\AutoMapper.dll
+I:\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\AutoMapper.xml
+E:\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\AutoMapper.dll
+E:\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\AutoMapper.xml
+E:\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.csproj.CopyComplete

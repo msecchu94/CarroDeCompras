@@ -1,0 +1,391 @@
+C:\Users\MAXI SECCHI\Desktop\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csprojResolveAssemblyReference.cache
+C:\Users\MAXI SECCHI\Desktop\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.dll
+C:\Users\MAXI SECCHI\Desktop\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.pdb
+C:\Users\MAXI SECCHI\Desktop\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasCommon.dll
+C:\Users\MAXI SECCHI\Desktop\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.dll
+C:\Users\MAXI SECCHI\Desktop\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Dapper.dll
+C:\Users\MAXI SECCHI\Desktop\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasCommon.pdb
+C:\Users\MAXI SECCHI\Desktop\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.pdb
+C:\Users\MAXI SECCHI\Desktop\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Dapper.xml
+C:\Users\MAXI SECCHI\Desktop\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.dll
+C:\Users\MAXI SECCHI\Desktop\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.pdb
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.dll.config
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.dll
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.pdb
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasCommon.dll
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.dll
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Helpers.dll
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Mvc.dll
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Razor.dll
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.dll
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Razor.dll
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Abstractions.dll
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Container.dll
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Mvc5.dll
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Dapper.dll
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasCommon.pdb
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.pdb
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.dll.config
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Helpers.xml
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Mvc.xml
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Razor.xml
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.xml
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Razor.xml
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Abstractions.pdb
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Container.pdb
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Dapper.xml
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csprojAssemblyReference.cache
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csproj.CoreCompileInputs.cache
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csproj.CopyComplete
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.dll
+D:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.pdb
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csprojResolveAssemblyReference.cache
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.dll
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.pdb
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.dll.config
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.dll
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.pdb
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasCommon.dll
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.dll
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Microsoft.Web.Infrastructure.dll
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Helpers.dll
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Mvc.dll
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Razor.dll
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Deployment.dll
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.dll
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Razor.dll
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Abstractions.dll
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Container.dll
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Mvc5.dll
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Dapper.dll
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasCommon.pdb
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.pdb
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Helpers.xml
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Mvc.xml
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Razor.xml
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.xml
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Deployment.xml
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Razor.xml
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Abstractions.pdb
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Container.pdb
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Dapper.xml
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.dll.config
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.dll
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.pdb
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasCommon.dll
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.dll
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Helpers.dll
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Mvc.dll
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Razor.dll
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.dll
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Abstractions.dll
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Container.dll
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Mvc5.dll
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Dapper.dll
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasCommon.pdb
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.pdb
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Helpers.xml
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Mvc.xml
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Razor.xml
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.xml
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Abstractions.pdb
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Container.pdb
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Dapper.xml
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csprojResolveAssemblyReference.cache
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.dll
+C:\Users\MAXI SECCHI\Desktop\Util\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.pdb
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csprojResolveAssemblyReference.cache
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.dll.config
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.dll
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.pdb
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasCommon.dll
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.dll
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Helpers.dll
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Mvc.dll
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Razor.dll
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.dll
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Abstractions.dll
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Container.dll
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Mvc5.dll
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Dapper.dll
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasCommon.pdb
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.pdb
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Helpers.xml
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Mvc.xml
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Razor.xml
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.xml
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Abstractions.pdb
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Container.pdb
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Dapper.xml
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.dll
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.pdb
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.dll.config
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.dll
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.pdb
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasCommon.dll
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.dll
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Helpers.dll
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Mvc.dll
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Razor.dll
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.dll
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Razor.dll
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Abstractions.dll
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Container.dll
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Mvc5.dll
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Dapper.dll
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasCommon.pdb
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.pdb
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.dll.config
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Helpers.xml
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Mvc.xml
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Razor.xml
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.xml
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Razor.xml
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Abstractions.pdb
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Container.pdb
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Dapper.xml
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csprojAssemblyReference.cache
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csproj.CoreCompileInputs.cache
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csproj.CopyComplete
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.dll
+D:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.pdb
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csprojAssemblyReference.cache
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csproj.CoreCompileInputs.cache
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.dll
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.pdb
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.dll.config
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.dll
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.pdb
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasCommon.dll
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.dll
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Helpers.dll
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Mvc.dll
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Razor.dll
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.dll
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Razor.dll
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Abstractions.dll
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Container.dll
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Mvc5.dll
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Dapper.dll
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasCommon.pdb
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.pdb
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.dll.config
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Helpers.xml
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Mvc.xml
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Razor.xml
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.xml
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Razor.xml
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Abstractions.pdb
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Container.pdb
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Dapper.xml
+E:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csproj.CopyComplete
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.dll.config
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.dll
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.pdb
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasCommon.dll
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.dll
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Microsoft.Web.Infrastructure.dll
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Helpers.dll
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Mvc.dll
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Razor.dll
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Deployment.dll
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.dll
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Razor.dll
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Abstractions.dll
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Container.dll
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Mvc5.dll
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Dapper.dll
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasCommon.pdb
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.pdb
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Helpers.xml
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Mvc.xml
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Razor.xml
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.xml
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Deployment.xml
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Razor.xml
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Abstractions.pdb
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Container.pdb
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Dapper.xml
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csprojResolveAssemblyReference.cache
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.dll
+I:\ProyectoExtrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.pdb
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.dll.config
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.dll
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.pdb
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasCommon.dll
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.dll
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Helpers.dll
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Mvc.dll
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Razor.dll
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.dll
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Abstractions.dll
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Container.dll
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Mvc5.dll
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Dapper.dll
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasCommon.pdb
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.pdb
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.dll.config
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Helpers.xml
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Mvc.xml
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Razor.xml
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.xml
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Abstractions.pdb
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Container.pdb
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Dapper.xml
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csprojAssemblyReference.cache
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csproj.CoreCompileInputs.cache
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csproj.CopyComplete
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.dll
+C:\Users\E2-PC-04\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.pdb
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.dll.config
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.dll
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.pdb
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasCommon.dll
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.dll
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Helpers.dll
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Mvc.dll
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Razor.dll
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.dll
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Razor.dll
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Abstractions.dll
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Container.dll
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Mvc5.dll
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Dapper.dll
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasCommon.pdb
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.pdb
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.dll.config
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Helpers.xml
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Mvc.xml
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Razor.xml
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.xml
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Razor.xml
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Abstractions.pdb
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Container.pdb
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Dapper.xml
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csprojAssemblyReference.cache
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csproj.CoreCompileInputs.cache
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csproj.CopyComplete
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.dll
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.pdb
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\AutoMapper.dll
+C:\Users\MAXI SECCHI\Desktop\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\AutoMapper.xml
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.dll.config
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.dll
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.pdb
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\AutoMapper.dll
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasCommon.dll
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.dll
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Helpers.dll
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Mvc.dll
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Razor.dll
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.dll
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Razor.dll
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Abstractions.dll
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Container.dll
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Mvc5.dll
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Dapper.dll
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasCommon.pdb
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.pdb
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.dll.config
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\AutoMapper.xml
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Helpers.xml
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Mvc.xml
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Razor.xml
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.xml
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Razor.xml
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Abstractions.pdb
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Container.pdb
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Dapper.xml
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csprojAssemblyReference.cache
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csproj.CoreCompileInputs.cache
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csproj.CopyComplete
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.dll
+E:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.pdb
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csprojResolveAssemblyReference.cache
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.dll.config
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.dll
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.pdb
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\AutoMapper.dll
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasCommon.dll
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.dll
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Microsoft.Web.Infrastructure.dll
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Helpers.dll
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Mvc.dll
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Razor.dll
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Deployment.dll
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.dll
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Razor.dll
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Abstractions.dll
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Container.dll
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Mvc5.dll
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Dapper.dll
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasCommon.pdb
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.pdb
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\AutoMapper.xml
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Helpers.xml
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Mvc.xml
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Razor.xml
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.xml
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Deployment.xml
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Razor.xml
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Abstractions.pdb
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Container.pdb
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Dapper.xml
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.dll
+I:\Proyectos\extrados\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.pdb
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\AutoMapper.dll
+E:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\AutoMapper.xml
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\AutoMapper.dll
+I:\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\AutoMapper.xml

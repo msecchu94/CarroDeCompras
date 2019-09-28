@@ -1,0 +1,125 @@
+﻿@model WebApp.Models.ProductoModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+}
+
+
+
+<div class="content-wrapper">
+
+    @if (ViewBag.Mensaje != null)
+    {
+        <script>
+            (function alert() {
+
+                let timerInterval
+                Swal.fire({
+                    title:  '@ViewBag.Mensaje @User.Identity.Name!',
+                    //html: 'I will close in <strong></strong> milliseconds.',
+                    timer: 2000,
+                    onBeforeOpen: ()=>{
+                        Swal.showLoading()
+                      timerInterval = setInterval(() => {
+                          Swal.getContent().querySelector('strong')
+                            .textContent = Swal.getTimerLeft()
+                      }, 100)
+                  },
+                    onClose: () => {
+                        clearInterval(timerInterval)
+                    }
+                    }).then((result) => {
+                        if (
+                            /* Read more about handling dismissals below */
+                            result.dismiss === Swal.DismissReason.timer
+                        ) {
+                        console.log('I was closed by the timer')
+                    }
+                    })
+            })();
+
+        </script>
+    }
+
+    <section class="content-header">
+        <h1>
+            Administrador
+
+            <small>Listado Productos</small>
+        </h1>
+        <ol class="breadcrumb"></ol>
+    </section>
+
+
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12 ">
+                <div class="box">
+                    <div class="box-body">
+
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ListaDeProductos.FirstOrDefault().Codigo)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ListaDeProductos.FirstOrDefault().Nombre)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ListaDeProductos.FirstOrDefault().IdMarca)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ListaDeProductos.FirstOrDefault().PrecioUnitario)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ListaDeProductos.FirstOrDefault().Activo)
+                                    </th>
+
+                                    <th colspan="1"></th>
+                                </tr>
+
+
+                                @foreach (var item in Model.ListaDeProductos)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Codigo)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Nombre)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Marca.Nombre)
+                                        </td>
+                                        <td>
+                                            <div style="float: right;">
+                                                @Html.DisplayFor(modelItem => item.PrecioUnitario)
+                                            </div>
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Activo)
+
+                                        </td>
+
+                                        <td>
+                                            @Html.ActionLink("Editar", "Editar", new { Codigo = item.Codigo })
+                                        </td>
+
+                                    </tr>
+                                }
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+</div>

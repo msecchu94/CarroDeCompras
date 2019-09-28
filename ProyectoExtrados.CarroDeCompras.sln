@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarroDeComprasBLL", "CarroComprasBLL\CarroDeComprasBLL\CarroDeComprasBLL.csproj", "{A5D4A795-5551-47F3-B349-51BEA191D1EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarroDeComprasCommon", "CarroDeComprasCommon\CarroDeComprasCommon\CarroDeComprasCommon.csproj", "{031E4370-4AE3-4532-83CA-1487481290FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "CarroDeCompras.WebApp\WebApp.csproj", "{37187B3B-9C3E-42B8-B222-4732B5D00ADC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{055773C6-0C41-4CBF-AC98-515E4B0C5439}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.pdb = .nuget\NuGet.pdb
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarroDeComprasDAL", "CarroDeComprasDAL\CarroDeComprasDAL\CarroDeComprasDAL.csproj", "{6C053387-0BDE-4A37-B6A9-A96AC3AEA61F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5D4A795-5551-47F3-B349-51BEA191D1EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5D4A795-5551-47F3-B349-51BEA191D1EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5D4A795-5551-47F3-B349-51BEA191D1EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5D4A795-5551-47F3-B349-51BEA191D1EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{031E4370-4AE3-4532-83CA-1487481290FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{031E4370-4AE3-4532-83CA-1487481290FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{031E4370-4AE3-4532-83CA-1487481290FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{031E4370-4AE3-4532-83CA-1487481290FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37187B3B-9C3E-42B8-B222-4732B5D00ADC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37187B3B-9C3E-42B8-B222-4732B5D00ADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37187B3B-9C3E-42B8-B222-4732B5D00ADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37187B3B-9C3E-42B8-B222-4732B5D00ADC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C053387-0BDE-4A37-B6A9-A96AC3AEA61F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C053387-0BDE-4A37-B6A9-A96AC3AEA61F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C053387-0BDE-4A37-B6A9-A96AC3AEA61F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C053387-0BDE-4A37-B6A9-A96AC3AEA61F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F8CF5551-2920-4081-B5D1-8C1BBFC25350}
+	EndGlobalSection
+EndGlobal

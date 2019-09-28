@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace DAO.Entidad
+{
+    public class Producto
+    {
+     public int Codigo{get;set;}
+     public string Nombre{get;set;}
+     public string Descripcion{get;set;}
+     public int IdMarca{get;set;}
+     public decimal PrecioUnitario{get;set;}
+     public BitConverter Activo{get;set;}
+     public string UrlImange{get;set;}
+    }
+}

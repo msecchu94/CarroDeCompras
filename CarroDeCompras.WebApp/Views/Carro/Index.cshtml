@@ -1,0 +1,125 @@
+﻿@model WebApp.Models.PedidoModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+
+    <section class="content-header">
+        <h1>
+            Carrito de Compras
+
+            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+        </h1>
+        <ol class="breadcrumb"></ol>
+    </section>
+
+
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12 ">
+                <div class="box">
+                    <div class="box-body">
+
+                        @using (Html.BeginForm("CargarPedido", "Pedido", FormMethod.Post, htmlAttributes: new { id = "form-pedido" }))
+                        {
+
+                            @Html.AntiForgeryToken()
+
+                            <div class="table-responsive">
+
+                                <table class="table table-striped table-hover" id="tablacarro">
+                                    <tr>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.ListaCarro.First().Producto)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.ListaCarro.First().Producto.PrecioUnitario)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.ListaCarro.First().Cantidad)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.ListaCarro.First().SubTotal)
+                                        </th>
+                                        <th></th>
+                                    </tr>
+
+                                    @foreach (var item in Model.ListaCarro)
+                                    {
+                                        <tr id="">
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Producto.Nombre)
+                                            </td>
+                                            <td>
+                                                <div style="float: right;">
+                                                    @Html.DisplayFor(modelItem => item.Producto.PrecioUnitario)
+                                                </div>
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(modelItem => item.Cantidad, new {type = "number", min = "1" })
+                                            </td>
+                                            <td>
+                                                <div style="float: right;">
+                                                    @Html.DisplayFor(modelItem => item.SubTotal)
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div style="float: right;">
+                                                    <button type="button" class="eliminar" data-id="@Model.ListaCarro.First().Producto.Codigo">Eliminar</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                    <tr>
+                                        <th>@Html.DisplayNameFor(model => model.Total)</th>
+                                        <td></td>
+                                        <td></td>
+
+                                        <th>
+                                            <div style="float:right;">
+                                                @Html.DisplayFor(model => model.Total, new { id = "Total" })
+                                            </div>
+                                        </th>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Observacion, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Observacion, new { htmlAttributes = new { @class = "form-control Observaciones" } })
+                                    @Html.ValidationMessageFor(model => model.Observacion, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                        <button type="button" class="btn btn-success btnAgregarPedido">Enviar Pedido</button>
+
+                                        @Html.ActionLink("Seguir Comprando", "Index", "Catalogo", null, new { @class = "btn btn-default" })
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
+</div>
