@@ -63,9 +63,10 @@ namespace WebApp.Controllers
 
             try
             {
-                _pedidoBLL.AgregarPedido(pedidoDTO);
-
-                _carroBLL.VaciarCarro(getIdUsuario.Id);
+                if (_pedidoBLL.AgregarPedido(pedidoDTO))
+                {
+                    _carroBLL.VaciarCarro(getIdUsuario.Id);
+                }
 
                 return Json(new { Success = true });
             }

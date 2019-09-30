@@ -60,40 +60,49 @@ namespace CarroDeComprasDAL.Implementaciones
 
         public PedidoBE ObtenerPedidos(int id)
         {
-            string getPedidos = @"Select p.[NumeroPedido],p.[CodigoCliente],p.[Fecha],p.[Observacion]
+            PedidoBE pedidoss = new PedidoBE();
 
-                              ,'split' as Split
+            // ObtenerPedidos codigo cliente 
 
-                        ,d.[NumeroPedido],d.[NumeroItem],d.[CodigoProducto],d.[Cantidad],d.[PrecioUnitario]
-                        FROM [Pedidos] p
-                        INNER JOIN [DetallePedidos] d ON p.[NumeroPedido]=d.[NumeroPedido]
-                        WHERE c.[CodigoCliente]=@id";
+            string getCodigoCliente = @"Select Codigo FROM Clientes WHERE IdUsuario=@IdUsuario";
 
-            try
-            {
-                PedidoBE pedidoBE =null;
-                pedidoBE = ConnectionString.Query<PedidoBE, DetallePedidoBE, DetallePedidoBE>(getPedidos, (pedido, detalle) =>
+            var codigo = ConnectionString.Query<int>(getCodigoCliente, param: new { IdUsuario = id });
+
+            // obtener numeros pedidos por codigo cliente
+
+            string getNumeroPedido = @"Select NumeroPedido,CodigoCliente,Fecha,Observacion FROM Pedidos WHERE CodigoCliente=@CodigoCliente";
+
+            var pedido = ConnectionString.Query<PedidoBE>(getNumeroPedido, param: new { CodigoCliente = codigo });
+
+              
+
+            // obtener detalles por numero pedidos
+
+            //string getDetallesPedidos = @"Select CodigoProducto,Cantidad,PrecioUnitario,NumeroPedido,NumeroItem FROM DetallesPedidos WHERE NumeroPedido=@NumeroPedido";
+
+        
+
+            //pedido.ListaCarro = ConnectionString.Query<DetallePedidoBE>(getDetallesPedidos, param: new { NumeroPedido = pedido.First().ListaCarro});
+
+
+            Dictionary<int, PedidoBE> dic = new Dictionary<int, PedidoBE>();
+            ConnectionString.Query<PedidoBE, DetallePedidoBE, int>
+                (@"select p.*,d.* from Pedidos p Join DetallesPedidos d 
+                            on p.SellerId = s.Id",
+                (s, p) =>
                 {
-                    return new PedidoBE
+                    if (dic.ContainsKey(s.NumeroPedido))
+                        dic[s.Id].Products.Add(p);
+                    else
                     {
-                        NumeroPedido = pedido.NumeroPedido,
-                        CodigoCliente = pedido.CodigoCliente,
-                        Fecha = pedido.Fecha,
-                        ListaCarro = detalle.
-                    };
-
-                }, param: new { IdUsuario = id }, splitOn: "Split");
-
-                return pedidoBE;
-            }
-
-            catch (Exception)
-            {
-                System.Diagnostics.Debug.WriteLine(ObtenerCarro + "WHERE c.[IdUsuario]=@IdUsuario");
-                throw;
-            }
-
-            throw new NotImplementedException();
+                        s.ListaCarro = new DetallePedidoBE();
+                        s.ListaCarro.Add(p);
+                        dic.Add(s.Id, s);
+                    }
+                    return s.Id;
+                });
+            var sellers = dic.Select(pair => pair.Value);
+            return pedidoss;
         }
     }
 

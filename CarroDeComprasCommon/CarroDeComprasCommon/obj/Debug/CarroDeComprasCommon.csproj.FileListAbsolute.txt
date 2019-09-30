@@ -66,3 +66,7 @@ E:\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeCom
 C:\Users\MAXI SECCHI\Repos\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.csprojResolveAssemblyReference.cache
 C:\Users\MAXI SECCHI\Repos\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.dll
 C:\Users\MAXI SECCHI\Repos\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.pdb
+C:\Users\MAXI SECCHI\Repos\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\CarroDeComprasCommon.dll
+C:\Users\MAXI SECCHI\Repos\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\CarroDeComprasCommon.pdb
+C:\Users\MAXI SECCHI\Repos\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\AutoMapper.dll
+C:\Users\MAXI SECCHI\Repos\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\AutoMapper.xml

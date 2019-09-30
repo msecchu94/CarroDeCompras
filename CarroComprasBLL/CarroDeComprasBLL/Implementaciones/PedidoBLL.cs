@@ -29,6 +29,7 @@ namespace CarroDeComprasBLL.Implementaciones
             var res = false;
 
             #region mapeo index-item
+
             int index = 1;
 
             foreach (var item in pedidoDTO.ListaCarro)
