@@ -19,15 +19,15 @@ namespace CarroDeComprasCommon.Entidad
 
         public string Observacion { get; set; }
 
-        public IEnumerable<DetallePedidoBE> ListaCarro { get; set; }
+        public IEnumerable<DetallePedidoBE> DetallesPedido { get; set; }
 
         public decimal Total
         {
             get
             {
-                if (ListaCarro != null)
+                if (DetallesPedido != null)
                 {
-                    return ListaCarro.Sum(x => x.SubTotal);
+                    return DetallesPedido.Sum(x => x.SubTotal);
                 }
                 else { return 0; }
             }

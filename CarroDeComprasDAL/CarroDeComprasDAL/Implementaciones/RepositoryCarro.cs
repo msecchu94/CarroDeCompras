@@ -50,7 +50,7 @@ namespace CarroDeComprasDAL.Implementaciones
             try
             {
                 PedidoBE pedidoBE = new PedidoBE();
-                pedidoBE.ListaCarro = ConnectionString.Query<CarroBE, ProductoBE, DetallePedidoBE>(ObtenerCarro + " WHERE c.[IdUsuario]=@IdUsuario", (carro, producto) =>
+                pedidoBE.DetallesPedido = ConnectionString.Query<CarroBE, ProductoBE, DetallePedidoBE>(ObtenerCarro + " WHERE c.[IdUsuario]=@IdUsuario",(carro, producto) =>
                          {
                              return new DetallePedidoBE
                              {

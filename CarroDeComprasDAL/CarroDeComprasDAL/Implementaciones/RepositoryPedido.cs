@@ -35,13 +35,13 @@ namespace CarroDeComprasDAL.Implementaciones
 
                 pedidoBE.NumeroPedido = ConnectionString.ExecuteScalar<int>(addPedido, param: pedidoBE, transaction: trans);
 
-                foreach (var item in pedidoBE.ListaCarro)
+                foreach (var item in pedidoBE.DetallesPedido)
                 {
                     item.NumeroPedido = pedidoBE.NumeroPedido;
                 }
 
 
-                ConnectionString.Execute(addDetallePedido, param: pedidoBE.ListaCarro, transaction: trans);
+                ConnectionString.Execute(addDetallePedido, param: pedidoBE.DetallesPedido, transaction: trans);
                 trans.Commit();
                 res = true;
             }
@@ -58,52 +58,63 @@ namespace CarroDeComprasDAL.Implementaciones
             return res;
         }
 
-        public List<PedidoBE> ObtenerPedidos(int id)
+        public IEnumerable<PedidoBE> ObtenerPedidos(int id)
         {
-            //PedidoBE detalle = new PedidoBE();
+            PedidoBE pedido = new PedidoBE();
 
 
             // ObtenerPedidos codigo cliente 
 
             string getCodigoCliente = @"Select Codigo FROM Clientes WHERE IdUsuario=@IdUsuario";
 
-            var codigoCliente = ConnectionString.Query<int>(getCodigoCliente, param: new { IdUsuario = id });
+            var getcodigoCliente = ConnectionString.Query<int>(getCodigoCliente, param: new { IdUsuario = id });
 
 
             // obtener numeros pedidos por codigo cliente
 
             string getNumeroPedido = @"Select NumeroPedido,CodigoCliente,Fecha,Observacion FROM Pedidos WHERE CodigoCliente=@CodigoCliente";
 
-            var pedido = ConnectionString.Query<PedidoBE>(getNumeroPedido, param: new { CodigoCliente = codigoCliente });
+            var getpedidos = ConnectionString.Query<PedidoBE>(getNumeroPedido, param: new { CodigoCliente = getcodigoCliente });
 
 
             ////obtener detalles por numero pedidos
 
-            string getDetallesPedidos = @"Select CodigoProducto,Cantidad,PrecioUnitario,NumeroPedido,NumeroItem FROM DetallesPedidos WHERE NumeroPedido IN @NumeroPedido";
+            string getDetallesPedidos = @"Select 
+                                dp.[CodigoProducto]
+                                ,dp.[Cantidad]
+                                ,dp.[PrecioUnitario]
+                                ,dp.[NumeroPedido]
+                                ,dp.[NumeroItem]
 
-           var detalle = ConnectionString.Query<DetallePedidoBE>(getDetallesPedidos, param: new { NumeroPedido = pedido.Select(x => x.NumeroPedido) }).ToList();
+                                ,'split' as Split
 
-            List<PedidoBE> pedidoBE = new List<PedidoBE>();
-            List<DetallePedidoBE> detallePedidoBE = new List<DetallePedidoBE>();
+                                ,p.[Codigo]
+                                ,p.[Nombre]
+                                ,p.[PrecioUnitario]
+                                FROM [DetallesPedidos] dp
+                                INNER JOIN Productos p  ON dp.[CodigoProducto]=p.Codigo";
 
-            foreach (var item in pedido)
-            {
-                pedidoBE.Add(item);
 
-                foreach (var lista in detalle)
+            pedido.DetallesPedido = ConnectionString.Query<DetallePedidoBE, ProductoBE, DetallePedidoBE>(getDetallesPedidos + " WHERE dp.[NumeroPedido] IN @NumeroPedido", (detail, product) =>
                 {
-                    if (item.NumeroPedido == lista.NumeroPedido)
+                    return new DetallePedidoBE
                     {
+                        ProductoBE = product,
+                        Cantidad = detail.Cantidad,
+                        NumeroItem = detail.NumeroItem,
+                        NumeroPedido = detail.NumeroPedido
 
-                        detallePedidoBE.Add(lista);
-                        pedidoBE.First().ListaCarro.Concat(detallePedidoBE);
-                     
-                    }
+                    };
 
-                }
+                }, param: new { NumeroPedido = getpedidos.Select(x => x.NumeroPedido) },splitOn: "Split").ToList();
+
+            
+            foreach (var item in getpedidos)
+            {
+                item.DetallesPedido = pedido.DetallesPedido.Where(d => d.NumeroPedido == item.NumeroPedido).ToList();
 
             }
-            return pedidoBE;
+            return getpedidos;
         }
 
     }

@@ -423,3 +423,40 @@ C:\Users\MAXI SECCHI\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\
 C:\Users\MAXI SECCHI\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csprojResolveAssemblyReference.cache
 C:\Users\MAXI SECCHI\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.dll
 C:\Users\MAXI SECCHI\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.pdb
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.dll.config
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.dll
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasBLL.pdb
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\AutoMapper.dll
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasCommon.dll
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.dll
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Helpers.dll
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Mvc.dll
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Razor.dll
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.dll
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Abstractions.dll
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Container.dll
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Mvc5.dll
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Dapper.dll
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasCommon.pdb
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.pdb
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\CarroDeComprasDAL.dll.config
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\AutoMapper.xml
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Helpers.xml
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Mvc.xml
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.Razor.xml
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.xml
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Abstractions.pdb
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Unity.Container.pdb
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\bin\Debug\Dapper.xml
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csprojAssemblyReference.cache
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csproj.CoreCompileInputs.cache
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.csproj.CopyComplete
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.dll
+C:\Repos\CarroDeCompras\CarroComprasBLL\CarroDeComprasBLL\obj\Debug\CarroDeComprasBLL.pdb

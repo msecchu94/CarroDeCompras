@@ -19,7 +19,7 @@ namespace WebApp.App_Start
                 config.CreateMap<MarcaBE,MarcaDTO>();
                 config.CreateMap<ProductoBE,ProductoDTO>();
                 config.CreateMap<DetallePedidoBE,DetallePedidoDTO>().ForMember(x=>x.ProductoDTO,y=>y.MapFrom(z=>z.ProductoBE));
-                config.CreateMap<PedidoBE, PedidoDTO>();
+                config.CreateMap<PedidoBE,PedidoDTO>();
 
                 config.CreateMap<MarcaDTO,Marca>();
                 config.CreateMap<ProductoDTO,Producto>();
@@ -35,6 +35,11 @@ namespace WebApp.App_Start
                 config.CreateMap<Producto, ProductoDTO>();
                 config.CreateMap<DetallePedidoModel,DetallePedidoDTO>().ForMember(x => x.ProductoDTO, y => y.MapFrom(z => z.Producto));
                 config.CreateMap<PedidoModel,PedidoDTO>();
+
+             
+                config.CreateMap<Producto, ProductoDTO>();
+                config.CreateMap<DetallePedidoModel, DetallePedidoDTO>().ForMember(x => x.ProductoDTO, y => y.MapFrom(z => z.Producto));
+                config.CreateMap<PedidoModel, PedidoDTO>();
 
             });
         }

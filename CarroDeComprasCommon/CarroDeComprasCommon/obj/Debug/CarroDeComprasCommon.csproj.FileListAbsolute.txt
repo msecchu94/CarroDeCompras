@@ -70,3 +70,12 @@ C:\Users\MAXI SECCHI\Repos\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCom
 C:\Users\MAXI SECCHI\Repos\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\CarroDeComprasCommon.pdb
 C:\Users\MAXI SECCHI\Repos\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\AutoMapper.dll
 C:\Users\MAXI SECCHI\Repos\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\AutoMapper.xml
+C:\Repos\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\CarroDeComprasCommon.dll
+C:\Repos\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\CarroDeComprasCommon.pdb
+C:\Repos\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\AutoMapper.dll
+C:\Repos\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\bin\Debug\AutoMapper.xml
+C:\Repos\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.csprojAssemblyReference.cache
+C:\Repos\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.csproj.CoreCompileInputs.cache
+C:\Repos\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.csproj.CopyComplete
+C:\Repos\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.dll
+C:\Repos\CarroDeCompras\CarroDeComprasCommon\CarroDeComprasCommon\obj\Debug\CarroDeComprasCommon.pdb

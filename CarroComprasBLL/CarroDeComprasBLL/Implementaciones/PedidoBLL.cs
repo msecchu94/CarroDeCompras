@@ -55,11 +55,11 @@ namespace CarroDeComprasBLL.Implementaciones
 
         }
 
-        public PedidoDTO ObtenerPedidos(int id)
+        public IEnumerable<PedidoDTO> ObtenerPedidos(int id)
         {
             var pedidoBE = _repositoryPedido.ObtenerPedidos(id);
 
-            var pedidoDTO = Mapper.Map<PedidoDTO>(pedidoBE);
+            var pedidoDTO = Mapper.Map<IEnumerable<PedidoDTO>>(pedidoBE);
 
             return pedidoDTO;
         }

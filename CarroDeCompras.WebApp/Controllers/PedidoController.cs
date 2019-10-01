@@ -34,7 +34,7 @@ namespace WebApp.Controllers
             var getIdUsuario = _usuarioBLL.ObtenerUsuario(usuarioDTO);
 
             var getPedidos = _pedidoBLL.ObtenerPedidos(getIdUsuario.Id);
-            var pedidoModel = Mapper.Map<PedidoModel>(getPedidos);
+            var pedidoModel = Mapper.Map<IEnumerable<PedidoModel>>(getPedidos);
 
             return View(pedidoModel);
         }
