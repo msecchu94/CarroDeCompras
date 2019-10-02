@@ -19,7 +19,6 @@ namespace WebApp.Models
 
     public class Producto
     {
-        //[ReadOnly(true)]
         [Key]
         public int Codigo { get; set; }
 
@@ -33,15 +32,11 @@ namespace WebApp.Models
         [StringLength(255, MinimumLength = 4, ErrorMessage = "Debe contener un rango minimo de 4 digitos")]
         public string Descripcion { get; set; }
 
-        [Required(ErrorMessage = "El campo {0} es Obligatorio")]
+        //[Required(ErrorMessage = "El campo {0} es Obligatorio")]
         [Display(Name = "Marca")]
-        //[DataType()]
         public int IdMarca { get; set; }
 
-        //[DisplayFormat(DataFormatString = "{0:C}")]
         [Required(ErrorMessage = "El campo {0} es Obligatorio")]
-        //[DataType(("{0:C}"), ErrorMessage = "El formato no es valido")]
-
         [Column(TypeName = "decimal(18,2)")]
         [DataType(DataType.Currency)]
         public decimal PrecioUnitario { get; set; }
@@ -94,9 +89,6 @@ namespace WebApp.Models
             //    string newFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(photo.FileName);
 
             //}
-
-
-
         }
     }
 

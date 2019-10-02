@@ -35,6 +35,7 @@ $('#form-pedido').on('submit', function (e) {
                     if (data.Success) {
 
                         location.reload();
+
                         Swal.fire({
                             type: 'success',
                             title: 'Pedido Agregado con Exito',

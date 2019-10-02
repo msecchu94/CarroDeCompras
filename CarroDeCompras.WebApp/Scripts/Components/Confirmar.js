@@ -12,7 +12,7 @@
         if (result.value) {
             $('.form-crear').submit();
     Swal.fire(
-        'Confirmado!'
+        'Producto Agregado!'
     );
 }
 });

@@ -32,28 +32,28 @@ namespace WebApp.Controllers
         {
             ViewBag.Mensaje = mensaje;
 
-            //ProductoModel productoModel = new ProductoModel();
+            ProductoModel productoModel = new ProductoModel();
+
             try
             {
                 var productoDTO = _productoBLL.ObtenerProductos();
-                var productoModel = Mapper.Map<ProductoModel>(productoDTO);
+                productoModel.ListaDeProductos = productoDTO.Select(item => new Producto
 
-                //productoModel.ListaDeProductos = productoDTO.Select(item => new Producto
-                //{
-                //    Activo = item.Activo,
-                //    Codigo = item.Codigo,
-                //    Descripcion = item.Descripcion,
-                //    IdMarca = item.IdMarca,
-                //    Nombre = item.Nombre,
-                //    PrecioUnitario = item.PrecioUnitario,
-                //    UrlImagen = item.UrlImange,
-                //    Marca = new Marca
-                //    {
-                //        Id = item.Marca.Id,
-                //        Nombre = item.Marca.Nombre
-                //    }
+                {
+                    Activo = item.Activo,
+                    Codigo = item.Codigo,
+                    Descripcion = item.Descripcion,
+                    IdMarca = item.IdMarca,
+                    Nombre = item.Nombre,
+                    PrecioUnitario = item.PrecioUnitario,
+                    UrlImagen = item.UrlImange,
+                    Marca = new Marca
+                    {
+                        Id = item.Marca.Id,
+                        Nombre = item.Marca.Nombre
+                    }
 
-                //});
+                });
 
                 return View(productoModel);
             }
@@ -69,9 +69,7 @@ namespace WebApp.Controllers
         public ActionResult Crear()
         {
             Producto producto = new Producto();
-
             producto.Activo = true;
-
 
             try
             {
@@ -95,6 +93,19 @@ namespace WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Crear(Producto producto)
         {
+
+            if (!ModelState.IsValid)
+            {
+                var listamarcaDTO = _marcaBLL.CargarMarca();
+                producto.ListaMarca = listamarcaDTO.Select(item => new Marca
+                {
+                    Id = item.Id,
+                    Nombre = item.Nombre
+
+                }).ToList();
+                return View("Crear",producto);
+            }
+
             #region File
             if (producto.File != null)
             {
@@ -103,29 +114,12 @@ namespace WebApp.Controllers
                 ViewBag.Message = "Archivo cargado exitosamente !!!";
                 ModelState.Clear();
             }
- 
-            //ProductoDTO productoDTO = null;
+            #endregion
 
             try
             {
-
-                if (producto != null)
-                {
-                    var productoDTO = Mapper.Map<ProductoDTO>(producto);
-                    //productoDTO = new ProductoDTO()
-                    //{
-                    //    Nombre = producto.Nombre,
-                    //    Descripcion = producto.Descripcion,
-                    //    IdMarca = producto.IdMarca,
-                    //    PrecioUnitario = producto.PrecioUnitario,
-                    //    UrlImange = producto.UrlImagen,
-                    //    Activo = producto.Activo,
-
-                    //};
-
-                    ViewBag.resultado = _productoBLL.AltaProducto(productoDTO);
-
-                }
+                var productoDTO = Mapper.Map<ProductoDTO>(producto);
+                ViewBag.resultado = _productoBLL.AltaProducto(productoDTO);
             }
             catch (Exception ex)
             {
@@ -138,40 +132,24 @@ namespace WebApp.Controllers
             }
             ViewBag.Mensaje = "Se Registro Correctamente";
             return RedirectToAction("Index", "Producto");
-            #endregion
-
         }
 
         [HttpGet]
-
         public ActionResult Editar(int codigo)
         {
-            //Producto producto = null;
-
             try
             {
                 var productoDTO = _productoBLL.ObtenerPorId(codigo);
                 var producto = Mapper.Map<Producto>(productoDTO);
-                //producto = new Producto()
-                //{
-                //    Activo = productoDTO.Activo,
-                //    Descripcion = productoDTO.Descripcion,
-                //    Nombre = productoDTO.Nombre,
-                //    PrecioUnitario = productoDTO.PrecioUnitario,
-                //    Codigo = productoDTO.Codigo,
-                //    IdMarca = productoDTO.IdMarca,
-                //    UrlImagen = productoDTO.UrlImange
-                //};
+
                 ViewBag.lista = _marcaBLL.CargarMarca();
                 return View(producto);
-
             }
             catch (Exception)
             {
                 throw;
             }
         }
-
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -182,21 +160,9 @@ namespace WebApp.Controllers
                 producto.SubirArchivo(producto);
             }
 
-            //ProductoDTO productoDTO = null;
             try
             {
                 var productoDTO = Mapper.Map<ProductoDTO>(producto);
-                //productoDTO = new ProductoDTO()
-                //{
-                //    UrlImange = producto.UrlImagen,
-                //    Activo = producto.Activo,
-                //    Codigo = producto.Codigo,
-                //    Nombre = producto.Nombre,
-                //    Descripcion = producto.Descripcion,
-                //    IdMarca = producto.IdMarca,
-                //    PrecioUnitario = producto.PrecioUnitario,
-                //};
-
                 ViewBag.resultado = _productoBLL.EditarProducto(productoDTO);
 
                 if (ViewBag.resultado != true)

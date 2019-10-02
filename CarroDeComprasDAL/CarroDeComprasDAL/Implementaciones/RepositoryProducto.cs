@@ -52,7 +52,6 @@ namespace CarroDeComprasDAL.Implementaciones
                                          producto.Marca = marca;
                                          return producto;
 
-
                                      }, splitOn: "Split");
 
                 return lista;
