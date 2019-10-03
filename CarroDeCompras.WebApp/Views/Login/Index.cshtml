@@ -27,60 +27,67 @@
     <!-- iCheck -->
     <link rel="stylesheet" href="~/Content/plugins/iCheck/square/blue.css">
 
+    <link rel="stylesheet" href="~/Content/css/Login.css">
+
 </head>
 <body class="hold-transition login-page">
 
-    <div class="login-box">
-        <div class="login-box-body box-info">
-            <h1 class="text-center">Login</h1>
+    <div class="login-box ">
 
-    
-                @if (ViewBag.Mensaje != null)
-                {
-                    <div class="alert alert-danger">
-                        <i class="icon fa fa-ban"></i>
-                        <strong>Permiso Denegado @ViewBag.Mensaje !</strong>
-                    </div>
-                }
+        <div class="login-logo">
+            <h1 class="text-center"><b>CarrO</b>nLine</h1>
+        </div>
+
+        <div class="login-box-body box-info bordes">
+
+            <p class="login-box-msg">Inicie sesión para comenzar</p>
+
+            @if (ViewBag.Mensaje != null)
+            {
+                <div class="alert alert-danger bordes">
+                    <i class="icon fa fa-ban"></i>
+                    <strong>Permiso Denegado @ViewBag.Mensaje !</strong>
+                </div>
+            }
 
 
-                @using (Html.BeginForm("Login", "Login", FormMethod.Post))
-                {
-                    @Html.AntiForgeryToken()
+            @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
 
-                    <div class="form-group has-feedback">
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group has-feedback">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                        @Html.TextBoxFor(m => m.Usuario, htmlAttributes: new { @class = "form-control", placeholder = "Usuario" })
-                        @Html.ValidationMessageFor(m => m.Usuario, "", new { @class = "text-danger" })
-                        <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                    </div>
+                    @Html.TextBoxFor(m => m.Usuario, htmlAttributes: new { @class = "form-control bordes", placeholder = "Usuario" })
+                    @Html.ValidationMessageFor(m => m.Usuario, "", new { @class = "text-danger" })
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
 
-                    <div class="form-group has-feedback">
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group has-feedback">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                        @Html.PasswordFor(modelo => modelo.Password, new { @class = "form-control", placeholder = "Contraseña" })
-                        @Html.ValidationMessageFor(m => m.Password, "", htmlAttributes: new { @class = "text-danger" })
-                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                    </div>
+                    @Html.PasswordFor(modelo => modelo.Password, new { @class = "form-control bordes", placeholder = "Contraseña" })
+                    @Html.ValidationMessageFor(m => m.Password, "", htmlAttributes: new { @class = "text-danger",@id="inputError" })
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
 
-                    <div class="form-group has-feedback">
+                <div class="form-group has-feedback">
 
-                        <input type="submit" value="Login" class="btn btn-primary btn-block" />
+                    <input type="submit" value="Login" class="btn btn-primary btn-block" />
 
-                    </div>
-                    <p>
-                        @Html.ActionLink("Registrarme", "Registro", null, new { @class = "btn btn-primary btn-block" })
-                    </p>
+                </div>
+                <p>
+                    @Html.ActionLink("Registrarme", "Registro", null, new { @class = "btn btn-primary btn-block" })
+                </p>
+            }
 
-                }
-       
 
             <script src="~/Content/plugins/jQuery/jquery-2.2.3.min.js"></script>
             <!-- Bootstrap 3.3.6 -->
             <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
             <!-- iCheck -->
             <script src="~/Content/plugins/iCheck/icheck.min.js"></script>
+
             <script>
                 $(function () {
                     $('input').iCheck({
@@ -97,6 +104,8 @@
                 }
             </div>
         </div>
+
     </div>
+
 </body>
 </html>
