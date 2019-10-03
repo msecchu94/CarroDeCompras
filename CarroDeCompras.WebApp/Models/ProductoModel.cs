@@ -24,7 +24,7 @@ namespace WebApp.Models
 
         [Required(ErrorMessage = "El campo {0} es Obligatorio")]
         [StringLength(100, MinimumLength = 4, ErrorMessage = "Debe contener un rango minimo de 4 digitos")]
-        [DisplayName("Producto")]
+        [DisplayName("Nombre")]
         public string Nombre { get; set; }
 
         [DataType(DataType.MultilineText)]
@@ -41,7 +41,7 @@ namespace WebApp.Models
         [DataType(DataType.Currency)]
         public decimal PrecioUnitario { get; set; }
 
-        [Required(ErrorMessage = "el campo {0} es obligatorio")]
+        //[Required(ErrorMessage = "el campo {0} es obligatorio")]
         [DataType(DataType.Upload, ErrorMessage = "el formato no es valido")]
         public string UrlImagen { get; set; }
 
@@ -56,7 +56,7 @@ namespace WebApp.Models
 
         [DataType(DataType.Upload)]
         [Display(Name = "Archivo")]
-        [Required(ErrorMessage = "seleccione archivo")]
+        //[Required(ErrorMessage = "seleccione archivo")]
         public HttpPostedFileBase File { get; set; }
 
         public void SubirArchivo(Producto producto)

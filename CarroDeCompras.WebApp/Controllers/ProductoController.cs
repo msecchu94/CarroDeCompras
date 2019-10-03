@@ -103,7 +103,7 @@ namespace WebApp.Controllers
                     Nombre = item.Nombre
 
                 }).ToList();
-                return View("Crear",producto);
+                return View("Crear", producto);
             }
 
             #region File
@@ -155,6 +155,13 @@ namespace WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Editar(Producto producto)
         {
+            if (!ModelState.IsValid)
+            {
+
+                ViewBag.lista = _marcaBLL.CargarMarca();
+                return View("Editar", producto);
+            }
+
             if (producto.File != null)
             {
                 producto.SubirArchivo(producto);

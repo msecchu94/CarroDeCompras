@@ -11,11 +11,11 @@
     }).then((result) => {
         if (result.value) {
             $('.form-crear').submit();
-    Swal.fire(
-        'Producto Agregado!'
-    );
-}
-});
+            Swal.fire(
+                'Producto Agregado!'
+            );
+        }
+    });
 });
 
 
@@ -32,9 +32,9 @@ $('#editar').on('click', function (e) {
     }).then((result) => {
         if (result.value) {
             $('.form-editar').submit();
-    Swal.fire(
-        'Confirmado!'
-    );
-}
-});
+            Swal.fire(
+                'Confirmado!'
+            );
+        }
+    });
 });

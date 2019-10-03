@@ -102,24 +102,18 @@
                                         </td>
                                         <td>
                                             @Html.DisplayFor(modelItem => item.Activo)
-
                                         </td>
-
                                         <td>
-                                          
-                                            @Html.ActionLink("Editar", "Editar", new { Codigo = item.Codigo, }, new { @class = "btn btn-primary btn-sm btn-block icon ion-edit", })
+                                            @Html.ActionLink("Editar", "Editar", new { Codigo = item.Codigo }, new { @class = "btn btn-primary btn-sm btn-block icon ion-edit" })
                                         </td>
-
                                     </tr>
                                 }
-                            
+
                             </table>
 
                         </div>
-                        <div class="">
-
-                            <a href="@Url.Action("Crear","Producto")" class=" col-md-3 btn btn-primary"> <i class="icon ion-ios-plus-outline"></i>   Agregar Producto</a>
-
+                        <div>
+                            <a href="@Url.Action("Crear","Producto")" class="col-md-3 btn btn-primary icon ion-ios-plus-outline">Agregar Producto</a>
                         </div>
 
                     </div>
