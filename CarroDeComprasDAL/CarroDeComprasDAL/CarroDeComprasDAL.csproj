@@ -96,11 +96,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="Implementaciones\ConnectionFactory.cs" />
     <Compile Include="Implementaciones\RepositoryCarro.cs" />
     <Compile Include="Implementaciones\RepositoryUsuario.cs" />
     <Compile Include="Implementaciones\RepositoryMarca.cs" />
     <Compile Include="Implementaciones\RepositoryPedido.cs" />
     <Compile Include="Implementaciones\RepositoryProducto.cs" />
+    <Compile Include="Interfaces\IConnectionFactory.cs" />
     <Compile Include="Interfaces\IRepositoryCarro.cs" />
     <Compile Include="Interfaces\IRepositoryUsuario.cs" />
     <Compile Include="Interfaces\IRepositoryMarca.cs" />

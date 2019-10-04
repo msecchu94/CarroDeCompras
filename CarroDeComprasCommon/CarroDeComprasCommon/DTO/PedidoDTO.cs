@@ -18,15 +18,15 @@ namespace CarroDeComprasCommon.DTO
 
         public string Observacion { get; set; }
 
-        public IEnumerable<DetallePedidoDTO> ListaCarro { get; set; }
+        public IEnumerable<DetallePedidoDTO> DetallesPedido { get; set; }
 
         public decimal Total
         {
             get
             {
-                if (ListaCarro != null)
+                if (DetallesPedido != null)
                 {
-                    return ListaCarro.Sum(x => x.SubTotal);
+                    return DetallesPedido.Sum(x => x.SubTotal);
                 }
                 else { return 0; }
             }

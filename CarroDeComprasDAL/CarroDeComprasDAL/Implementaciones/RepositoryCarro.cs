@@ -1,4 +1,5 @@
-﻿using CarroDeComprasCommon.Entidad;
+﻿using CarroDeComprasBLL.Interfaces;
+using CarroDeComprasCommon.Entidad;
 using CarroDeComprasDAL.Interfaces;
 using Dapper;
 using System;
@@ -13,28 +14,37 @@ namespace CarroDeComprasDAL.Implementaciones
 {
     public class RepositoryCarro : IRepositoryCarro
     {
-        public SqlConnection ConnectionString = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionTable"].ConnectionString);
+        //public SqlConnection ConnectionString = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionTable"].ConnectionString);
 
+        private readonly IConnectionFactory _connectionFactory;
 
-
-
+        public RepositoryCarro(IConnectionFactory ConnectionFactory)
+        {
+            this._connectionFactory = ConnectionFactory;
+        }
+        
         public void AgragarCarro(int codigo, int cantidadProducto, int id)
         {
-            try
-            {
-                string InsertCarro = @"INSERT INTO Carro(IdUsuario,Cantidad,CodigoProducto) VALUES(@id,@cantidadProducto,@codigo)";
+            string InsertCarro = @"INSERT INTO Carro(IdUsuario,Cantidad,CodigoProducto) VALUES(@id,@cantidadProducto,@codigo)";
 
-                var result = ConnectionString.Execute(InsertCarro, param: new { id, cantidadProducto, codigo });
-            }
-            catch (Exception)
+            using (var Connection = _connectionFactory.CreateConnection())
             {
-                throw;
-            }
 
+                try
+                {
+                    var result = Connection.Execute(InsertCarro, param: new { id, cantidadProducto, codigo });
+                }
+                catch (Exception ex)
+                {
+                    throw ex ;
+                }
+            }
         }
 
         public PedidoBE ObtenerCarro(int IdUsuario)
         {
+            #region Query
+
             string ObtenerCarro = @"SELECT   
                     c.[Cantidad] 
                     ,c.[IdUsuario]
@@ -47,55 +57,69 @@ namespace CarroDeComprasDAL.Implementaciones
                     ,p.[PrecioUnitario]
                     FROM [Carro] c
                     INNER JOIN Productos p ON c.[CodigoProducto] = p.Codigo";
-            try
+
+            #endregion
+
+            using (var Connection = _connectionFactory.CreateConnection())
             {
-                PedidoBE pedidoBE = new PedidoBE();
-                pedidoBE.DetallesPedido = ConnectionString.Query<CarroBE, ProductoBE, DetallePedidoBE>(ObtenerCarro + " WHERE c.[IdUsuario]=@IdUsuario",(carro, producto) =>
-                         {
-                             return new DetallePedidoBE
-                             {
-                                 Cantidad = carro.Cantidad,
-                                 ProductoBE = producto
-                             };
+                try
+                {
+                    PedidoBE pedidoBE = new PedidoBE();
+                    pedidoBE.DetallesPedido = Connection.Query<CarroBE, ProductoBE, DetallePedidoBE>(ObtenerCarro + " WHERE c.[IdUsuario]=@IdUsuario", (carro, producto) =>
+                              {
+                                  return new DetallePedidoBE
+                                  {
+                                      Cantidad = carro.Cantidad,
+                                      ProductoBE = producto
+                                  };
 
-                         }, param: new { IdUsuario = IdUsuario }, splitOn: "Split");
+                              }, param: new { IdUsuario = IdUsuario }, splitOn: "Split");
 
-                return pedidoBE;
-            }
+                    return pedidoBE;
+                }
 
-            catch (Exception)
-            {
-                System.Diagnostics.Debug.WriteLine(ObtenerCarro + "WHERE c.[IdUsuario]=@IdUsuario");
-                throw;
+                catch (Exception)
+                {
+                    System.Diagnostics.Debug.WriteLine(ObtenerCarro + "WHERE c.[IdUsuario]=@IdUsuario");
+                    throw;
+                }
             }
         }
 
         public void EliminarItem(int codigo, int IdUsuario)
         {
             string EliminarItem = @"DELETE FROM Carro WHERE CodigoProducto=@codigo AND IdUsuario=@IdUsuario ";
-            try
+
+            using (var Connection = _connectionFactory.CreateConnection())
             {
-                var Eliminar = ConnectionString.Execute(EliminarItem, param: new { codigo, IdUsuario });
-            }
-            catch (Exception E)
-            {
-                System.Diagnostics.Debug.WriteLine(EliminarItem + "DELETE FROM Carro WHERE CodigoProducto=@codigo");
-                throw E;
+
+                try
+                {
+                    var Eliminar = Connection.Execute(EliminarItem, param: new { codigo, IdUsuario });
+                }
+                catch (Exception E)
+                {
+                    System.Diagnostics.Debug.WriteLine(EliminarItem + "DELETE FROM Carro WHERE CodigoProducto=@codigo");
+                    throw E;
+                }
+
             }
         }
-
+        
         public void VaciarCarro(int IdUsuario)
         {
             string VaciarCarro = @"DELETE FROM Carro WHERE  IdUsuario=@IdUsuario";
 
-            try
+            using (var Connection = _connectionFactory.CreateConnection())
             {
-                ConnectionString.Execute(VaciarCarro, param: new { IdUsuario });
-            }
-            catch (Exception)
-            {
-
-                throw;
+                try
+                {
+                    Connection.Execute(VaciarCarro, param: new { IdUsuario });
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
             }
         }
     }

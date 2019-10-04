@@ -24,7 +24,7 @@ namespace WebApp.Controllers
             this._usuarioBLL = UsuarioBLL;
             this._pedidoBLL = PedidoBLL;
         }
-        // GET: Pedido
+
         public ActionResult Index()
         {
             UsuarioDTO usuarioDTO = new UsuarioDTO()
@@ -39,7 +39,6 @@ namespace WebApp.Controllers
 
             return View(pedidoModel);
         }
-
 
         [HttpPost]
         public ActionResult CargarPedido(string Observaciones)

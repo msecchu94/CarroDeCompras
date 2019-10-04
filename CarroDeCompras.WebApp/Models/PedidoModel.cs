@@ -20,7 +20,7 @@ namespace WebApp.Models
         [DataType(DataType.MultilineText)]
         public string Observacion { get; set; }
 
-        public IEnumerable<DetallePedidoModel> ListaCarro { get; set; }
+        public IEnumerable<DetallePedidoModel> DetallesPedido { get; set; }
 
         [Column(TypeName = "decimal(18,2)")]
         [DataType(DataType.Currency)]
@@ -28,9 +28,9 @@ namespace WebApp.Models
         {
             get
             {
-                if (ListaCarro != null)
+                if (DetallesPedido != null)
                 {
-                    return ListaCarro.Sum(x => x.SubTotal);
+                    return DetallesPedido.Sum(x => x.SubTotal);
                 }
                 else { return 0; }
             }

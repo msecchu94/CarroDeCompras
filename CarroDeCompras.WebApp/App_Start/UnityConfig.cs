@@ -52,7 +52,9 @@ namespace WebApp
             container.RegisterType<IRepositoryUsuario,RepositoryUsuario>();
 
             container.RegisterType<ICarroBLL, CarroBLL>();
-            container.RegisterType<IRepositoryCarro,RepositoryCarro>();
+            container.RegisterType<IRepositoryCarro, RepositoryCarro>();
+
+            container.RegisterType<IConnectionFactory,ConnectionFactory>();
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }

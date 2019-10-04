@@ -20,6 +20,7 @@ namespace WebApp.App_Start
                 config.CreateMap<ProductoBE, ProductoDTO>().ForMember(X => X.Marca, y => y.MapFrom(z => z.Marca));
                 config.CreateMap<DetallePedidoBE, DetallePedidoDTO>().ForMember(x => x.ProductoDTO, y => y.MapFrom(z => z.ProductoBE));
                 config.CreateMap<PedidoBE, PedidoDTO>();
+                //.ForMember(x=>x.ListaCarro,y=>y.MapFrom(z=>z.));
 
                 config.CreateMap<MarcaDTO, Marca>();
                 config.CreateMap<ProductoDTO, Producto>();

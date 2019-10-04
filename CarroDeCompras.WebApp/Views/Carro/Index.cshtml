@@ -33,21 +33,21 @@
                                 <table class="table table-striped table-hover" id="tablacarro">
                                     <tr>
                                         <th>
-                                            @Html.DisplayNameFor(model => model.ListaCarro.First().Producto)
+                                            @Html.DisplayNameFor(model => model.DetallesPedido.First().Producto)
                                         </th>
                                         <th>
-                                            @Html.DisplayNameFor(model => model.ListaCarro.First().Producto.PrecioUnitario)
+                                            @Html.DisplayNameFor(model => model.DetallesPedido.First().Producto.PrecioUnitario)
                                         </th>
                                         <th>
-                                            @Html.DisplayNameFor(model => model.ListaCarro.First().Cantidad)
+                                            @Html.DisplayNameFor(model => model.DetallesPedido.First().Cantidad)
                                         </th>
                                         <th>
-                                            @Html.DisplayNameFor(model => model.ListaCarro.First().SubTotal)
+                                            @Html.DisplayNameFor(model => model.DetallesPedido.First().SubTotal)
                                         </th>
                                         <th></th>
                                     </tr>
 
-                                    @foreach (var item in Model.ListaCarro)
+                                    @foreach (var item in Model.DetallesPedido)
                                     {
                                         <tr id="">
                                             <td>
@@ -68,7 +68,7 @@
                                             </td>
                                             <td>
                                                 <div style="float: right;">
-                                                    <button type="button" class="eliminar" data-id="@Model.ListaCarro.First().Producto.Codigo">Eliminar</button>
+                                                    <button type="button" class="eliminar" data-id="@Model.DetallesPedido.First().Producto.Codigo">Eliminar</button>
                                                 </div>
                                             </td>
                                         </tr>

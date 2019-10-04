@@ -32,7 +32,7 @@ namespace CarroDeComprasBLL.Implementaciones
 
             int index = 1;
 
-            foreach (var item in pedidoDTO.ListaCarro)
+            foreach (var item in pedidoDTO.DetallesPedido)
             {
 
                 item.NumeroItem = index;
@@ -47,9 +47,9 @@ namespace CarroDeComprasBLL.Implementaciones
                 _repositoryPedido.AgregarPedido(pedidoBE);
                 return res = true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                throw ex;
                 return res = false;
             }
 
