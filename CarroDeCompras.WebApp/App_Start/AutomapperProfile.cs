@@ -20,12 +20,13 @@ namespace WebApp.App_Start
                 config.CreateMap<ProductoBE, ProductoDTO>().ForMember(X => X.Marca, y => y.MapFrom(z => z.Marca));
                 config.CreateMap<DetallePedidoBE, DetallePedidoDTO>().ForMember(x => x.ProductoDTO, y => y.MapFrom(z => z.ProductoBE));
                 config.CreateMap<PedidoBE, PedidoDTO>();
-                //.ForMember(x=>x.ListaCarro,y=>y.MapFrom(z=>z.));
+                
 
-                config.CreateMap<MarcaDTO, Marca>();
-                config.CreateMap<ProductoDTO, Producto>();
-                config.CreateMap<DetallePedidoDTO, DetallePedidoModel>().ForMember(x => x.Producto, y => y.MapFrom(z => z.ProductoDTO));
-                config.CreateMap<PedidoDTO, PedidoModel>();
+                config.CreateMap<MarcaDTO,Marca>();
+                config.CreateMap<ProductoDTO,Producto>();
+                config.CreateMap<DetallePedidoDTO,DetallePedidoModel>().ForMember(x => x.Producto, y => y.MapFrom(z => z.ProductoDTO));
+                config.CreateMap<PedidoDTO,PedidoModel>();
+                config.CreateMap<UsuarioDTO,UsuarioModel>();
 
                 config.CreateMap<MarcaDTO, MarcaBE>();
                 config.CreateMap<ProductoDTO, ProductoBE>();
@@ -33,14 +34,15 @@ namespace WebApp.App_Start
                 config.CreateMap<PedidoDTO, PedidoBE>();
 
                 config.CreateMap<Marca,MarcaDTO>();
-                config.CreateMap<Producto, ProductoDTO>();
-                config.CreateMap<DetallePedidoModel, DetallePedidoDTO>().ForMember(x => x.ProductoDTO, y => y.MapFrom(z => z.Producto));
-                config.CreateMap<PedidoModel, PedidoDTO>();
+                config.CreateMap<Producto,ProductoDTO>();
+                config.CreateMap<DetallePedidoModel,DetallePedidoDTO>().ForMember(x => x.ProductoDTO, y => y.MapFrom(z => z.Producto));
+                config.CreateMap<PedidoModel,PedidoDTO>();
+                config.CreateMap<UsuarioModel,UsuarioDTO>();
 
 
-                config.CreateMap<Producto, ProductoDTO>();
-                config.CreateMap<DetallePedidoModel, DetallePedidoDTO>().ForMember(x => x.ProductoDTO, y => y.MapFrom(z => z.Producto));
-                config.CreateMap<PedidoModel, PedidoDTO>();
+                config.CreateMap<Producto,ProductoDTO>();
+                config.CreateMap<DetallePedidoModel,DetallePedidoDTO>().ForMember(x => x.ProductoDTO, y => y.MapFrom(z => z.Producto));
+                config.CreateMap<PedidoModel,PedidoDTO>();
 
             });
         }

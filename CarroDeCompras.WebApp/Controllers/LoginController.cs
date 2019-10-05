@@ -13,6 +13,7 @@ using System.Web.Security;
 using WebGrease;
 using Microsoft.AspNet.Identity;
 using System.Web.UI;
+using AutoMapper;
 
 namespace WebApp.Controllers
 {
@@ -26,91 +27,73 @@ namespace WebApp.Controllers
         }
 
         [HttpGet, AllowAnonymous]
-        public ActionResult Index(string mensaje)
+        public ActionResult Index(string mensaje, string permiso)
         {
-            ViewBag.Mensaje = mensaje;
+            if (permiso != null)
+            {
+                ViewBag.Permiso = permiso;
+                return View();
+
+            }
+
+            if (mensaje != null)
+            {
+                ViewBag.Mensaje = mensaje;
+                TempData["msjExito"] = "Modificacion Exitosa,Valide su crave para continuar ... !!";
+                ViewBag.msjExito = TempData["msjExito"];
+            }
 
             return View();
         }
 
         [HttpPost, AllowAnonymous]
-        public ActionResult Login(UsuarioModel usuariomodel)
+        public ActionResult Login(UsuarioModel usuarioModel)       //   MODELO DTO
         {
-            string mensaje = "";
+            string permiso = "";
 
             if (!ModelState.IsValid)
             {
-
-                return View("Index", usuariomodel);
+                return View("Index", usuarioModel);
             }
-
-            #region mapeo
-            UsuarioModel usuariomodelnuevo = null;
-            UsuarioDTO usuarioDTOnuevo = null;
 
             try
             {
-                UsuarioDTO usuarioDTO = new UsuarioDTO()
+                var usuarioDTO = Mapper.Map<UsuarioDTO>(usuarioModel);   //   MODELO DTO  NVO
+                var getUsuario = _usuarioBLL.ObtenerUsuario(usuarioDTO); //  METODO DTO
+
+                var usuarioResult = Mapper.Map<UsuarioModel>(getUsuario);       //MODELO uSUARIO  NVO
+
+                if (!usuarioResult.Activo)
                 {
-                    Nombre = usuariomodel.Nombre,
-                    Usuario = usuariomodel.Usuario,
-                    Password = usuariomodel.Password,
-                    Id = usuariomodel.Id,
-                    IdRol = usuariomodel.IdRol,
-                    Activo = usuariomodel.Activo,
-                };
+                    permiso = "Usuario sin acceso";
+                    usuarioModel.Password = string.Empty;
+                    return RedirectToAction("Index", new { permiso });
+                }
 
-                var user = _usuarioBLL.ObtenerUsuario(usuarioDTO);
-                usuarioDTOnuevo = user;
-
-                usuariomodelnuevo = new UsuarioModel()
+                if (usuarioModel.VerificarHashedPassword(usuarioModel.Password, usuarioResult.Password, usuarioResult.PasswordSalt) == true)
                 {
-                    Nombre = usuarioDTOnuevo.Nombre,
-                    Usuario = usuarioDTOnuevo.Usuario,
-                    Password = usuarioDTOnuevo.Password,
-                    PasswordSalt = usuarioDTOnuevo.PasswordSalt,
-                    Id = usuarioDTOnuevo.Id,
-                    IdRol = usuarioDTOnuevo.IdRol,
-                    Activo = usuarioDTOnuevo.Activo,
+                    usuarioModel.GenerarTicketCookie(Response, usuarioResult);
 
-                };
+                    if (usuarioResult.IdRol == "CLI")
+                    {
+                        permiso = "Bienvenido ";
+                        return RedirectToAction("Index", "Catalogo", new { mensaje = permiso });
+                    }
+                    permiso = "Bienvenido ";
+                    return RedirectToAction("Index", "Producto", new { mensaje = permiso });
+                }
+
+                else
+                {
+                    permiso = "Contraseña no válida";
+                    return RedirectToAction("Index", new { permiso });
+                }
             }
             catch (Exception)
             {
-
-                mensaje = "El Usuario no se encuentra registrado";
-                usuariomodel.Password = string.Empty;
-                return RedirectToAction("Index", new { mensaje });
-            }
-
-
-            #endregion
-
-
-            if (!usuariomodelnuevo.Activo)
-            {
-                mensaje = "Usuario sin acceso";
-                usuariomodel.Password = string.Empty;
-                return RedirectToAction("Index", new { mensaje });
-            }
-
-            if (usuariomodel.VerificarHashedPassword(usuariomodel.Password, usuariomodelnuevo.Password, usuarioDTOnuevo.PasswordSalt) == true)
-            {
-                usuariomodel.GenerarTicketCookie(Response, usuariomodelnuevo);
-
-                if (usuariomodelnuevo.IdRol == "CLI")
-                {
-                    mensaje = "Bienvenido ";
-                    return RedirectToAction("Index", "Catalogo", new { mensaje });
-                }
-                mensaje = "Bienvenido ";
-                return RedirectToAction("Index", "Producto", new { mensaje });
-            }
-
-            else
-            {
-                mensaje = "Contraseña no válida";
-                return RedirectToAction("Index", new { mensaje });
+                permiso = "El Usuario no se encuentra registrado";
+                usuarioModel.Password = string.Empty;
+                return RedirectToAction("Index", new { permiso });
             }
 
         }
@@ -121,12 +104,9 @@ namespace WebApp.Controllers
             try
             {
                 ViewBag.msjExito = TempData["msjExito"];
-          
-
             }
             catch (Exception)
             {
-
                 ViewBag.msjError = TempData["msjError"];
             }
             return View();
@@ -198,6 +178,9 @@ namespace WebApp.Controllers
         [Authorize]
         public ActionResult LogOut()
         {
+
+            #region Opciones
+
             //1
 
             //FormsAuthentication.SignOut(); 
@@ -216,6 +199,8 @@ namespace WebApp.Controllers
             //rFormsCookie.Expires = DateTime.Now.AddYears(-1);
             //Response.Cookies.Add(rFormsCookie);
 
+            #endregion
+
             //3
 
             FormsAuthentication.SignOut();
@@ -232,32 +217,18 @@ namespace WebApp.Controllers
         }
 
         [HttpGet, Authorize]
-        public ActionResult ModificarPassword(string mensaje)
+        public ActionResult ModificarPassword()
         {
-            ViewBag.Mensaje = mensaje;
 
-            if (mensaje == null)
-            {
-                UsuarioModel usuario = new UsuarioModel();
-                usuario.Usuario = User.Identity.GetUserName();
-                return View(usuario);
-            }
+            UsuarioModel usuario = new UsuarioModel();
+            usuario.Usuario = User.Identity.GetUserName();
 
-            try
-            {
-                ViewBag.msjExito = TempData["msjExito"];
-                return View("ModificarPassword");
-            }
-            catch (Exception)
-            {
-                ViewBag.msjError = TempData["msjError"];
-                return RedirectToAction("ModificarPassword");
-            }
-
+            return View(usuario);
 
         }
 
         [Authorize, HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult ModificarPassword(UsuarioModel usuarioModel)
         {
             string mensaje = "";
@@ -272,15 +243,12 @@ namespace WebApp.Controllers
 
             if (usuarioModel.Password == usuarioModel.PasswordNueva)
             {
-                //addmodelerror
                 ModelState.AddModelError("Password", "No puede usar contraseña vigente");
                 return View("ModificarPassword", usuarioModel);
             }
 
-            if (usuarioModel.PasswordNueva ==null || usuarioModel.PasswordConfirmada == null)
+            if (usuarioModel.PasswordNueva == null || usuarioModel.PasswordConfirmada == null)
             {
-                 //addmodelerror
-
                 ModelState.AddModelError("PasswordNueva", "El campo no puede estar vacio");
                 ModelState.AddModelError("PasswordConfirmada", "El campo no puede estar vacio");
 
@@ -291,27 +259,14 @@ namespace WebApp.Controllers
                 return View("ModificarPassword", usuarioModel);
             }
 
-            #region mapeo
-
-            UsuarioDTO usuarioDTOverificar = null;
-            UsuarioModel usuariomodelverificado = null;
-
-            UsuarioDTO usuarioDTO = new UsuarioDTO()
-            {
-                Usuario = usuarioModel.Usuario,
-            };
-
             try
             {
-                usuarioDTOverificar = _usuarioBLL.ObtenerUsuario(usuarioDTO);
+                var usuarioDTO = Mapper.Map<UsuarioDTO>(usuarioModel);     //model a dto
+                var getUsuario = _usuarioBLL.ObtenerUsuario(usuarioDTO);
 
-                usuariomodelverificado = new UsuarioModel()
-                {
-                    Password = usuarioDTOverificar.Password,
-                    PasswordSalt = usuarioDTOverificar.PasswordSalt,
-                };
+                var usuarioResult = Mapper.Map<UsuarioModel>(getUsuario);     //DTO A MODEL
 
-                if (usuarioModel.VerificarHashedPassword(usuarioModel.Password, usuariomodelverificado.Password, usuariomodelverificado.PasswordSalt) == true)
+                if (usuarioModel.VerificarHashedPassword(usuarioModel.Password, usuarioResult.Password, usuarioResult.PasswordSalt) == true)
                 {
                     string passwordHash, passwordSalt;
                     usuarioModel.CreatePasswordHash(usuarioModel.PasswordConfirmada, out passwordHash, out passwordSalt);
@@ -321,11 +276,12 @@ namespace WebApp.Controllers
 
                     _usuarioBLL.ModificarPassword(usuarioDTO);
 
-                    TempData["msjExito"] = "Modificacion Exitosa !!";
+                    mensaje = "Contraseña Modificada Exitosamente!";
+
+                    TempData["msjExito"] = "Modificacion Exitosa, Valide su clave Nuevamente ...";
                     ViewBag.msjExito = TempData["msjExito"];
 
-                    mensaje = "Contraseña Modificada Exitosamente!";
-                    return RedirectToAction("ModificarPassword", new { mensaje });
+                    return View("Index");
                 }
 
                 ModelState.AddModelError("Password", "La contraseña actual es incorrecta");
@@ -336,14 +292,8 @@ namespace WebApp.Controllers
                 TempData["msjError"] = "Error al Modificacion Contraseña.";
                 ViewBag.msjError = TempData["msjError"];
 
-                return RedirectToAction("ModificarPassword");
+                return View("ModificarPassword");
             }
-
-
-            #endregion
-
-
-
         }
     }
 }
