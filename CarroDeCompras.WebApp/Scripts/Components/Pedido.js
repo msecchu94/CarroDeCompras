@@ -20,15 +20,17 @@ $('#form-pedido').on('submit', function (e) {
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, delete it!'
+
     }).then((result) => {
-        if (result.value) {
+       
+        if (result.value){
 
-            $.ajax({
-                method: 'POST',
-                url: this.attributes.action.value,
-                data: { Observaciones: Observaciones }
+        $.ajax({
+        method: 'POST',
+        url: this.attributes.action.value,
+        data: { Observaciones: Observaciones }
 
-            })
+})
                 .done(function (data) {
                     console.log(data);
 
@@ -55,8 +57,34 @@ $('#form-pedido').on('submit', function (e) {
 
                 });
 
-        }
-    });
+}
+});
 
 });
+
+$('.btnPedido').on('click', function () {
+
+    console.log(this);
+
+    //creamos var con la data pasada por el btnPedido 
+    const pedidoObservaciones = this.dataset.pedidoObservaciones;
+    const pedidoTotal = this.dataset.pedidoTotal;
+    const pedidoDetalles = this.dataset.pedido;
+    var items=[];
+    items=this.this.dataset.detalles;
+    Console.log(items);
+
+
+    // Llenar los datos del modal
+    const $modal = $('#myModalPedido');
+    $modal.find('.modal-observaciones').html(pedidoObservaciones);
+    $modal.find('.descripcion-detalles').html(pedidoDetalles);
+    $modal.find('.pedidoTotal').val(pedidoTotal);
+    $modal.find('.pedidoTotal').val(pedidoTotal);
+
+
+    // Abrir
+    $modal.modal('show');
+});
+
 

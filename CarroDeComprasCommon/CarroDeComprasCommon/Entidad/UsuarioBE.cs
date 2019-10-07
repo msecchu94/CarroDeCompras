@@ -19,6 +19,6 @@ namespace CarroDeComprasCommon.Entidad
         public DateTime FechaCreacion { get; set; }
         public bool Activo { get; set; }
 
-        public RolesBE Roles { get; set; }
+        //public RolesBE Roles { get; set; }
     }
 }

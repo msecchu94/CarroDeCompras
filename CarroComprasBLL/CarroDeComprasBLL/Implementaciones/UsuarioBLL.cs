@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 
 namespace CarroDeComprasBLL.Implementaciones
 {
@@ -17,95 +18,67 @@ namespace CarroDeComprasBLL.Implementaciones
         public UsuarioBLL(IRepositoryUsuario repositoryUsuario)
         {
             this._repositoryUsuario = repositoryUsuario;
-
         }
 
         public UsuarioDTO AltaUsuario(UsuarioDTO usuarioDTO)
         {
-            UsuarioBE usuarioBE = null;
-            if (usuarioDTO != null)
+            try
             {
-                usuarioBE = new UsuarioBE()
-                {
-                    Usuario = usuarioDTO.Usuario,
-                    Nombre = usuarioDTO.Nombre,
-                    Apellido = usuarioDTO.Apellido,
-                    PasswordSalt = usuarioDTO.PasswordSalt,
-                    Password = usuarioDTO.Password,
-                    Activo = usuarioDTO.Activo,
-                    IdRol = usuarioDTO.IdRol
-
-                };
+                var usuarioBE = Mapper.Map<UsuarioBE>(usuarioDTO);
+                var result = _repositoryUsuario.AltaUsuario(usuarioBE);
             }
-
-            //metodoINSERT
-            var result = _repositoryUsuario.AltaUsuario(usuarioBE);
+            catch (Exception)
+            {
+                throw;
+            }
 
             return usuarioDTO;
         }
 
-
         public UsuarioDTO ObtenerUsuario(UsuarioDTO usuarioDTO)
         {
-            UsuarioDTO usuarioDTOnuevo = null;
 
-            UsuarioBE usuarioBE = null;
-            UsuarioBE usuarioBENuevo = null;
+            try
+            {
 
-                usuarioBE = new UsuarioBE()
-                {
-                    Nombre = usuarioDTO.Nombre,
-                    Usuario = usuarioDTO.Usuario,
-                    Password = usuarioDTO.Password,
-                    Id = usuarioDTO.Id,
-                    IdRol = usuarioDTO.IdRol,
-                    Activo = usuarioDTO.Activo
-                };
-               
-                var user = _repositoryUsuario.ObtenerUsuario(usuarioBE);
+                var usuarioBE = Mapper.Map<UsuarioBE>(usuarioDTO);
+                var getUsuario = _repositoryUsuario.ObtenerUsuario(usuarioBE);
 
+                var usuarioResult = Mapper.Map<UsuarioDTO>(getUsuario);
+                return usuarioResult;
 
-                usuarioBENuevo = user;
-                usuarioDTOnuevo = new UsuarioDTO()
-                {
-
-                    Nombre = usuarioBENuevo.Nombre,
-                    Usuario = usuarioBENuevo.Usuario,
-                    Password = usuarioBENuevo.Password,
-                    PasswordSalt = usuarioBENuevo.PasswordSalt,
-                    Id = usuarioBENuevo.Id,
-                    IdRol = usuarioBENuevo.IdRol,
-                    Activo = usuarioBENuevo.Activo
-
-                };
-    
-            return usuarioDTOnuevo;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
         }
 
         public UsuarioDTO ModificarPassword(UsuarioDTO usuarioDTO)
         {
-            UsuarioDTO usuarioDTOverificar = null;
+            //UsuarioDTO usuarioDTOverificar = null;
 
-            UsuarioBE usuarioBE = null;
-            UsuarioBE usuarioBEverificar = null;
+            ////UsuarioBE usuarioBE = null;
+            //UsuarioBE usuarioBEverificar = null;
 
-            usuarioBE = new UsuarioBE()
-            {
-                Usuario = usuarioDTO.Usuario,
-                Password = usuarioDTO.Password,
-                PasswordSalt = usuarioDTO.PasswordSalt
-            };
+            var usuarioBE = Mapper.Map<UsuarioBE>(usuarioDTO);
+            //   new UsuarioBE()
+            //{
+            //    Usuario = usuarioDTO.Usuario,
+            //    Password = usuarioDTO.Password,
+            //    PasswordSalt = usuarioDTO.PasswordSalt
+            //};
 
-            usuarioBEverificar = _repositoryUsuario.ModificarPassword(usuarioBE);
+            var getModificacion = _repositoryUsuario.ModificarPassword(usuarioBE);
+            var modificacionResult = Mapper.Map<UsuarioDTO>(getModificacion);
 
-            usuarioDTOverificar = new UsuarioDTO()
-            {
-                Password = usuarioBEverificar.Password,
-                PasswordSalt = usuarioBEverificar.PasswordSalt
-            };
-            return usuarioDTOverificar;
-
+            //usuarioDTOverificar = new UsuarioDTO()
+            //{
+            //    Password = getModificacion.Password,
+            //    PasswordSalt = getModificacion.PasswordSalt
+            //};
+            return modificacionResult;
         }
 
     }

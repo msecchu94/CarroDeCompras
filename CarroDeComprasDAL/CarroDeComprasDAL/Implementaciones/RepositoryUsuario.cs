@@ -1,4 +1,5 @@
-﻿using CarroDeComprasCommon.Entidad;
+﻿using CarroDeComprasBLL.Interfaces;
+using CarroDeComprasCommon.Entidad;
 using CarroDeComprasDAL.Interfaces;
 using Dapper;
 using System;
@@ -13,9 +14,49 @@ namespace CarroDeComprasDAL.Implementaciones
 {
     public class RepositoryUsuario : IRepositoryUsuario
     {
-        public SqlConnection ConnectionString = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionTable"].ConnectionString);
+        private readonly IConnectionFactory _connectionFactory;
 
-        private string queryUsuario = @"SELECT 
+        public RepositoryUsuario(IConnectionFactory ConnectionFactory)
+        {
+
+            this._connectionFactory = ConnectionFactory;
+        }
+
+        public UsuarioBE AltaUsuario(UsuarioBE usuarioBE)
+        {
+
+            #region Query
+
+
+            string queryUsuarioInsert = @"INSERT INTO Usuarios 
+                                    (Usuario,Nombre,Apellido,Activo,PasswordSalt,Password,IdRol)
+                                    VALUES(@Usuario,@Nombre,@Apellido,@Activo,@PasswordSalt,@Password,@IdRol)";
+
+            #endregion
+
+            using (var Connection = _connectionFactory.CreateConnection())
+            {
+                UsuarioBE usuario = null;
+                try
+                {
+                    usuario = Connection.QueryFirstOrDefault<UsuarioBE>(queryUsuarioInsert, param: usuarioBE);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                return usuario;
+
+            }
+        }
+
+        public UsuarioBE ObtenerUsuario(UsuarioBE usuarioBE)
+        {
+
+            #region Query
+
+            string queryUsuario = @"SELECT 
                                        [Id]
                                        ,[Activo]
                                        ,[Usuario]
@@ -25,56 +66,49 @@ namespace CarroDeComprasDAL.Implementaciones
                                        ,[IdRol]
                                        FROM [Usuarios]
                                        WHERE [Usuario]=@Usuario";
+            #endregion
 
-        string queryUsuarioInsert = @"INSERT INTO Usuarios 
-                                    (Usuario,Nombre,Apellido,Activo,PasswordSalt,Password,IdRol)
-                                    VALUES(@Usuario,@Nombre,@Apellido,@Activo,@PasswordSalt,@Password,@IdRol)";
-
-        string queryEditPassword = @"UPDATE Usuarios
-                                   SET Password=@Password,
-                                   PasswordSalt=@PasswordSalt
-                                   WHERE [Usuario]=@Usuario";
-
-        public UsuarioBE AltaUsuario(UsuarioBE usuarioBE)
-        {
-            UsuarioBE usuario = null;
-            try
+            using (var Connection = _connectionFactory.CreateConnection())
             {
-                usuario = ConnectionString.QueryFirstOrDefault<UsuarioBE>(queryUsuarioInsert, param: usuarioBE);
+                try
+                {
+                   var usuarioResult = Connection.QueryFirstOrDefault<UsuarioBE>(queryUsuario, param: usuarioBE);
+
+                   return usuarioResult;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
             }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            return usuario;
-
-
-        }
-
-        public UsuarioBE ObtenerUsuario(UsuarioBE usuarioBE)
-        {
-            UsuarioBE usuario = ConnectionString.QueryFirstOrDefault<UsuarioBE>(queryUsuario, param: usuarioBE);
-
-            return usuario;
         }
 
         public UsuarioBE ModificarPassword(UsuarioBE usuarioBE)
         {
+            #region Query
 
-            UsuarioBE usuario = null;
+            string queryEditPassword = @"UPDATE Usuarios
+                                   SET Password=@Password,
+                                   PasswordSalt=@PasswordSalt
+                                   WHERE [Usuario]=@Usuario";
+            #endregion
 
-            try
+            using (var Connection = _connectionFactory.CreateConnection())
             {
-                usuario = ConnectionString.QueryFirstOrDefault<UsuarioBE>(queryEditPassword, param: usuarioBE);
-            }
-            catch (Exception)
-            {
 
-                throw new Exception("No se pudo obtener Usuario");
-            }
+                UsuarioBE usuario = null;
 
-            return usuarioBE;
+                try
+                {
+                    usuario = Connection.QueryFirstOrDefault<UsuarioBE>(queryEditPassword, param: usuarioBE);
+                }
+                catch (Exception)
+                {
+                    throw new Exception("No se pudo obtener Usuario");
+                }
+
+                return usuarioBE;
+            }
         }
     }
 }

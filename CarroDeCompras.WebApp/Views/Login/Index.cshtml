@@ -31,6 +31,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
 </head>
+
 <body class="hold-transition login-page">
 
     <div class="login-box ">
@@ -50,24 +51,24 @@
                         Swal.fire({
                             type: 'success',
                             title: '@TempData["msjExito"]',
-                            showConfirmButton: true,
-
+                            showConfirmButton: false,
+                            time: 2500
                         })
                     })();
-
                 </script>
-                <div class="alert alert-success bordes">
+
+                <div class="alert alert-success bordes text-center">
                     <i class="icon fa fa-check"></i>
                     <strong>@TempData["msjExito"] !</strong>
                 </div>
 
             }
 
-        
+
 
             @if (ViewBag.Permiso != null)
             {
-                <div class="alert alert-danger bordes">
+                <div class="alert alert-danger bordes text-center">
                     <i class="icon fa fa-ban"></i>
                     <strong>Permiso Denegado @ViewBag.Permiso !</strong>
                 </div>

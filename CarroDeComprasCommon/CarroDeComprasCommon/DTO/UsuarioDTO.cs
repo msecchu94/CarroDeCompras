@@ -18,7 +18,7 @@ namespace CarroDeComprasCommon.DTO
         public string PasswordSalt { get; set; }
         public DateTime FechaCreacion { get; set; }
         public bool Activo { get; set; }
-        public RolesDTO Roles { get; set; }
+        //public RolesDTO Roles { get; set; }
 
     }
 }

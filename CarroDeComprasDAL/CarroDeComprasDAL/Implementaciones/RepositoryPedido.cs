@@ -21,9 +21,6 @@ namespace CarroDeComprasDAL.Implementaciones
             this._connectionFactory = ConnectionFactory;
         }
 
-        //public SqlConnection ConnectionString = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionTable"].ConnectionString);
-
-
         public bool AgregarPedido(PedidoBE pedidoBE)
         {
             using (var Connection = _connectionFactory.CreateConnection())

@@ -4,6 +4,86 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@*//index pedido*@
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModalPedido" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"><b>Detalle de Pedido</b>,</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped table-hover" id="tablacarro">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DetallesPedido.First().Producto)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DetallesPedido.First().Producto.PrecioUnitario)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DetallesPedido.First().Cantidad)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DetallesPedido.First().SubTotal)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in )
+                    {
+                        <tr id="lista">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Producto.Nombre)
+                            </td>
+                            <td>
+                                <div style="float: right;">
+                                    @Html.DisplayFor(modelItem => item.Producto.PrecioUnitario)
+                                </div>
+                            </td>
+                            <td>
+                                <div style="float: right;">
+                                    @Html.DisplayFor(modelItem => item.Cantidad)
+                                </div>
+                            </td>
+                            <td>
+                                <div style="float: right;">
+                                    @Html.DisplayFor(modelItem => item.SubTotal)
+                                </div>
+                            </td>
+
+                        </tr>
+                    }
+
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Total)</th>
+                        <td></td>
+                        <td></td>
+
+                        <th>
+                            <div style="float:right;">
+                                @Html.DisplayFor(model => model.First().Total, new { id = "Total" })
+                            </div>
+                        </th>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
 
 
 <div class="content-wrapper">
@@ -57,7 +137,7 @@
 
                                         <td>
                                             <div class="center-block">
-                                                @Html.ActionLink("Ver Detalle", "Details", new { Codigo = item.NumeroPedido }, new { @class = "btn btn-primary btn-sm bordes center-block" })
+                                                <button class="btn btn-primary btn-block btn-sm bordes center-block btnPedido" data-detalles="@Model" >Ver Detalle</button>
                                             </div>
                                         </td>
                                     </tr>

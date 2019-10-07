@@ -33,7 +33,6 @@ namespace WebApp.Controllers
             {
                 ViewBag.Permiso = permiso;
                 return View();
-
             }
 
             if (mensaje != null)
@@ -47,7 +46,7 @@ namespace WebApp.Controllers
         }
 
         [HttpPost, AllowAnonymous]
-        public ActionResult Login(UsuarioModel usuarioModel)       //   MODELO DTO
+        public ActionResult Login(UsuarioModel usuarioModel)       //   MODELO uSUARIO
         {
             string permiso = "";
 
@@ -94,83 +93,6 @@ namespace WebApp.Controllers
                 permiso = "El Usuario no se encuentra registrado";
                 usuarioModel.Password = string.Empty;
                 return RedirectToAction("Index", new { permiso });
-            }
-
-        }
-
-        [HttpGet, AllowAnonymous]
-        public ActionResult Registro()
-        {
-            try
-            {
-                ViewBag.msjExito = TempData["msjExito"];
-            }
-            catch (Exception)
-            {
-                ViewBag.msjError = TempData["msjError"];
-            }
-            return View();
-        }
-
-        [HttpPost, AllowAnonymous]
-        [ValidateAntiForgeryToken]
-        public ActionResult Registro(UsuarioModel usuariomodel)
-        {
-            string mensaje = "";
-            UsuarioDTO usuarioDTO = null;
-            string passwordHash, passwordSalt;
-
-
-            if (!ModelState.IsValid)
-            {
-                return View("Registro", usuariomodel);
-            }
-
-            if (usuariomodel.Apellido == null || usuariomodel.Nombre == null)
-            {
-                ModelState.AddModelError("Nombre", "El campo Nombre no puede estar vacio");
-                ModelState.AddModelError("Apellido", "El campo Apellido no puede estar vacio");
-
-                usuariomodel.Nombre = string.Empty;
-                usuariomodel.Nombre = string.Empty;
-                usuariomodel.Password = string.Empty;
-
-                return View("Registro", usuariomodel);
-            }
-
-            usuariomodel.CreatePasswordHash(usuariomodel.Password, out passwordHash, out passwordSalt);
-
-            usuariomodel.PasswordSalt = passwordSalt;
-            usuariomodel.Password = passwordHash;
-
-            try
-            {
-                usuarioDTO = new UsuarioDTO()
-                {
-                    Usuario = usuariomodel.Usuario,
-                    Nombre = usuariomodel.Nombre,
-                    Apellido = usuariomodel.Apellido,
-                    Password = usuariomodel.Password,
-                    PasswordSalt = usuariomodel.PasswordSalt,
-                    Activo = true,
-                    IdRol = "CLI"
-                };
-
-                var resultado = _usuarioBLL.AltaUsuario(usuarioDTO);
-
-                TempData["msjExito"] = "Registro Exitoso !!";
-                ViewBag.msjExito = TempData["msjExito"];
-
-                return RedirectToAction("Registro");
-
-            }
-            catch (Exception)
-            {
-                TempData["msjError"] = "Error al registrar Usuario.";
-                ViewBag.msjError = TempData["msjError"];
-
-                usuariomodel.Password = string.Empty;
-                return RedirectToAction("Registro");
             }
 
         }
@@ -294,6 +216,83 @@ namespace WebApp.Controllers
 
                 return View("ModificarPassword");
             }
+        }
+
+        [HttpGet, AllowAnonymous]
+        public ActionResult Registro()
+        {
+            try
+            {
+                ViewBag.msjExito = TempData["msjExito"];
+            }
+            catch (Exception)
+            {
+                ViewBag.msjError = TempData["msjError"];
+            }
+            return View();
+        }
+
+        [HttpPost, AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult Registro(UsuarioModel usuariomodel)
+        {
+            string mensaje = "";
+            UsuarioDTO usuarioDTO = null;
+            string passwordHash, passwordSalt;
+
+
+            if (!ModelState.IsValid)
+            {
+                return View("Registro", usuariomodel);
+            }
+
+            if (usuariomodel.Apellido == null || usuariomodel.Nombre == null)
+            {
+                ModelState.AddModelError("Nombre", "El campo Nombre no puede estar vacio");
+                ModelState.AddModelError("Apellido", "El campo Apellido no puede estar vacio");
+
+                usuariomodel.Nombre = string.Empty;
+                usuariomodel.Nombre = string.Empty;
+                usuariomodel.Password = string.Empty;
+
+                return View("Registro", usuariomodel);
+            }
+
+            usuariomodel.CreatePasswordHash(usuariomodel.Password, out passwordHash, out passwordSalt);
+
+            usuariomodel.PasswordSalt = passwordSalt;
+            usuariomodel.Password = passwordHash;
+
+            try
+            {
+                usuarioDTO = new UsuarioDTO()
+                {
+                    Usuario = usuariomodel.Usuario,
+                    Nombre = usuariomodel.Nombre,
+                    Apellido = usuariomodel.Apellido,
+                    Password = usuariomodel.Password,
+                    PasswordSalt = usuariomodel.PasswordSalt,
+                    Activo = true,
+                    IdRol = "CLI"
+                };
+
+                var resultado = _usuarioBLL.AltaUsuario(usuarioDTO);
+
+                TempData["msjExito"] = "Registro Exitoso !!";
+                ViewBag.msjExito = TempData["msjExito"];
+
+                return RedirectToAction("Registro");
+
+            }
+            catch (Exception)
+            {
+                TempData["msjError"] = "Error al registrar Usuario.";
+                ViewBag.msjError = TempData["msjError"];
+
+                usuariomodel.Password = string.Empty;
+                return RedirectToAction("Registro");
+            }
+
         }
     }
 }
