@@ -464,8 +464,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Content Include="Content\css\Login.css" />
-    <Content Include="Scripts\Components\Confirmar.js" />
     <Content Include="Scripts\Components\Pedido.js" />
+    <Content Include="Scripts\Components\Producto.js" />
     <Content Include="Views\Catalogo\Index.cshtml" />
     <Content Include="Views\Login\ModificarPassword.cshtml" />
     <Content Include="Views\Carro\Index.cshtml" />

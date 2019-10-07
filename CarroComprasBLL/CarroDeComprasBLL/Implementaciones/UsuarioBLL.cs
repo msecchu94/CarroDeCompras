@@ -40,7 +40,6 @@ namespace CarroDeComprasBLL.Implementaciones
 
             try
             {
-
                 var usuarioBE = Mapper.Map<UsuarioBE>(usuarioDTO);
                 var getUsuario = _repositoryUsuario.ObtenerUsuario(usuarioBE);
 
@@ -57,27 +56,11 @@ namespace CarroDeComprasBLL.Implementaciones
 
         public UsuarioDTO ModificarPassword(UsuarioDTO usuarioDTO)
         {
-            //UsuarioDTO usuarioDTOverificar = null;
-
-            ////UsuarioBE usuarioBE = null;
-            //UsuarioBE usuarioBEverificar = null;
-
             var usuarioBE = Mapper.Map<UsuarioBE>(usuarioDTO);
-            //   new UsuarioBE()
-            //{
-            //    Usuario = usuarioDTO.Usuario,
-            //    Password = usuarioDTO.Password,
-            //    PasswordSalt = usuarioDTO.PasswordSalt
-            //};
-
             var getModificacion = _repositoryUsuario.ModificarPassword(usuarioBE);
+
             var modificacionResult = Mapper.Map<UsuarioDTO>(getModificacion);
 
-            //usuarioDTOverificar = new UsuarioDTO()
-            //{
-            //    Password = getModificacion.Password,
-            //    PasswordSalt = getModificacion.PasswordSalt
-            //};
             return modificacionResult;
         }
 

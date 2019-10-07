@@ -15,6 +15,7 @@ namespace WebApp.Controllers
 {
 
     [Authorize(Roles = "ADMIN")]
+
     public class ProductoController : Controller
     {
         private IProductoBLL _productoBLL;
@@ -128,10 +129,11 @@ namespace WebApp.Controllers
 
             if (ViewBag.resultado != true)
             {
-                ViewBag.Mensaje = "Error al Insertar Registro";
+                return Json(new { Success = false });
+
             }
-            ViewBag.Mensaje = "Se Registro Correctamente";
-            return RedirectToAction("Index", "Producto");
+            return Json(new { Success = true });
+
         }
 
         [HttpGet]
@@ -157,7 +159,6 @@ namespace WebApp.Controllers
         {
             if (!ModelState.IsValid)
             {
-
                 ViewBag.lista = _marcaBLL.CargarMarca();
                 return View("Editar", producto);
             }
@@ -174,15 +175,14 @@ namespace WebApp.Controllers
 
                 if (ViewBag.resultado != true)
                 {
-                    ViewBag.Mensaje = "Error al Insertar Registro";
+                    return Json(new { Success = false });
                 }
-                ViewBag.Mensaje = "Se Registro Correctamente";
-
-                return RedirectToAction("Index", "Producto");
+                return Json(new { Success = true });
 
             }
             catch (Exception ex)
             {
+                return Json(new { Success = false });
                 throw ex;
             }
 

@@ -8,14 +8,20 @@ using Dapper;
 using CarroDeComprasDAL.Interfaces;
 using CarroDeComprasCommon.Entidad;
 using CarroDeComprasCommon.DTO;
+using CarroDeComprasDAL.Interfaces;
+using CarroDeComprasBLL.Interfaces;
 
 namespace CarroDeComprasDAL.Implementaciones
 {
     public class RepositoryProducto : IRepositoryProducto
     {
-        public SqlConnection ConnectionString = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionTable"].ConnectionString);
 
-        private string sqlObtener = @"SELECT 
+
+        private readonly IConnectionFactory _connectionFactory;
+
+        #region QueryObtener
+
+        string sqlObtener = @"SELECT 
                     p.[Codigo] 
                     ,p.[Nombre]
                     ,p.[Descripcion]
@@ -30,8 +36,77 @@ namespace CarroDeComprasDAL.Implementaciones
                     ,m.[Nombre]
                     FROM [Productos] p
                     INNER JOIN Marcas m ON p.IdMarca = m.Id";
+        #endregion
 
-        private string sqlObtenerId = @"SELECT 
+        public RepositoryProducto(IConnectionFactory ConnectionFactory)
+        {
+            this._connectionFactory = ConnectionFactory;
+        }
+
+
+        public IEnumerable<ProductoBE> ObtenerProductos()
+        {
+ 
+
+            using (var Connection = _connectionFactory.CreateConnection())
+            {
+                try
+                {
+                    var lista = Connection.Query<ProductoBE, MarcaBE, ProductoBE>(sqlObtener, (producto, marca) =>
+                                         {
+                                             producto.Marca = marca;
+                                             return producto;
+
+                                         }, splitOn: "Split");
+
+                    return lista;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+
+        }
+
+        public bool AltaProducto(ProductoBE productoBE)
+        {
+            #region Query
+
+            string sqlInsert = @"INSERT into Productos(Activo,Nombre,Descripcion,IdMarca,PrecioUnitario,UrlImange)
+                 VALUES(@Activo,@Nombre,@Descripcion,@IdMarca,@PrecioUnitario,@UrlImange)";
+
+             #endregion
+
+            using (var Connection = _connectionFactory.CreateConnection())
+            {
+                try
+                {
+
+                    var result = Connection.Execute(sqlInsert, param: productoBE);
+
+                    if (result == 1)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        }
+
+        public ProductoBE ObtenerPorId(int codigo)
+        {
+            #region Query
+
+            string sqlObtenerId = @"SELECT 
                     p.[Codigo] 
                     ,p.[Nombre]
                     ,p.[Descripcion]
@@ -41,76 +116,34 @@ namespace CarroDeComprasDAL.Implementaciones
                     ,p.[UrlImange]
                     FROM [Productos] p
                     WHERE [Codigo]=@codigo";
+            #endregion
 
-
-        public IEnumerable<ProductoBE> ObtenerProductos()
-        {
-            try
+            using (var Connection = _connectionFactory.CreateConnection())
             {
-                var lista = ConnectionString.Query<ProductoBE, MarcaBE, ProductoBE>(sqlObtener, (producto, marca) =>
-                                     {
-                                         producto.Marca = marca;
-                                         return producto;
-
-                                     }, splitOn: "Split");
-
-                return lista;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-        }
-
-        public bool AltaProducto(ProductoBE productoBE)
-        {
-            try
-            {
-                string sql = @"INSERT into Productos(Activo,Nombre,Descripcion,IdMarca,PrecioUnitario,UrlImange)
-                 VALUES(@Activo,@Nombre,@Descripcion,@IdMarca,@PrecioUnitario,@UrlImange)";
-
-                var result = ConnectionString.Execute(sql, param: productoBE);
-
-                if (result == 1)
+                try
                 {
-                    return true;
+                    ProductoBE productoBE = new ProductoBE();
+
+                    productoBE = Connection.Query<ProductoBE>(sqlObtenerId, param: new { Codigo = codigo }).Single();
+
+                    return productoBE;
                 }
-                else
+                catch (Exception ex)
                 {
-                    return false;
+                    throw ex;
                 }
-
-            }
-            catch (Exception ex)
-            {
-                throw ex;
             }
 
-        }
 
-        public ProductoBE ObtenerPorId(int codigo)
-        {
-            try
-            {
-                ProductoBE productoBE = new ProductoBE();
-
-                productoBE = ConnectionString.Query<ProductoBE>(sqlObtenerId, param: new { Codigo = codigo }).Single();
-
-                return productoBE;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
 
         }
 
         public bool EditarProducto(ProductoBE productoBE)
         {
-            try
-            {
-                string sql = @"UPDATE Productos 
+            #region QUERY
+
+
+            string sql = @"UPDATE Productos 
                                 SET Nombre=@Nombre,
                                 Descripcion=@Descripcion,
                                 IdMarca=@IdMarca,
@@ -119,20 +152,50 @@ namespace CarroDeComprasDAL.Implementaciones
                                 UrlImange=@UrlImange
                                 WHERE Codigo=@Codigo";
 
+            #endregion
 
-                var result = ConnectionString.Execute(sql, param: productoBE);
-                if (result == 1)
+
+            using (var Connection = _connectionFactory.CreateConnection())
+            {
+                try
                 {
-                    return true;
+                    var result = Connection.Execute(sql, param: productoBE);
+                    if (result == 1)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    return false;
+                    throw ex;
                 }
             }
-            catch (Exception ex)
+
+        }
+
+        public IEnumerable<ProductoBE> ObtenerProductosActivos()
+        {
+            using (var Connection = _connectionFactory.CreateConnection())
             {
-                throw ex;
+                try
+                {
+                    var lista = Connection.Query<ProductoBE, MarcaBE, ProductoBE>(sqlObtener+ " WHERE p.[Activo]=1", (producto, marca) =>
+                    {
+                        producto.Marca = marca;
+                        return producto;
+
+                    }, splitOn: "Split");
+
+                    return lista;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
             }
         }
     }

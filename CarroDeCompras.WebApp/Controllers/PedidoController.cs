@@ -32,12 +32,25 @@ namespace WebApp.Controllers
                 Usuario = User.Identity.Name
             };
 
-            var getIdUsuario = _usuarioBLL.ObtenerUsuario(usuarioDTO);
-            var getPedidos = _pedidoBLL.ObtenerPedidos(getIdUsuario.Id);
 
-            var pedidoModel = Mapper.Map<IEnumerable<PedidoModel>>(getPedidos);
+            if (User.IsInRole("ADMIN"))
+            {
+                var getIdUsuario = _usuarioBLL.ObtenerUsuario(usuarioDTO);
+                var getPedidos = _pedidoBLL.ObtenerPedidos();
+                var pedidoModel = Mapper.Map<IEnumerable<PedidoModel>>(getPedidos);
 
-            return View(pedidoModel);
+                return View(pedidoModel);
+            }
+            else
+            {
+                var getIdUsuario = _usuarioBLL.ObtenerUsuario(usuarioDTO);
+                var getPedidos = _pedidoBLL.ObtenerPedidosXusuario(getIdUsuario.Id);
+                var pedidoModel = Mapper.Map<IEnumerable<PedidoModel>>(getPedidos);
+                return View(pedidoModel);
+            }
+
+
+
         }
 
         [HttpPost]

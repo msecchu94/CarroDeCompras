@@ -74,7 +74,7 @@
 
             @foreach (var item in Model.ListaDeProductos)
             {
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="box box-solid box-primary ">
 
 
@@ -93,7 +93,7 @@
                                 <img src="@string.Concat(Model, " default.jpg")" style="max-width:100%" />
 
                             }
-                            <p class="info-box-text">@item.PrecioUnitario</p>
+                                <p class="info-box-text text-center" string.Format("{0:#,###,##0.00}")>$ @item.PrecioUnitario</p>
 
                             <p class="">@item.Descripcion</p>
                         </div>

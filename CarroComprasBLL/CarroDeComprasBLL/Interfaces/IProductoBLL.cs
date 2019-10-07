@@ -12,6 +12,8 @@ namespace CarroDeComprasBLL.Interfaces
     {
         IEnumerable<ProductoDTO> ObtenerProductos();
 
+        IEnumerable<ProductoDTO> ObtenerProductosActivos();
+
         bool AltaProducto(ProductoDTO productosDTO);
 
         ProductoDTO ObtenerPorId(int codigo);

@@ -82,6 +82,21 @@ namespace CarroDeComprasBLL.Implementaciones
                 throw ex;
             }
         }
+
+        public IEnumerable<ProductoDTO> ObtenerProductosActivos()
+        {
+            try
+            {
+                var productosBE = _repositoryProducto.ObtenerProductosActivos();
+                var productosDTO = Mapper.Map<IEnumerable<ProductoDTO>>(productosBE);
+
+                return productosDTO;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
 

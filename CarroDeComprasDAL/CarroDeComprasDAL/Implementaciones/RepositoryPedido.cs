@@ -70,7 +70,66 @@ namespace CarroDeComprasDAL.Implementaciones
             }
         }
 
-        public IEnumerable<PedidoBE> ObtenerPedidos(int idUsuario)
+        public IEnumerable<PedidoBE> ObtenerPedidos()
+        {
+            #region Query
+
+            string getDetallesPedidos = @"Select 
+                                dp.[CodigoProducto]
+                                ,dp.[Cantidad]
+                                ,dp.[PrecioUnitario]
+                                ,dp.[NumeroPedido]
+                                ,dp.[NumeroItem]
+
+                                ,'split' as Split
+
+                                ,p.[Codigo]
+                                ,p.[Nombre]
+                                ,p.[PrecioUnitario]
+                                FROM [DetallesPedidos] dp
+                                INNER JOIN Productos p  ON dp.[CodigoProducto]=p.Codigo";
+
+
+            string getNumeroPedido = @"Select NumeroPedido,CodigoCliente,Fecha,Observacion FROM Pedidos";
+
+            #endregion
+
+            using (var Connection = _connectionFactory.CreateConnection())
+            {
+                PedidoBE pedido = new PedidoBE();
+
+
+                // obtener numeros pedidos por codigo cliente
+
+                var getpedidos = Connection.Query<PedidoBE>(getNumeroPedido);
+
+                ////obtener detalles por numero pedidos
+
+                pedido.DetallesPedido = Connection.Query<DetallePedidoBE, ProductoBE, DetallePedidoBE>(getDetallesPedidos + " WHERE dp.[NumeroPedido] IN @NumeroPedido", (detail, product) =>
+                {
+                    return new DetallePedidoBE
+                    {
+                        ProductoBE = product,
+                        Cantidad = detail.Cantidad,
+                        NumeroItem = detail.NumeroItem,
+                        NumeroPedido = detail.NumeroPedido
+
+                    };
+
+                }, param: new { NumeroPedido = getpedidos.Select(x => x.NumeroPedido) }, splitOn: "Split").ToList();
+
+                foreach (var item in getpedidos)
+                {
+
+                    item.DetallesPedido = pedido.DetallesPedido.Where(d => d.NumeroPedido == item.NumeroPedido).ToList();
+
+                }
+
+                return getpedidos;
+            }
+        }
+
+        public IEnumerable<PedidoBE> ObtenerPedidosXusuario(int idUsuario)
         {
             #region Query
 

@@ -39,6 +39,7 @@ namespace WebApp.Models
         [Required(ErrorMessage = "El campo {0} es Obligatorio")]
         [Column(TypeName = "decimal(18,2)")]
         [DataType(DataType.Currency)]
+        
         public decimal PrecioUnitario { get; set; }
 
         //[Required(ErrorMessage = "el campo {0} es obligatorio")]

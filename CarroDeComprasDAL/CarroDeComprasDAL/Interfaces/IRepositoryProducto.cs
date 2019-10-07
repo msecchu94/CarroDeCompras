@@ -16,6 +16,8 @@ namespace CarroDeComprasDAL.Interfaces
 
         IEnumerable<ProductoBE> ObtenerProductos();
 
+        IEnumerable<ProductoBE> ObtenerProductosActivos();
+
         bool AltaProducto(ProductoBE productoBE);
 
         ProductoBE ObtenerPorId(int Codigo);

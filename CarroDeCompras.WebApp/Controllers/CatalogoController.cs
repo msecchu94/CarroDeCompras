@@ -38,7 +38,8 @@ namespace WebApp.Controllers
             ProductoModel productoModel = new ProductoModel();
             try
             {
-                var productoDTO = _productoBLL.ObtenerProductos();
+                var productoDTO = _productoBLL.ObtenerProductosActivos();
+
                 productoModel.ListaDeProductos = productoDTO.Select(item => new Producto
                 {
                     Activo = item.Activo,

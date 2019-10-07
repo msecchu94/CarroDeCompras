@@ -37,7 +37,7 @@ namespace WebApp
             "~/Content/dist/js/demo.js",
              "~/Content/bootstrap/js/Site.js",
              "~/Scripts/Components/Carro.js",
-             "~/Scripts/Components/Confirmar.js",
+             "~/Scripts/Components/Producto.js",
               "~/Scripts/Components/Pedido.js"
 
              ));

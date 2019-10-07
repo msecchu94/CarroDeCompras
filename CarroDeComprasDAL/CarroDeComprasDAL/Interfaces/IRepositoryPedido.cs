@@ -10,7 +10,8 @@ namespace CarroDeComprasDAL.Interfaces
     public interface IRepositoryPedido
     {
         bool AgregarPedido(PedidoBE pedidoBE);
-        IEnumerable<PedidoBE> ObtenerPedidos(int idUsuario);
+        IEnumerable<PedidoBE> ObtenerPedidosXusuario(int idUsuario);
+        IEnumerable<PedidoBE> ObtenerPedidos();
 
     }
 }
