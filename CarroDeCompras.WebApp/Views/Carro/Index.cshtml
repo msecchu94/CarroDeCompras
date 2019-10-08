@@ -66,15 +66,15 @@
                                                 </td>
                                                 <td>
                                                     <div style="float: right;">
-                                                        @Html.DisplayFor(modelItem => item.Producto.PrecioUnitario)
+                                                        @Html.DisplayFor(modelItem => item.Producto.PrecioUnitario, new { @class= "precioUnitario" })
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    @Html.TextBoxFor(modelItem => item.Cantidad, new { type = "number", min = "1" })
+                                                    @Html.TextBoxFor(modelItem => item.Cantidad, new { type = "number", min = "1", @class = "cantidad" })
                                                 </td>
                                                 <td>
                                                     <div style="float: right;">
-                                                        @Html.DisplayFor(modelItem => item.SubTotal)
+                                                        @Html.DisplayFor(modelItem => item.SubTotal,new { @class = "subtotal" })
                                                     </div>
                                                 </td>
                                                 <td>
@@ -92,7 +92,7 @@
 
                                             <th>
                                                 <div style="float:right;">
-                                                    @Html.DisplayFor(model => model.Total, new { id = "Total" })
+                                                    @Html.DisplayFor(model => model.Total, new { @class = "total" })
                                                 </div>
                                             </th>
                                         </tr>

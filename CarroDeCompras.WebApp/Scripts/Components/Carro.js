@@ -93,12 +93,12 @@ $('.eliminar').on('click', function (e) {
         if (result.value) {
 
             $.ajax({
-                method: 'POST',
-                url: 'Carro/EliminarItem',
-                data: {
-                    codigo: codigo
-                }
-            })
+        method: 'POST',
+    url: 'Carro/EliminarItem',
+    data: {
+        codigo: codigo
+    }
+})
 
                 .done(function (data) {
                     console.log(data);
@@ -126,6 +126,24 @@ $('.eliminar').on('click', function (e) {
                     console.log(data);
 
                 });
-        }
-    });
+}
 });
+});
+
+$('.cantidad').on('change',function(){
+  
+     
+    const cantidad=$(this).val();
+    const precioUnitario=$('.precioUnitario').val();
+    const subtotal =$(".subtotal").val();
+    const total = $('.total').val();
+
+    console.log(precioUnitario);
+
+
+
+});
+
+
+
+
