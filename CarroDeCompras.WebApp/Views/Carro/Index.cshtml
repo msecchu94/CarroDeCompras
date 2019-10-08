@@ -65,7 +65,7 @@
                                                     @Html.DisplayFor(modelItem => item.Producto.Nombre)
                                                 </td>
                                                 <td>
-                                                    <div style="float: right;">
+                                                    <div style="float: right;"  class="precioUnitario">
                                                         @Html.DisplayFor(modelItem => item.Producto.PrecioUnitario, new { @class= "precioUnitario" })
                                                     </div>
                                                 </td>
@@ -73,7 +73,7 @@
                                                     @Html.TextBoxFor(modelItem => item.Cantidad, new { type = "number", min = "1", @class = "cantidad" })
                                                 </td>
                                                 <td>
-                                                    <div style="float: right;">
+                                                    <div style="float: right;" class="subtotal">
                                                         @Html.DisplayFor(modelItem => item.SubTotal,new { @class = "subtotal" })
                                                     </div>
                                                 </td>
@@ -91,7 +91,7 @@
                                             <td></td>
 
                                             <th>
-                                                <div style="float:right;">
+                                                <div style="float:right;" class="total">
                                                     @Html.DisplayFor(model => model.Total, new { @class = "total" })
                                                 </div>
                                             </th>

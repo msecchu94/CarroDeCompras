@@ -93,12 +93,12 @@ $('.eliminar').on('click', function (e) {
         if (result.value) {
 
             $.ajax({
-        method: 'POST',
-    url: 'Carro/EliminarItem',
-    data: {
-        codigo: codigo
-    }
-})
+                method: 'POST',
+                url: 'Carro/EliminarItem',
+                data: {
+                    codigo: codigo
+                }
+            })
 
                 .done(function (data) {
                     console.log(data);
@@ -126,19 +126,62 @@ $('.eliminar').on('click', function (e) {
                     console.log(data);
 
                 });
-}
-});
+        }
+    });
 });
 
-$('.cantidad').on('change',function(){
-  
-     
-    const cantidad=$(this).val();
-    const precioUnitario=$('.precioUnitario').val();
-    const subtotal =$(".subtotal").val();
-    const total = $('.total').val();
+$('.cantidad').on('change', function () {
 
-    console.log(precioUnitario);
+
+    var cantidad = $(this).val();
+    cantidad = parseInt(cantidad);
+
+    var precioUnitario = $(".precioUnitario").html();
+    precioUnitario = precioUnitario.replace(".", "");
+    precioUnitario = precioUnitario.replace("$", "");
+    precioUnitario = precioUnitario.replace(",", ".");
+    precioUnitario = parseFloat(precioUnitario);
+
+
+    var subtotal = cantidad * precioUnitario;
+    //subtotal = subtotal.toString("#,#.00");
+    //subtotal = new Intl.NumberFormat('es-AR').format(subtotal);
+    //subtotal = subtotal.replace(".", "");
+    //subtotal = subtotal.replace("$", "");
+    //subtotal = subtotal.replace(",", ".");
+    //var sTtotal = parseFloat(subtotal);
+    //subtotal = subtotal.toFixed(2);
+    //const total = $(".total").html();
+
+    //subtotal = parseFloat(subtotal);
+    var formatNumber = {
+        separador: ".", // separador para los miles
+        sepDecimal: ',', // separador para los decimales
+        formatear: function (num) {
+            num += '';
+            var splitStr = num.split('.');
+            var splitLeft = splitStr[0];
+            var splitRight = splitStr.length > 1 ? this.sepDecimal + splitStr[1] : '';
+            var regx = /(\d+)(\d{3})/;
+            while (regx.test(splitLeft)) {
+                splitLeft = splitLeft.replace(regx, '$1' + this.separador + '$2');
+            }
+            return this.simbol + splitLeft + splitRight;
+        },
+        new: function (num, simbol) {
+            this.simbol = simbol || '';
+            return this.formatear(num);
+        }
+    };
+    formatNumber.new(subtotal);
+    alert(subtotal);
+    $('.subtotal').text(subtotal);
+
+
+
+    //.toString("#,#.00")
+
+
 
 
 
