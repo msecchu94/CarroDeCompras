@@ -29,8 +29,8 @@ namespace WebApp.Models
         [Range(0, 15, ErrorMessage = "rango incorrecto")]
         public int Cantidad { get; set; }
 
-        [Column(TypeName = "decimal(18,2)")]
-        [DataType(DataType.Currency)]
+        //[Column(TypeName = "decimal(18,2)")]
+        //[DataType(DataType.Currency)]
         public decimal Subtotal { get; set; }
 
 

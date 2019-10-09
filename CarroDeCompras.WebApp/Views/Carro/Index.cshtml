@@ -23,7 +23,7 @@
                 <div class="box box-primary">
                     <div class="box-body">
 
-                        @if (Model.Total==0)
+                        @if (Model.Total == 0)
                         {
                             <div class="alert alert-danger bordes text-center">
                                 <i class="icon fa fa-ban"></i>
@@ -65,8 +65,8 @@
                                                     @Html.DisplayFor(modelItem => item.Producto.Nombre)
                                                 </td>
                                                 <td>
-                                                    <div style="float: right;"  class="precioUnitario">
-                                                        @Html.DisplayFor(modelItem => item.Producto.PrecioUnitario, new { @class= "precioUnitario" })
+                                                    <div style="float: right;" class="precioUnitario">
+                                                        $  @item.Producto.PrecioUnitario.ToString("#,#.00")
                                                     </div>
                                                 </td>
                                                 <td>
@@ -74,7 +74,7 @@
                                                 </td>
                                                 <td>
                                                     <div style="float: right;" class="subtotal">
-                                                        @Html.DisplayFor(modelItem => item.SubTotal,new { @class = "subtotal" })
+                                                        $  @item.SubTotal.ToString("#,#.00")
                                                     </div>
                                                 </td>
                                                 <td>
@@ -92,7 +92,7 @@
 
                                             <th>
                                                 <div style="float:right;" class="total">
-                                                    @Html.DisplayFor(model => model.Total, new { @class = "total" })
+                                                    $   @Model.Total.ToString("#,#.00")
                                                 </div>
                                             </th>
                                         </tr>
@@ -134,5 +134,22 @@
     @section Scripts {
         @Scripts.Render("~/bundles/jqueryval")
     }
+
+    <script type="text/javascript">
+        // obtener array del modelo
+        var arr = JSON.parse('@Html.Raw(Json.Encode(@Model.DetallesPedido.ToArray()))')
+
+        
+        console.log(arr);
+
+        //capturar la ubicacion en el arreglo del imput que cambio
+
+        $('.cantidad').on('change', function () {
+            console.log()
+
+        });
+
+    </script>
+
 
 </div>

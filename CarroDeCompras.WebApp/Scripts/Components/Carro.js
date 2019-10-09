@@ -133,19 +133,32 @@ $('.eliminar').on('click', function (e) {
 $('.cantidad').on('change', function () {
 
 
-    var cantidad = $(this).val();
-    cantidad = parseInt(cantidad);
+    var arregloPreciosUnitarios = [];
 
-    var precioUnitario = $(".precioUnitario").html();
-    precioUnitario = precioUnitario.replace(".", "");
-    precioUnitario = precioUnitario.replace("$", "");
-    precioUnitario = precioUnitario.replace(",", ".");
-    precioUnitario = parseFloat(precioUnitario);
+    //var cantidad = $(this).val();
+    ////cantidad = parseInt(cantidad);
+
+    //var precioUnitario = $(".precioUnitario").html();
 
 
-    var subtotal = cantidad * precioUnitario;
-    //subtotal = subtotal.toString("#,#.00");
+    //precioUnitario = precioUnitario.replace(".", "");
+    //precioUnitario = precioUnitario.replace("$", "");
+    //precioUnitario = precioUnitario.replace(",", ".");
+    ////precioUnitario = parseFloat(precioUnitario);
+  
+
+
+    //var subtotal = cantidad * precioUnitario;
+    //subtotal = parseFloat(subtotal);
+
+    ////subtotal = subtotal.toString("#,#.00");
     //subtotal = new Intl.NumberFormat('es-AR').format(subtotal);
+
+
+
+
+    //alert(subtotal)
+    //subtotal = subtotal.toString("#,#.00");
     //subtotal = subtotal.replace(".", "");
     //subtotal = subtotal.replace("$", "");
     //subtotal = subtotal.replace(",", ".");
@@ -153,29 +166,28 @@ $('.cantidad').on('change', function () {
     //subtotal = subtotal.toFixed(2);
     //const total = $(".total").html();
 
-    //subtotal = parseFloat(subtotal);
-    var formatNumber = {
-        separador: ".", // separador para los miles
-        sepDecimal: ',', // separador para los decimales
-        formatear: function (num) {
-            num += '';
-            var splitStr = num.split('.');
-            var splitLeft = splitStr[0];
-            var splitRight = splitStr.length > 1 ? this.sepDecimal + splitStr[1] : '';
-            var regx = /(\d+)(\d{3})/;
-            while (regx.test(splitLeft)) {
-                splitLeft = splitLeft.replace(regx, '$1' + this.separador + '$2');
-            }
-            return this.simbol + splitLeft + splitRight;
-        },
-        new: function (num, simbol) {
-            this.simbol = simbol || '';
-            return this.formatear(num);
-        }
-    };
-    formatNumber.new(subtotal);
-    alert(subtotal);
-    $('.subtotal').text(subtotal);
+    //var formatNumber = {
+    //    separador: ".", // separador para los miles
+    //    sepDecimal: ',', // separador para los decimales
+    //    formatear: function (num) {
+    //        num += '';
+    //        var splitStr = num.split('.');
+    //        var splitLeft = splitStr[0];
+    //        var splitRight = splitStr.length > 1 ? this.sepDecimal + splitStr[1] : '';
+    //        var regx = /(\d+)(\d{3})/;
+    //        while (regx.test(splitLeft)) {
+    //            splitLeft = splitLeft.replace(regx, '$1' + this.separador + '$2');
+    //        }
+    //        return this.simbol + splitLeft + splitRight;
+    //    },
+    //    new: function (num, simbol) {
+    //        this.simbol = simbol || '';
+    //        return this.formatear(num);
+    //    }
+    //};
+    //formatNumber.new(subtotal);
+   
+    //$('.subtotal').text(subtotal);
 
 
 
