@@ -9,8 +9,25 @@ $('#form-pedido').on('submit', function (e) {
     e.preventDefault();
     console.log(this);
     console.log('Submit form carrito');
+    const detallePedido = [];
 
-    const Observaciones = $('.Observaciones').val();
+    $('#tablaPedido tbody tr').each(function (el, index) {
+
+        //const itemDetalle = {
+        //    cantidad: $(el).find('td.col-cantidad input').val(),
+        //};
+
+        //cantidad = $('.Cantidad').val(),
+        //    producto = {
+        //        nombre: $('.Nombre').val(),
+        //        preciounitario: $('.PrecioUnitario').val()
+        //    },
+        //    subtotal = $('.SubTotal').val()
+
+        //detallePedido.push(itemDetalle);
+    });
+
+    //const Observaciones = $('.Observaciones').val();
 
     Swal.fire({
         title: 'Are you sure?',
@@ -28,7 +45,8 @@ $('#form-pedido').on('submit', function (e) {
         $.ajax({
         method: 'POST',
         url: this.attributes.action.value,
-        data: { Observaciones: Observaciones }
+            data:
+                //{ Observaciones: Observaciones }
 
 })
                 .done(function (data) {

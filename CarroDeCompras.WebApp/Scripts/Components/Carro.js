@@ -53,9 +53,7 @@ $('#form-carro').on('submit', function (e) {
                     showConfirmButton: true,
                     timer: 1500
                 });
-
             }
-
         })
         .fail(function (data) {
 
@@ -99,7 +97,6 @@ $('.eliminar').on('click', function (e) {
                     codigo: codigo
                 }
             })
-
                 .done(function (data) {
                     console.log(data);
 
@@ -124,7 +121,6 @@ $('.eliminar').on('click', function (e) {
                         footer: '<a href>Why do I have this issue?</a>'
                     });
                     console.log(data);
-
                 });
         }
     });
@@ -133,71 +129,42 @@ $('.eliminar').on('click', function (e) {
 $('.cantidad').on('change', function () {
 
 
-    var arregloPreciosUnitarios = [];
+    var cantidad = $(this).val();
+    cantidad = parseInt(cantidad);
 
-    //var cantidad = $(this).val();
-    ////cantidad = parseInt(cantidad);
+    // var precioUnitario = $(".precioUnitario").html();
+    var $tr = $(this).closest('tr');
+    var precioUnitarioStr = $tr.data('precio-unitario').replace(',', '.');
+    var precioUnitario = parseFloat(precioUnitarioStr); // numérico
+    var subtotal = cantidad * precioUnitario;
+    $tr.data('subtotal', subtotal);
 
-    //var precioUnitario = $(".precioUnitario").html();
+    var intl = new Intl.NumberFormat('es-AR', { maximumFractionDigits: 2, minimumFractionDigits: 2, useGrouping: true });
+    subtotal = intl.format(subtotal);
+    $tr.find('.subtotal').html('$ ' + subtotal);
 
-
-    //precioUnitario = precioUnitario.replace(".", "");
-    //precioUnitario = precioUnitario.replace("$", "");
-    //precioUnitario = precioUnitario.replace(",", ".");
-    ////precioUnitario = parseFloat(precioUnitario);
-  
-
-
-    //var subtotal = cantidad * precioUnitario;
-    //subtotal = parseFloat(subtotal);
-
-    ////subtotal = subtotal.toString("#,#.00");
-    //subtotal = new Intl.NumberFormat('es-AR').format(subtotal);
-
-
-
-
-    //alert(subtotal)
-    //subtotal = subtotal.toString("#,#.00");
-    //subtotal = subtotal.replace(".", "");
-    //subtotal = subtotal.replace("$", "");
-    //subtotal = subtotal.replace(",", ".");
-    //var sTtotal = parseFloat(subtotal);
-    //subtotal = subtotal.toFixed(2);
-    //const total = $(".total").html();
-
-    //var formatNumber = {
-    //    separador: ".", // separador para los miles
-    //    sepDecimal: ',', // separador para los decimales
-    //    formatear: function (num) {
-    //        num += '';
-    //        var splitStr = num.split('.');
-    //        var splitLeft = splitStr[0];
-    //        var splitRight = splitStr.length > 1 ? this.sepDecimal + splitStr[1] : '';
-    //        var regx = /(\d+)(\d{3})/;
-    //        while (regx.test(splitLeft)) {
-    //            splitLeft = splitLeft.replace(regx, '$1' + this.separador + '$2');
-    //        }
-    //        return this.simbol + splitLeft + splitRight;
-    //    },
-    //    new: function (num, simbol) {
-    //        this.simbol = simbol || '';
-    //        return this.formatear(num);
-    //    }
-    //};
-    //formatNumber.new(subtotal);
-   
-    //$('.subtotal').text(subtotal);
-
-
-
-    //.toString("#,#.00")
-
-
-
-
+    actualizarTotal();
 
 });
+
+function actualizarTotal() {
+    let total = 0;
+    console.log('Actualizando total...');
+    $('#tablacarro tbody tr').each(function (index, el) {
+        let subtotal = $(el).data().subtotal;
+
+        if (typeof (subtotal) === 'string') {
+            subtotal = parseFloat(subtotal.replace(',', '.'));
+        }
+
+        total += subtotal;
+        var intl = new Intl.NumberFormat('es-AR', { maximumFractionDigits: 2, minimumFractionDigits: 2, useGrouping: true });
+        //total = intl.format(total);
+
+        $('.total').html('$ ' + intl.format(total));
+    });
+
+}
 
 
 

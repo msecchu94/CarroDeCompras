@@ -42,60 +42,66 @@
                                 <div class="table-responsive">
 
                                     <table class="table table-striped table-hover" id="tablacarro">
-                                        <tr>
-                                            <th>
-                                                @Html.DisplayNameFor(model => model.DetallesPedido.First().Producto)
-                                            </th>
-                                            <th>
-                                                @Html.DisplayNameFor(model => model.DetallesPedido.First().Producto.PrecioUnitario)
-                                            </th>
-                                            <th>
-                                                @Html.DisplayNameFor(model => model.DetallesPedido.First().Cantidad)
-                                            </th>
-                                            <th>
-                                                @Html.DisplayNameFor(model => model.DetallesPedido.First().SubTotal)
-                                            </th>
-                                            <th></th>
-                                        </tr>
-
-                                        @foreach (var item in Model.DetallesPedido)
-                                        {
+                                        <thead>
                                             <tr>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.Producto.Nombre)
-                                                </td>
-                                                <td>
-                                                    <div style="float: right;" class="precioUnitario">
-                                                        $  @item.Producto.PrecioUnitario.ToString("#,#.00")
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    @Html.TextBoxFor(modelItem => item.Cantidad, new { type = "number", min = "1", @class = "cantidad" })
-                                                </td>
-                                                <td>
-                                                    <div style="float: right;" class="subtotal">
-                                                        $  @item.SubTotal.ToString("#,#.00")
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div style="float: right;">
-                                                        <button type="button" class="eliminar" data-id="@Model.DetallesPedido.First().Producto.Codigo">Eliminar</button>
-                                                    </div>
-                                                </td>
+                                                <th>
+                                                    @Html.DisplayNameFor(model => model.DetallesPedido.First().Producto)
+                                                </th>
+                                                <th>
+                                                    @Html.DisplayNameFor(model => model.DetallesPedido.First().Producto.PrecioUnitario)
+                                                </th>
+                                                <th>
+                                                    @Html.DisplayNameFor(model => model.DetallesPedido.First().Cantidad)
+                                                </th>
+                                                <th>
+                                                    @Html.DisplayNameFor(model => model.DetallesPedido.First().SubTotal)
+                                                </th>
+                                                <th></th>
                                             </tr>
-                                        }
+                                        </thead>
+                                        
+                                        <tbody>
+                                            @foreach (var item in Model.DetallesPedido)
+                                            {
+                                                <tr id="tbody" data-precio-unitario="@item.Producto.PrecioUnitario" data-subtotal="@item.SubTotal">
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Producto.Nombre)
+                                                    </td>
+                                                    <td>
+                                                        <div style="float: right;" class="precioUnitario">
+                                                            @Html.DisplayFor(modelItem => item.Producto.PrecioUnitario)
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        @Html.TextBoxFor(modelItem => item.Cantidad, new { type = "number", min = "1", @class = "cantidad" })
+                                                    </td>
+                                                    <td>
+                                                        <div style="float: right;" class="subtotal">
+                                                            @Html.DisplayFor(model => item.SubTotal)
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div style="float: right;">
+                                                            <button type="button" class="eliminar" data-id="@Model.DetallesPedido.First().Producto.Codigo">Eliminar</button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
 
-                                        <tr>
-                                            <th>@Html.DisplayNameFor(model => model.Total)</th>
-                                            <td></td>
-                                            <td></td>
+                                        <tfoot id="tfoot" data-total="@Model.Total">
+                                            <tr>
+                                                <th>@Html.DisplayNameFor(model => model.Total)</th>
+                                                <td></td>
+                                                <td></td>
 
-                                            <th>
-                                                <div style="float:right;" class="total">
-                                                    $   @Model.Total.ToString("#,#.00")
-                                                </div>
-                                            </th>
-                                        </tr>
+                                                <th>
+                                                    <div style="float:right;" class="total">
+                                                        $   @Model.Total
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                        </tfoot>
                                     </table>
                                 </div>
 
@@ -135,21 +141,6 @@
         @Scripts.Render("~/bundles/jqueryval")
     }
 
-    <script type="text/javascript">
-        // obtener array del modelo
-        var arr = JSON.parse('@Html.Raw(Json.Encode(@Model.DetallesPedido.ToArray()))')
-
-        
-        console.log(arr);
-
-        //capturar la ubicacion en el arreglo del imput que cambio
-
-        $('.cantidad').on('change', function () {
-            console.log()
-
-        });
-
-    </script>
 
 
 </div>
