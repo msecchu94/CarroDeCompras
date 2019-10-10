@@ -34,7 +34,6 @@ namespace CarroDeComprasBLL.Implementaciones
 
             foreach (var item in pedidoDTO.DetallesPedido)
             {
-
                 item.NumeroItem = index;
                 index++;
             };

@@ -32,7 +32,6 @@ namespace WebApp.Controllers
                 Usuario = User.Identity.Name
             };
 
-
             if (User.IsInRole("ADMIN"))
             {
                 var getIdUsuario = _usuarioBLL.ObtenerUsuario(usuarioDTO);
@@ -49,14 +48,15 @@ namespace WebApp.Controllers
                 return View(pedidoModel);
             }
 
-
-
         }
 
         [HttpPost]
-        public ActionResult CargarPedido(string Observaciones)
+        public ActionResult CargarPedido(PedidoModel pedidoModel)
         {
-            var observaciones = Convert.ToString(Observaciones);
+            if (pedidoModel == null)
+            {
+                return View("Index");
+            }
 
             UsuarioDTO usuarioDTO = new UsuarioDTO()
             {
@@ -64,15 +64,18 @@ namespace WebApp.Controllers
             };
 
             var getIdUsuario = _usuarioBLL.ObtenerUsuario(usuarioDTO);
+
+            //obtener carro
             var getcarro = _carroBLL.ObtenerCarro(getIdUsuario.Id);
+            //var carro = Mapper.Map<CarroModels>(getcarro);
 
-            var pedidoModels = Mapper.Map<PedidoModel>(getcarro);
-            pedidoModels.Observacion = observaciones;
+            foreach (var item in pedidoModel.DetallesPedido)
+            {
+                getcarro.DetallesPedido.First().Cantidad = pedidoModel.DetallesPedido.First().Cantidad;
 
-            pedidoModels.Fecha = DateTime.Now;
-            pedidoModels.IdUsuario = getIdUsuario.Id;
+                    }
 
-            var pedidoDTO = Mapper.Map<PedidoDTO>(pedidoModels);
+            var pedidoDTO = Mapper.Map<PedidoDTO>(pedidoModel);
 
             try
             {

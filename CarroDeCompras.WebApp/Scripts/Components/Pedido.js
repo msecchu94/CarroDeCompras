@@ -9,25 +9,26 @@ $('#form-pedido').on('submit', function (e) {
     e.preventDefault();
     console.log(this);
     console.log('Submit form carrito');
-    const detallePedido = [];
 
-    $('#tablaPedido tbody tr').each(function (el, index) {
 
-        //const itemDetalle = {
-        //    cantidad: $(el).find('td.col-cantidad input').val(),
-        //};
+    let DetallesPedido = [];
+    let pedidoModel = {
+        Observaciones: $('.Observaciones').val(),
+        DetallesPedido
+    };
 
-        //cantidad = $('.Cantidad').val(),
-        //    producto = {
-        //        nombre: $('.Nombre').val(),
-        //        preciounitario: $('.PrecioUnitario').val()
-        //    },
-        //    subtotal = $('.SubTotal').val()
+    $('#tablacarro tbody tr').each(function (index, el) {
 
-        //detallePedido.push(itemDetalle);
+        DetallesPedido = {
+            Cantidad: $(el).data().cantidad,
+            Producto: {
+                Codigo: $(el).data('codigo-producto')
+            }
+        };
+        pedidoModel.DetallesPedido.push(DetallesPedido);
+
     });
-
-    //const Observaciones = $('.Observaciones').val();
+    console.log(pedidoModel);
 
     Swal.fire({
         title: 'Are you sure?',
@@ -39,16 +40,19 @@ $('#form-pedido').on('submit', function (e) {
         confirmButtonText: 'Yes, delete it!'
 
     }).then((result) => {
-       
-        if (result.value){
 
-        $.ajax({
-        method: 'POST',
-        url: this.attributes.action.value,
-            data:
-                //{ Observaciones: Observaciones }
+        if (result.value) {
 
-})
+            $.ajax({
+                method: 'POST',
+                url: this.attributes.action.value,
+
+                data: {
+                    Observaciones: Observaciones,
+
+                }
+
+            })
                 .done(function (data) {
                     console.log(data);
 
@@ -75,12 +79,12 @@ $('#form-pedido').on('submit', function (e) {
 
                 });
 
-}
-});
+        }
+    });
 
 });
 
-$('.btnPedido').on('click', function () {
+$('.btnVerPedido').on('click', function () {
 
     console.log(this);
 
@@ -88,8 +92,8 @@ $('.btnPedido').on('click', function () {
     const pedidoObservaciones = this.dataset.pedidoObservaciones;
     const pedidoTotal = this.dataset.pedidoTotal;
     const pedidoDetalles = this.dataset.pedido;
-    var items=[];
-    items=this.this.dataset.detalles;
+    var items = [];
+    items = this.this.dataset.detalles;
     Console.log(items);
 
 

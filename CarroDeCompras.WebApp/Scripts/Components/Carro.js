@@ -1,5 +1,4 @@
-﻿
-$('.btnCarro').on('click', function () {
+﻿$('.btnCarro').on('click', function () {
 
     console.log(this);
 
@@ -145,6 +144,8 @@ $('.cantidad').on('change', function () {
 
     actualizarTotal();
 
+    $tr.data('cantidad', cantidad);
+
 });
 
 function actualizarTotal() {
@@ -159,7 +160,8 @@ function actualizarTotal() {
 
         total += subtotal;
         var intl = new Intl.NumberFormat('es-AR', { maximumFractionDigits: 2, minimumFractionDigits: 2, useGrouping: true });
-        //total = intl.format(total);
+
+        console.log(subtotal);
 
         $('.total').html('$ ' + intl.format(total));
     });

@@ -8,8 +8,8 @@
 
 
 
-<!-- Modal -->
-@*<div class="modal fade" id="myModalPedido" role="dialog" aria-labelledby="myModalLabel">
+@*Modal*@
+<div class="modal fade" id="myModalPedido" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -34,28 +34,27 @@
                         <th></th>
                     </tr>
 
-                    @foreach (var item in )
+                    @foreach (var item in Model)
                     {
                         <tr id="lista">
                             <td>
-                                @Html.DisplayFor(modelItem => item.Producto.Nombre)
+                                @Html.DisplayFor(modelItem => item.DetallesPedido.First().Producto.Nombre)
                             </td>
                             <td>
                                 <div style="float: right;">
-                                    @Html.DisplayFor(modelItem => item.Producto.PrecioUnitario)
+                                    @Html.DisplayFor(modelItem => item.DetallesPedido.First().Producto.PrecioUnitario)
                                 </div>
                             </td>
                             <td>
                                 <div style="float: right;">
-                                    @Html.DisplayFor(modelItem => item.Cantidad)
+                                    @Html.DisplayFor(modelItem => item.DetallesPedido.First().Cantidad)
                                 </div>
                             </td>
                             <td>
                                 <div style="float: right;">
-                                    @Html.DisplayFor(modelItem => item.SubTotal)
+                                    @Html.DisplayFor(modelItem => item.DetallesPedido.First().SubTotal)
                                 </div>
                             </td>
-
                         </tr>
                     }
 
@@ -79,7 +78,7 @@
         </div>
 
     </div>
-</div>*@
+</div>
 
 
 
@@ -103,45 +102,50 @@
                     <div class="box-body">
 
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover table-bordered">
-                                <tr>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.NumeroPedido)
-                                    </th>
 
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Fecha)
-                                    </th>
-
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Total)
-                                    </th>
-                                    <th></th>
-                                </tr>
-
-                                @foreach (var item in Model)
-                                {
+                            <table class="table table-striped table-hover table-bordered" id="tablapedido">
+                                <thead>
                                     <tr>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.NumeroPedido)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Fecha, "{0:dd/MM/yyyy}")
-                                        </td>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.NumeroPedido)
+                                        </th>
 
-                                        <td>
-                                            <div style="float: right;">
-                                                @Html.DisplayFor(modelItem => item.Total)
-                                            </div>
-                                        </td>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Fecha)
+                                        </th>
 
-                                        <td>
-                                            <div class="center-block">
-                                                <button class="btn btn-primary btn-block btn-sm bordes center-block btnPedido" data-detalles="@Model" >Ver Detalle</button>
-                                            </div>
-                                        </td>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Total)
+                                        </th>
+                                        <th></th>
                                     </tr>
-                                }
+                                </thead>
+
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.NumeroPedido)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Fecha, "{0:dd/MM/yyyy}")
+                                            </td>
+
+                                            <td>
+                                                <div style="float: right;">
+                                                    @Html.DisplayFor(modelItem => item.Total)
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="center-block">
+                                                    <button class="btn btn-primary btn-block btn-sm bordes center-block btnVerPedido" data-detalles="@Model">Ver Detalle</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
 
                             </table>
                         </div>

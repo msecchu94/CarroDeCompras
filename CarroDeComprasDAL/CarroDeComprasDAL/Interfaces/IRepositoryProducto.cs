@@ -22,10 +22,8 @@ namespace CarroDeComprasDAL.Interfaces
 
         ProductoBE ObtenerPorId(int Codigo);
 
-        //void EliminarListado(int id);
-
         bool EditarProducto(ProductoBE productoBE);
 
-       
+
     }
 }

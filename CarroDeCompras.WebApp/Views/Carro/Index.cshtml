@@ -59,20 +59,21 @@
                                                 <th></th>
                                             </tr>
                                         </thead>
-                                        
+
                                         <tbody>
                                             @foreach (var item in Model.DetallesPedido)
                                             {
-                                                <tr id="tbody" data-precio-unitario="@item.Producto.PrecioUnitario" data-subtotal="@item.SubTotal">
+                                                <tr id="tbody" data-precio-unitario="@item.Producto.PrecioUnitario" data-subtotal="@item.SubTotal" data-cantidad="@item.Cantidad" data-codigo-producto="@item.Producto.Codigo">
+
                                                     <td>
                                                         @Html.DisplayFor(modelItem => item.Producto.Nombre)
                                                     </td>
                                                     <td>
                                                         <div style="float: right;" class="precioUnitario">
-                                                            @Html.DisplayFor(modelItem => item.Producto.PrecioUnitario)
+                                                            @Html.DisplayFor(model => item.Producto.PrecioUnitario)
                                                         </div>
                                                     </td>
-                                                    <td>
+                                                    <td id="cantidad">
                                                         @Html.TextBoxFor(modelItem => item.Cantidad, new { type = "number", min = "1", @class = "cantidad" })
                                                     </td>
                                                     <td>
