@@ -1,5 +1,4 @@
-﻿
-$('.btnAgregarPedido').on('click', function (e) {
+﻿ $('.btnAgregarPedido').on('click', function (e) {
     $('#form-pedido').submit();
 });
 
@@ -15,7 +14,7 @@ $('#form-pedido').on('submit', function (e) {
     let pedidoModel = {
         Observaciones: $('.Observaciones').val(),
         DetallesPedido
-    };
+        };
 
     $('#tablacarro tbody tr').each(function (index, el) {
 
@@ -39,20 +38,19 @@ $('#form-pedido').on('submit', function (e) {
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, delete it!'
 
-    }).then((result) => {
+    }).then((result)=>{
 
-        if (result.value) {
+                if(result.value){
 
-            $.ajax({
+                    $.ajax({
                 method: 'POST',
-                url: this.attributes.action.value,
+            url: 'Pedido/CargarPedido',
 
-                data: {
-                    Observaciones: Observaciones,
+               data: {
+                pedidoModel :pedidoModel
+              }
 
-                }
-
-            })
+        })
                 .done(function (data) {
                     console.log(data);
 
@@ -79,8 +77,8 @@ $('#form-pedido').on('submit', function (e) {
 
                 });
 
-        }
-    });
+}
+});
 
 });
 
@@ -93,7 +91,7 @@ $('.btnVerPedido').on('click', function () {
     const pedidoTotal = this.dataset.pedidoTotal;
     const pedidoDetalles = this.dataset.pedido;
     var items = [];
-    items = this.this.dataset.detalles;
+    items = this.dataset.detalles;
     Console.log(items);
 
 

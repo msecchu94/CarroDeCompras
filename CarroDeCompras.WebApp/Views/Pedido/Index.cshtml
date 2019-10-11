@@ -7,78 +7,77 @@
 
 
 
-
 @*Modal*@
-<div class="modal fade" id="myModalPedido" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title"><b>Detalle de Pedido</b>,</h4>
-            </div>
-            <div class="modal-body">
-                <table class="table table-striped table-hover" id="tablacarro">
-                    <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.DetallesPedido.First().Producto)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.DetallesPedido.First().Producto.PrecioUnitario)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.DetallesPedido.First().Cantidad)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.DetallesPedido.First().SubTotal)
-                        </th>
-                        <th></th>
-                    </tr>
-
-                    @foreach (var item in Model)
-                    {
-                        <tr id="lista">
-                            <td>
-                                @Html.DisplayFor(modelItem => item.DetallesPedido.First().Producto.Nombre)
-                            </td>
-                            <td>
-                                <div style="float: right;">
-                                    @Html.DisplayFor(modelItem => item.DetallesPedido.First().Producto.PrecioUnitario)
-                                </div>
-                            </td>
-                            <td>
-                                <div style="float: right;">
-                                    @Html.DisplayFor(modelItem => item.DetallesPedido.First().Cantidad)
-                                </div>
-                            </td>
-                            <td>
-                                <div style="float: right;">
-                                    @Html.DisplayFor(modelItem => item.DetallesPedido.First().SubTotal)
-                                </div>
-                            </td>
+    <div class="modal fade" id="myModalPedido" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"><b>Detalle de Pedido</b>,</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-striped table-hover" id="tablacarro">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DetallesPedido.First().Producto)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DetallesPedido.First().Producto.PrecioUnitario)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DetallesPedido.First().Cantidad)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DetallesPedido.First().SubTotal)
+                            </th>
+                            <th></th>
                         </tr>
-                    }
 
-                    <tr>
-                        <th>@Html.DisplayNameFor(model => model.Total)</th>
-                        <td></td>
-                        <td></td>
+                        @foreach (var item in Model)
+                        {
+                            <tr id="lista">
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DetallesPedido.First().Producto.Nombre)
+                                </td>
+                                <td>
+                                    <div style="float: right;">
+                                        @Html.DisplayFor(modelItem => item.DetallesPedido.First().Producto.PrecioUnitario)
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="float: right;">
+                                        @Html.DisplayFor(modelItem => item.DetallesPedido.First().Cantidad)
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="float: right;">
+                                        @Html.DisplayFor(modelItem => item.DetallesPedido.First().SubTotal)
+                                    </div>
+                                </td>
+                            </tr>
+                        }
 
-                        <th>
-                            <div style="float:right;">
-                                @Html.DisplayFor(model => model.First().Total, new { id = "Total" })
-                            </div>
-                        </th>
-                    </tr>
-                </table>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Total)</th>
+                            <td></td>
+                            <td></td>
 
+                            <th>
+                                <div style="float:right;">
+                                    @Html.DisplayFor(model => model.First().Total, new { id = "Total" })
+                                </div>
+                            </th>
+                        </tr>
+                    </table>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-            </div>
+
         </div>
-
     </div>
-</div>
 
 
 
@@ -124,12 +123,12 @@
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
-                                        <tr>
+                                        <tr data-numero-pedido="@item.NumeroPedido">
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.NumeroPedido)
                                             </td>
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.Fecha, "{0:dd/MM/yyyy}")
+                                                @Html.DisplayFor(modelItem => item.Fecha)
                                             </td>
 
                                             <td>
@@ -140,7 +139,7 @@
 
                                             <td>
                                                 <div class="center-block">
-                                                    <button class="btn btn-primary btn-block btn-sm bordes center-block btnVerPedido" data-detalles="@Model">Ver Detalle</button>
+                                                    <button class="btn btn-primary btn-block btn-sm bordes center-block btnVerPedido" data-codigo-producto="@Model">Ver Detalle</button>
                                                 </div>
                                             </td>
                                         </tr>

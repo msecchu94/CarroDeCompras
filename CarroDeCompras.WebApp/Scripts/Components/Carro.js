@@ -95,8 +95,7 @@ $('.eliminar').on('click', function (e) {
                 data: {
                     codigo: codigo
                 }
-            })
-                .done(function (data) {
+            }).done(function (data) {
                     console.log(data);
 
                     if (data.Success) {
@@ -131,7 +130,7 @@ $('.cantidad').on('change', function () {
     var cantidad = $(this).val();
     cantidad = parseInt(cantidad);
 
-    // var precioUnitario = $(".precioUnitario").html();
+   
     var $tr = $(this).closest('tr');
     var precioUnitarioStr = $tr.data('precio-unitario').replace(',', '.');
     var precioUnitario = parseFloat(precioUnitarioStr); // numérico

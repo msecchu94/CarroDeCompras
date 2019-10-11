@@ -67,13 +67,19 @@ namespace WebApp.Controllers
 
             //obtener carro
             var getcarro = _carroBLL.ObtenerCarro(getIdUsuario.Id);
-            //var carro = Mapper.Map<CarroModels>(getcarro);
 
+            var carro = Mapper.Map<PedidoModel>(getcarro);
+
+            // asignar perecio unitario desde el carro al pedido (x codigo del Producto)
             foreach (var item in pedidoModel.DetallesPedido)
             {
-                getcarro.DetallesPedido.First().Cantidad = pedidoModel.DetallesPedido.First().Cantidad;
 
-                    }
+                item.Producto.PrecioUnitario = carro.DetallesPedido.First(x => x.Producto.Codigo == item.Producto.Codigo).Producto.PrecioUnitario;
+
+            }
+
+            pedidoModel.Fecha = DateTime.Now;
+            pedidoModel.IdUsuario = getIdUsuario.Id;
 
             var pedidoDTO = Mapper.Map<PedidoDTO>(pedidoModel);
 
