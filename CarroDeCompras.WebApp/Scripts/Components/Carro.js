@@ -21,7 +21,6 @@
 $('.btnAgregarCarro').on('click', function (e) {
     $('#form-carro').submit();
 });
-
 //Agregar Carrito
 
 $('#form-carro').on('submit', function (e) {
@@ -66,7 +65,6 @@ $('#form-carro').on('submit', function (e) {
 
         });
 });
-
 //eliminar item carro
 
 $('.eliminar').on('click', function (e) {
@@ -96,20 +94,20 @@ $('.eliminar').on('click', function (e) {
                     codigo: codigo
                 }
             }).done(function (data) {
-                    console.log(data);
+                console.log(data);
 
-                    if (data.Success) {
-                        tr.remove();
-                        location.reload();
+                if (data.Success) {
+                    tr.remove();
+                    location.reload();
 
-                        Swal.fire({
-                            type: 'success',
-                            title: 'Producto Eliminado con Exito',
-                            showConfirmButton: true,
-                            timer: 1500
-                        });
-                    }
-                })
+                    Swal.fire({
+                        type: 'success',
+                        title: 'Producto Eliminado con Exito',
+                        showConfirmButton: true,
+                        timer: 1500
+                    });
+                }
+            })
                 .fail(function (data) {
 
                     Swal.fire({
@@ -123,14 +121,14 @@ $('.eliminar').on('click', function (e) {
         }
     });
 });
-
+// modificar cantidad en carro
 $('.cantidad').on('change', function () {
 
 
     var cantidad = $(this).val();
     cantidad = parseInt(cantidad);
 
-   
+
     var $tr = $(this).closest('tr');
     var precioUnitarioStr = $tr.data('precio-unitario').replace(',', '.');
     var precioUnitario = parseFloat(precioUnitarioStr); // numérico

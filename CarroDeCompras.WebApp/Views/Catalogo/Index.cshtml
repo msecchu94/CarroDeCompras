@@ -88,12 +88,8 @@
                             {
                                 <img src="@item.UrlImagen" style="max-width:100%" />
                             }
-                            else
-                            {
-                                <img src="@string.Concat(Model, " default.jpg")" style="max-width:100%" />
-
-                            }
-                                <p class="info-box-text text-center">$ @item.PrecioUnitario.ToString("#,#.00")</p>
+                         
+                            <p class="info-box-text text-center">$ @item.PrecioUnitario.ToString("#,#.00")</p>
 
                             <p class="">@item.Descripcion</p>
                         </div>

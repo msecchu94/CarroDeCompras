@@ -1,0 +1,80 @@
+﻿@model WebApp.Models.PedidoModel
+
+
+@{
+    ViewBag.Title = "Usuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+<div class="table-responsive">
+
+    <table class="table table-striped table-hover" id="tablacarro">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.DetallesPedido.First().Producto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DetallesPedido.First().Producto.PrecioUnitario)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DetallesPedido.First().Cantidad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DetallesPedido.First().SubTotal)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model.DetallesPedido)
+            {
+                <tr id="tbody" data-precio-unitario="@item.Producto.PrecioUnitario" data-subtotal="@item.SubTotal" data-cantidad="@item.Cantidad" data-codigo-producto="@item.Producto.Codigo">
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Producto.Nombre)
+                    </td>
+                    <td>
+                        <div style="float: right;" class="precioUnitario">
+                            @Html.DisplayFor(model => item.Producto.PrecioUnitario)
+                        </div>
+                    </td>
+                    <td id="cantidad">
+                        @Html.TextBoxFor(modelItem => item.Cantidad, new { type = "number", min = "1", @class = "cantidad" })
+                    </td>
+                    <td>
+                        <div style="float: right;" class="subtotal">
+                            @Html.DisplayFor(model => item.SubTotal)
+                        </div>
+                    </td>
+                    <td>
+                        <div style="float: right;">
+                            <button type="button" class="eliminar" data-id="@Model.DetallesPedido.First().Producto.Codigo">Eliminar</button>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+        <tfoot id="tfoot" data-total="@Model.Total">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Total)</th>
+                <td></td>
+                <td></td>
+
+                <th>
+                    <div style="float:right;" class="total">
+                        $   @Model.Total
+                    </div>
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

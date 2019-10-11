@@ -1,7 +1,6 @@
-﻿ $('.btnAgregarPedido').on('click', function (e) {
+﻿$('.btnAgregarPedido').on('click', function (e) {
     $('#form-pedido').submit();
 });
-
 
 $('#form-pedido').on('submit', function (e) {
 
@@ -14,7 +13,7 @@ $('#form-pedido').on('submit', function (e) {
     let pedidoModel = {
         Observaciones: $('.Observaciones').val(),
         DetallesPedido
-        };
+    };
 
     $('#tablacarro tbody tr').each(function (index, el) {
 
@@ -38,19 +37,19 @@ $('#form-pedido').on('submit', function (e) {
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, delete it!'
 
-    }).then((result)=>{
+    }).then((result) => {
 
-                if(result.value){
+        if (result.value) {
 
-                    $.ajax({
+            $.ajax({
                 method: 'POST',
-            url: 'Pedido/CargarPedido',
+                url: 'Pedido/CargarPedido',
 
-               data: {
-                pedidoModel :pedidoModel
-              }
+                data: {
+                    pedidoModel: pedidoModel
+                }
 
-        })
+            })
                 .done(function (data) {
                     console.log(data);
 
@@ -77,8 +76,8 @@ $('#form-pedido').on('submit', function (e) {
 
                 });
 
-}
-});
+        }
+    });
 
 });
 
@@ -86,21 +85,38 @@ $('.btnVerPedido').on('click', function () {
 
     console.log(this);
 
-    //creamos var con la data pasada por el btnPedido 
-    const pedidoObservaciones = this.dataset.pedidoObservaciones;
-    const pedidoTotal = this.dataset.pedidoTotal;
-    const pedidoDetalles = this.dataset.pedido;
-    var items = [];
-    items = this.dataset.detalles;
-    Console.log(items);
+    //var $tr = $(this).closest('tr');
+    //var numeroPedido = $tr.data('numero-pedido');
+    //var detallePedido = $tr.data('detalle-pedido');
+    //$tr.find(numeroPedido);
+    //console.log(detallePedido);
 
 
-    // Llenar los datos del modal
-    const $modal = $('#myModalPedido');
-    $modal.find('.modal-observaciones').html(pedidoObservaciones);
-    $modal.find('.descripcion-detalles').html(pedidoDetalles);
-    $modal.find('.pedidoTotal').val(pedidoTotal);
-    $modal.find('.pedidoTotal').val(pedidoTotal);
+    ////creamos var con la data pasada por el btnPedido 
+    //var numeropedido = $(this).closest('tr').find('numero-pedido');
+    //console.log(numeropedido);
+
+    //const pedidoObservaciones = this.dataset.observaciones;
+    //const pedidoTotal = this.dataset.total;
+    //const numeroPedido = this.dataset.numeropedido;
+    //var items = [];
+    //items = this.dataset.detalles;
+
+    //Console.log(pedidoObservaciones);
+    //Console.log(pedidoTotal);
+    //Console.log(numeroPedido);
+    //Console.log(items);
+    //var modalPedido = function () {
+    //    var url = "/";
+    //},
+$('.btnVerPedido').load("Pedido/ModalPedido");
+
+    //// Llenar los datos del modal
+    const $modal = $('#myModal');
+    //$modal.find('.modal-observaciones').html(pedidoObservaciones);
+    //$modal.find('.descripcion-detalles').html(pedidoDetalles);
+    //$modal.find('.pedidoTotal').val(pedidoTotal);
+    //$modal.find('.pedidoTotal').val(pedidoTotal);
 
 
     // Abrir

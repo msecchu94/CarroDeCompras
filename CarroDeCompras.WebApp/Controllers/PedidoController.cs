@@ -98,5 +98,12 @@ namespace WebApp.Controllers
             }
 
         }
+
+        public ActionResult ModalPedido()
+        {
+            return PartialView("ModalPedido");
+        }
+
     }
+
 }
