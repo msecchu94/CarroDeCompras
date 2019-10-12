@@ -15,7 +15,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title"><b>Detalle de Pedido</b></h4>
             </div>
-            <div class="modal-body" id="myModalPedido">
+            <div class="modal-body" id="modalbodydiv">
 
             </div>
             <div class="modal-footer">
@@ -48,7 +48,7 @@
                     <div class="box-body">
 
                         <div class="table-responsive">
-
+                            <div id="parcial"></div>
                             <table class="table table-striped table-hover table-bordered" id="tablapedido">
                                 <thead>
                                     <tr>
@@ -85,7 +85,7 @@
                                             </td>
                                             <td>
                                                 <div class="center-block">
-                                                    <button class="btn btn-primary btn-block btn-sm bordes center-block btnVerPedido" data-observacion="@item.Observacion" data-total="@item.Total" data-numero-pedido="@item.NumeroPedido" data-detalles="@item.DetallesPedido.First().Producto.Nombre">Ver Detalle</button>
+                                                    <button class="btn btn-primary btn-block btn-sm bordes center-block btnVerPedido" @*data-toggle="modal" data-target="#myModal" *@ data-pedido="@item.NumeroPedido">Ver Detalle</button>
                                                 </div>
                                             </td>
                                         </tr>

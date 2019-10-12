@@ -470,7 +470,7 @@
     <Content Include="Views\Login\ModificarPassword.cshtml" />
     <Content Include="Views\Carro\Index.cshtml" />
     <Content Include="Views\Pedido\Index.cshtml" />
-    <Content Include="Views\Pedido\ModalPedido.cshtml" />
+    <Content Include="Views\Pedido\_ModalPedido.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap\css\bootstrap-theme.css" />

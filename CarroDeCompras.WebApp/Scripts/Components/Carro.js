@@ -74,55 +74,55 @@ $('.eliminar').on('click', function (e) {
 
     const codigo = this.dataset.id;
     var tr = $(this).closest('tr');
-    console.log(codigo);
+    console.log(tr);
 
     Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
+        title: 'Estas Seguro?',
+        text: "Una vez confirmado, no podrás revertir !",
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
+        confirmButtonText: 'Yes, eliminar!'
     }).then((result) => {
         if (result.value) {
 
             $.ajax({
                 method: 'POST',
-                url: 'Carro/EliminarItem',
-                data: {
-                    codigo: codigo
-                }
-            }).done(function (data) {
-                console.log(data);
+            url: 'Carro/EliminarItem',
+            data: {
+                codigo: codigo
+            }
+        }).done(function (data) {
+            console.log(data);
 
-                if (data.Success) {
-                    tr.remove();
-                    location.reload();
+            if (data.Success) {
+                tr.remove();
+                location.reload();
 
-                    Swal.fire({
-                        type: 'success',
-                        title: 'Producto Eliminado con Exito',
-                        showConfirmButton: true,
-                        timer: 1500
-                    });
-                }
-            })
-                .fail(function (data) {
+                Swal.fire({
+                    type: 'success',
+                    title: 'Producto Eliminado con Exito',
+                    showConfirmButton: true,
+                    timer: 1500
+                });
+            }
+        })
+                        .fail(function (data) {
 
                     Swal.fire({
                         type: 'error',
                         title: 'Oops...',
-                        text: 'Error al Eliminar al Producto',
-                        footer: '<a href>Why do I have this issue?</a>'
+                        text: 'Error al Eliminar al Producto'
+                                            
                     });
                     console.log(data);
                 });
-        }
-    });
+}
 });
-// modificar cantidad en carro
-$('.cantidad').on('change', function () {
+});
+    // modificar cantidad en carro
+    $('.cantidad').on('change', function () {
 
 
     var cantidad = $(this).val();
@@ -145,7 +145,7 @@ $('.cantidad').on('change', function () {
 
 });
 
-function actualizarTotal() {
+    function actualizarTotal() {
     let total = 0;
     console.log('Actualizando total...');
     $('#tablacarro tbody tr').each(function (index, el) {

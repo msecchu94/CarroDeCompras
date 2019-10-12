@@ -99,11 +99,20 @@ namespace WebApp.Controllers
 
         }
 
-        public ActionResult ModalPedido()
+
+        [HttpPost]
+        public ActionResult _ModalPedido(int numeroPedido)
         {
-            return PartialView("ModalPedido");
+            UsuarioDTO usuarioDTO = new UsuarioDTO()
+            {
+                Usuario = User.Identity.Name
+            };
+            var getIdUsuario = _usuarioBLL.ObtenerUsuario(usuarioDTO);
+
+            var pedidoDTO = _pedidoBLL.ObtenerPedido(numeroPedido);
+            var pedidoModel= Mapper.Map<PedidoModel>(pedidoDTO);
+
+            return PartialView("_ModalPedido", pedidoModel);
         }
-
     }
-
 }

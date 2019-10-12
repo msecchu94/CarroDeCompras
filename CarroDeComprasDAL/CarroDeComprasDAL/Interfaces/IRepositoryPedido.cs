@@ -12,6 +12,6 @@ namespace CarroDeComprasDAL.Interfaces
         bool AgregarPedido(PedidoBE pedidoBE);
         IEnumerable<PedidoBE> ObtenerPedidosXusuario(int idUsuario);
         IEnumerable<PedidoBE> ObtenerPedidos();
-
+        PedidoBE ObtenerPedido(int numPedido);
     }
 }

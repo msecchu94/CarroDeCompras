@@ -75,12 +75,9 @@ namespace WebApp.Controllers
         [HttpPost]
         public ActionResult EliminarItem(int codigo)
         {
-            UsuarioModel usuarioModel = new UsuarioModel();
-            usuarioModel.Usuario = User.Identity.Name;
-
             UsuarioDTO usuarioDTO = new UsuarioDTO()
             {
-                Usuario = usuarioModel.Usuario
+                Usuario = User.Identity.Name
             };
 
             var getid = _usuarioBLL.ObtenerUsuario(usuarioDTO);

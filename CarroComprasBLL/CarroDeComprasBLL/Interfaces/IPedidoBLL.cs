@@ -13,5 +13,7 @@ namespace CarroDeComprasBLL.Interfaces
         IEnumerable<PedidoDTO> ObtenerPedidosXusuario(int idUsuario);
         IEnumerable<PedidoDTO> ObtenerPedidos();
 
+        PedidoDTO ObtenerPedido(int numPedido);
+
     }
 }
