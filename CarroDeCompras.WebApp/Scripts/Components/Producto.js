@@ -8,6 +8,7 @@ $('#form-crear').on('submit', function (e) {
 
     e.preventDefault();
     console.log(this);
+    var formData = new FormData(this);
 
     Swal.fire({
         title: 'Are you sure?',
@@ -23,9 +24,12 @@ $('#form-crear').on('submit', function (e) {
         if (result.value) {
 
             $.ajax({
-                method: 'POST',
-                url: this.attributes.action.value,
-                data: $(this).serialize()
+                method:'POST',
+            url:this.attributes.action.value,
+            data: formData,
+            contentType: false,
+            cache: false,
+            processData: false
 
             })
                 .done(function (data) {
@@ -69,6 +73,8 @@ $('.form-editar').on('submit', function (e) {
 
     e.preventDefault();
     console.log(this);
+    var formData = new FormData(this);
+
 
     Swal.fire({
         title: 'Are you sure?',
@@ -84,9 +90,12 @@ $('.form-editar').on('submit', function (e) {
         if (result.value) {
 
             $.ajax({
-                method: 'POST',
-                url: this.attributes.action.value,
-                data: $(this).serialize()
+                method:'POST',
+                url:this.attributes.action.value,
+                data: formData,
+                contentType: false,
+                cache: false,
+                processData: false
 
             })
                 .done(function (data) {

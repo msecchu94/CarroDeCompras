@@ -1504,7 +1504,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\Productos\" />
-    <Folder Include="Img\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

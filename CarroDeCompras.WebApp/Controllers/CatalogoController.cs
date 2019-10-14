@@ -48,7 +48,7 @@ namespace WebApp.Controllers
                     IdMarca = item.IdMarca,
                     Nombre = item.Nombre,
                     PrecioUnitario = item.PrecioUnitario,
-                    UrlImagen = item.UrlImange,
+                    UrlImange = item.UrlImange,
                     Marca = new Marca
                     {
                         Id = item.Marca.Id,

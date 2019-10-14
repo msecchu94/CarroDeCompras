@@ -8,6 +8,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.IO;
 using System.Web.Helpers;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
+using System.Configuration;
 
 namespace WebApp.Models
 {
@@ -44,7 +46,12 @@ namespace WebApp.Models
 
         //[Required(ErrorMessage = "el campo {0} es obligatorio")]
         [DataType(DataType.Upload, ErrorMessage = "el formato no es valido")]
-        public string UrlImagen { get; set; }
+        public string UrlImange { get; set; }
+
+       
+        [Display(Name = "Archivo")]
+        //[Required(ErrorMessage = "seleccione archivo")]
+        public HttpPostedFileBase File { get; set; }
 
         //[DataType()]
         [Required(ErrorMessage = "El campo {0} es Obligatorio")]
@@ -55,21 +62,54 @@ namespace WebApp.Models
 
         public IEnumerable<Marca> ListaMarca { get; set; }
 
-        [DataType(DataType.Upload)]
-        [Display(Name = "Archivo")]
-        //[Required(ErrorMessage = "seleccione archivo")]
-        public HttpPostedFileBase File { get; set; }
-
         public void SubirArchivo(Producto producto)
         {
-            string fileName = Path.GetFileNameWithoutExtension(producto.File.FileName);
-            string extension = Path.GetExtension(producto.File.FileName);
 
-            fileName = fileName + extension;
-            producto.UrlImagen = "~/Images/Productos/" + fileName;
+            //Use Namespace called :  System.IO             objeto 
+            string FileName = Path.GetFileNameWithoutExtension(producto.File.FileName);
 
-            fileName = Path.Combine(HttpContext.Current.Server.MapPath("~/Images/Productos/"), fileName);
-            producto.File.SaveAs(fileName);
+            //To Get File Extension  
+            string FileExtension = Path.GetExtension(producto.File.FileName);
+
+            //Add Current Date To Attached File Name  
+            FileName = DateTime.Now.ToString("yyyyMMdd") + "-" + FileName.Trim() + FileExtension;
+
+            //Get Upload path from Web.Config file AppSettings.  
+            string UploadPath = ConfigurationManager.AppSettings["ProductosUrlImagen"].ToString();
+
+            //Its Create complete path to store in server.  
+            producto.UrlImange = UploadPath + FileName;
+
+            //To copy and save file into server.  
+            producto.File.SaveAs(producto.UrlImange);
+
+
+            //To save Club Member Contact Form Detail to database table.  
+        
+            //try
+            //{
+            //    string path = HttpContext.Current.Server.MapPath("~/Images/Productos/");
+            //    if (!Directory.Exists(path))
+            //    {
+            //        Directory.CreateDirectory(path);
+            //    }
+            //    File.SaveAs(path + Path.GetFileName(File.FileName));
+            //}
+            //catch (Exception)
+            //{
+                
+            //    throw;
+            //}
+
+
+            //string fileName = Path.GetFileNameWithoutExtension(producto.File.FileName);
+            //string extension = Path.GetExtension(producto.File.FileName);
+
+            //fileName = fileName + extension;
+            //producto.UrlImagen = "~/Images/Productos/" + fileName;
+
+            //fileName = Path.Combine(HttpContext.Current.Server.MapPath("~/Images/Productos/"), fileName);
+            //producto.File.SaveAs(fileName);
 
             //ModelState.Clear();
 
