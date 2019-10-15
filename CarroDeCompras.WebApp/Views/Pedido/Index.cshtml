@@ -11,28 +11,7 @@
 <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header primary">
-                <button type="button" class="close btn-danger" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">
-
-                    <div>
-
-                        <b>
-                            Detalle de Pedido Nº : @Model.First().NumeroPedido
-                        </b>
-
-                        @if (User.IsInRole("ADMIN"))
-                        {
-                            <span class="col-xs-5 pull-right">
-                                <b>Código Cliente : @Model.First().CodigoCliente</b>
-
-                            </span>
-                        }
-
-                    </div>
-
-                </h4>
-            </div>
+            
             <div class="modal-body" id="modalbodydiv">
 
 

@@ -1,7 +1,7 @@
 ﻿@model WebApp.Models.Producto
 
 @{
-    ViewBag.Title = "Edición de Producto -" + Model.Codigo + "-" + Model.Nombre;
+    ViewBag.Title = "Producto-" + Model.Codigo + "-" + Model.Nombre;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -10,12 +10,12 @@
 <div class="content-wrapper">
 
     @*<section class="content-header">
-        <h1>
-            Administrador
-            <small>Editar Producto</small>
-        </h1>
-        <ol class="breadcrumb"></ol>
-    </section>*@
+            <h1>
+                Administrador
+                <small>Editar Producto</small>
+            </h1>
+            <ol class="breadcrumb"></ol>
+        </section>*@
 
 
     <section class="content">
@@ -28,16 +28,19 @@
                         @using (Html.BeginForm("Editar", "Producto", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-editar" }))
                         {
                             @Html.AntiForgeryToken()
+                            <div>
+                                <img src="@Url.Content(Model.UrlImange)"/>
+                            </div>
 
                             <div class="form-horizontal">
-                                <h4>Edición de Producto - @Model.Codigo-@Model.Nombre </h4>
+                                <h4>Edición de Producto-@Model.Codigo-@Model.Nombre</h4>
                                 <hr />
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Codigo, htmlAttributes: new { @class = "control-label col-md-2" })
                                     <div class="col-md-10">
-                                        @Html.EditorFor(model => model.Codigo, new { htmlAttributes = new { @readonly = true, @class = "control-editor col-md-3 bordes " } })
+                                        @Html.EditorFor(model => model.Codigo, new { htmlAttributes = new { @readonly = true, @class = "control-editor col-md-2 bordes " } })
                                         @Html.ValidationMessageFor(model => model.Codigo, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
@@ -112,6 +115,7 @@
 
                     </div>
                 </div>
+              
             </div>
         </div>
     </section>

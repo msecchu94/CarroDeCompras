@@ -13,7 +13,7 @@ $('#form-pedido').on('submit', function (e) {
     let pedidoModel = {
         Observaciones: $('.Observaciones').val(),
         DetallesPedido
-        };
+    };
 
     $('#tablacarro tbody tr').each(function (index, el) {
 
@@ -42,14 +42,14 @@ $('#form-pedido').on('submit', function (e) {
         if (result.value) {
 
             $.ajax({
-        method: 'POST',
-    url: 'Pedido/CargarPedido',
+                method: 'POST',
+                url: 'Pedido/CargarPedido',
 
-    data: {
-        pedidoModel: pedidoModel
-    }
+                data: {
+                    pedidoModel: pedidoModel
+                }
 
-})
+            })
                 .done(function (data) {
                     console.log(data);
 
@@ -76,30 +76,27 @@ $('#form-pedido').on('submit', function (e) {
 
                 });
 
-}
-});
+        }
+    });
 
 });
 
 $('.btnVerPedido').on('click', function () {
 
-    //e.preventDefault();
     console.log(this);
     const numeroPedido = this.dataset.pedido;
     console.log(numeroPedido);
 
-    //$("#parcial").load("Pedido/_ModelPedido")
-
     $.ajax({
         url: "Pedido/_ModalPedido",
         type: "POST",
-        data: {numeroPedido: numeroPedido }
+        data: { numeroPedido: numeroPedido }
     })
-    .done(function(data) {
-        $("#modalbodydiv").html(data);
-        const $modal = $('#myModal');
-        $modal.modal('show');
-  
-    });
-               
+        .done(function (data) {
+            $("#modalbodydiv").html(data);
+            const $modal = $('#myModal');
+            $modal.modal('show');
+
+        });
+
 })

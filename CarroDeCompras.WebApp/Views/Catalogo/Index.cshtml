@@ -11,7 +11,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                @*   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>*@
                 <h4 class="modal-title"></h4>
             </div>
             <div class="modal-body">
@@ -25,13 +25,13 @@
 
                     <p class="descripcion-body"></p>
 
-                    @Html.TextBox("Cantidad", "", htmlAttributes: new { @class = "Cantidad", type = "number", min = "1" })
+                    @Html.TextBox("Cantidad", "", htmlAttributes: new { @class = "Cantidad", type = "number", min ="1"})
                 }
 
             </div>
             <div class="modal-footer">
 
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btn-primary  btnAgregarCarro">Agregar</button>
             </div>
         </div>
@@ -39,15 +39,13 @@
     </div>
 </div>
 
-
-
 <!-- Modelo -->
 
-<div class="content-wrapper">
+<div class="content-wrapper ">
 
     @if (ViewBag.Mensaje != null)
     {
-        <script>
+        <script class="mayus">
             (function alert() {
 
                 Swal.fire({
@@ -62,8 +60,7 @@
 
     <section class="content-header">
         <h1>
-            Usuario
-            <small>Catalogo</small>
+            Catálogo
         </h1>
         <ol class="breadcrumb"></ol>
     </section>
@@ -79,16 +76,16 @@
 
 
                         <div class="box-header with-border">
-                            <h1 class="box-title">@item.Nombre</h1>
+                            <h1 class="box-title text-aling-center">@item.Nombre</h1>
 
 
                         </div>
                         <div class="box-body">
                             @if (item.UrlImange != null)
                             {
-                                <img src="@item.UrlImange" style="max-width:100%" />
+                                <img src="@Url.Content(item.UrlImange)" class="img" />
                             }
-                         
+                          
                             <p class="info-box-text text-center">$ @item.PrecioUnitario.ToString("#,#.00")</p>
 
                             <p class="">@item.Descripcion</p>

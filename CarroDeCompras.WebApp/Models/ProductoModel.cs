@@ -67,23 +67,23 @@ namespace WebApp.Models
         public void SubirArchivo(Producto producto)
         {
 
-            //Use Namespace called :  System.IO             objeto 
-            string FileName = Path.GetFileNameWithoutExtension(producto.File.FileName);
+            ////Use Namespace called :  System.IO             objeto 
+            //string FileName = Path.GetFileNameWithoutExtension(producto.File.FileName);
 
-            //To Get File Extension  
-            string FileExtension = Path.GetExtension(producto.File.FileName);
+            ////To Get File Extension  
+            //string FileExtension = Path.GetExtension(producto.File.FileName);
 
-            //Add Current Date To Attached File Name  
-            FileName = FileName.Trim() + FileExtension;
+            ////Add Current Date To Attached File Name  
+            //FileName = FileName.Trim() + FileExtension;
 
-            //Get Upload path from Web.Config file AppSettings.  
-            string UploadPath = ConfigurationManager.AppSettings["ProductosUrlImagen"].ToString();
+            ////Get Upload path from Web.Config file AppSettings.  
+            //string UploadPath = ConfigurationManager.AppSettings["ProductosUrlImagen"].ToString();
 
-            //Its Create complete path to store in server.  
-            producto.UrlImange = UploadPath + FileName;
+            ////Its Create complete path to store in server.  
+            //producto.UrlImange = UploadPath + FileName;
 
-            //To copy and save file into server.  
-            producto.File.SaveAs(producto.UrlImange);
+            ////To copy and save file into server.  
+            //producto.File.SaveAs(producto.UrlImange);
 
 
             //To save Club Member Contact Form Detail to database table.  
@@ -104,14 +104,14 @@ namespace WebApp.Models
             //}
 
 
-            //string fileName = Path.GetFileNameWithoutExtension(producto.File.FileName);
-            //string extension = Path.GetExtension(producto.File.FileName);
+            string fileName = Path.GetFileNameWithoutExtension(producto.File.FileName);
+            string extension = Path.GetExtension(producto.File.FileName);
 
-            //fileName = fileName + extension;
-            //producto.UrlImagen = "~/Images/Productos/" + fileName;
+            fileName = fileName + extension;
+            producto.UrlImange = ConfigurationManager.AppSettings["ProductosUrlImagen"].ToString() + fileName;
 
-            //fileName = Path.Combine(HttpContext.Current.Server.MapPath("~/Images/Productos/"), fileName);
-            //producto.File.SaveAs(fileName);
+            fileName = Path.Combine(HttpContext.Current.Server.MapPath("~/Images/Productos/"), fileName);
+            producto.File.SaveAs(fileName);
 
             //ModelState.Clear();
 

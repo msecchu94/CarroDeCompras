@@ -65,16 +65,16 @@ $('#form-carro').on('submit', function (e) {
 
         });
 });
-//eliminar item carro
 
+//eliminar item carro
 $('.eliminar').on('click', function (e) {
     e.preventDefault();
 
     console.log(this);
 
-    const codigo = this.dataset.id;
     var tr = $(this).closest('tr');
-    console.log(tr);
+    const codigo = tr.data('codigo-producto');
+    console.log(codigo);
 
     Swal.fire({
         title: 'Estas Seguro?',
@@ -83,7 +83,7 @@ $('.eliminar').on('click', function (e) {
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, eliminar!'
+        confirmButtonText: 'Si, eliminar!'
     }).then((result) => {
         if (result.value) {
 
@@ -121,8 +121,9 @@ $('.eliminar').on('click', function (e) {
 }
 });
 });
-    // modificar cantidad en carro
-    $('.cantidad').on('change', function () {
+
+// modificar cantidad en carro
+$('.cantidad').on('change', function () {
 
 
     var cantidad = $(this).val();
@@ -145,7 +146,7 @@ $('.eliminar').on('click', function (e) {
 
 });
 
-    function actualizarTotal() {
+function actualizarTotal() {
     let total = 0;
     console.log('Actualizando total...');
     $('#tablacarro tbody tr').each(function (index, el) {

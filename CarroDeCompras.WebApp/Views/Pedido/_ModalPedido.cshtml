@@ -4,6 +4,30 @@
     ViewBag.Title = "_ModalPedido";
     //Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<div class="modal-header primary">
+    @* <button type="button" class="close btn-danger" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>*@
+    <h4 class="modal-title">
+
+        <div>
+
+            <b>
+                Detalle de Pedido Nº : @Model.NumeroPedido
+            </b>
+
+            @if (User.IsInRole("ADMIN"))
+            {
+                <span class="col-md-offset-3">
+                    <b>Código Cliente : @Model.CodigoCliente</b>
+
+                </span>
+            }
+
+        </div>
+
+    </h4>
+</div>
+
 <div id="modal-body">
     <div class="table-responsive">
 
@@ -40,7 +64,9 @@
                             </div>
                         </td>
                         <td id="cantidad">
-                            @Html.DisplayFor(modelItem => item.Cantidad, new { type = "number", min = "1", @class = "cantidad" })
+                            <div class="precioUnitario text-center">
+                                @Html.DisplayFor(modelItem => item.Cantidad, new { @class = "text-aling-center" })
+                            </div>
                         </td>
                         <td>
                             <div style="float: right;" class="subtotal">
@@ -69,9 +95,9 @@
                     </th>
                 </tr>
                 <tr>
-                    <td>
+                    <th>
                         @Html.DisplayNameFor(model => model.Observacion)
-                    </td>
+                    </th>
                     <td>
                         @Html.DisplayFor(model => model.Observacion)
                     </td>

@@ -10,6 +10,7 @@ using WebApp.Models;
 
 namespace WebApp.Controllers
 {
+    [Authorize]
     public class PedidoController : Controller
     {
         private readonly IProductoBLL _productoBLL;
@@ -51,6 +52,7 @@ namespace WebApp.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult CargarPedido(PedidoModel pedidoModel)
         {
             if (pedidoModel == null)
@@ -110,7 +112,7 @@ namespace WebApp.Controllers
             var getIdUsuario = _usuarioBLL.ObtenerUsuario(usuarioDTO);
 
             var pedidoDTO = _pedidoBLL.ObtenerPedido(numeroPedido);
-            var pedidoModel= Mapper.Map<PedidoModel>(pedidoDTO);
+            var pedidoModel = Mapper.Map<PedidoModel>(pedidoDTO);
 
             return PartialView("_ModalPedido", pedidoModel);
         }

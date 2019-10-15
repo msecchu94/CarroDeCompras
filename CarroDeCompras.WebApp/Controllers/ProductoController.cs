@@ -107,13 +107,17 @@ namespace WebApp.Controllers
             }
 
             #region File
-            if (producto.File != null)
+
+
+
+            if (producto.File == null)
             {
                 producto.SubirArchivo(producto);
 
                 ViewBag.Message = "Archivo cargado exitosamente !!!";
                 ModelState.Clear();
             }
+
             #endregion
 
             try

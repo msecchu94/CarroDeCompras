@@ -1,7 +1,7 @@
 ﻿@model WebApp.Models.PedidoModel
 
 @{
-    ViewBag.Title = "Index";
+        ViewBag.Title ="Mi Carro de Compras";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -27,7 +27,7 @@
                         {
                             <div class="alert alert-danger bordes text-center">
                                 <i class="icon fa fa-ban"></i>
-                                <strong>Su Carro se encuentra vacio.Dirigase al Catalogo para agregar su producto !</strong>
+                                <strong>Su Carro se encuentra vacio .Dirigase al Catalogo para agregar su producto !</strong>
                             </div>
                         }
 
@@ -83,7 +83,7 @@
                                                     </td>
                                                     <td>
                                                         <div style="float: right;">
-                                                            <button type="button" class="eliminar" data-id="@Model.DetallesPedido.First().Producto.Codigo">Eliminar</button>
+                                                            <button type="button" class="eliminar btn-danger bordes"  data-id="@Model.DetallesPedido.First().Producto.Codigo">Eliminar</button>
                                                         </div>
                                                     </td>
                                                 </tr>

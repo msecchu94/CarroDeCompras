@@ -239,6 +239,7 @@ namespace CarroDeComprasDAL.Implementaciones
                     item.DetallesPedido = pedido.DetallesPedido.Where(d => d.NumeroPedido == item.NumeroPedido);
 
                 }
+                pedido = getpedido.First();
                 return pedido;
 
 

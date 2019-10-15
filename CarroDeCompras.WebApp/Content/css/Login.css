@@ -11,3 +11,14 @@
  }
  .modal-header .close{margin-top:2px}
  .modal-header h3{margin:0;line-height:30px}
+
+.mayus{
+    text-transform: lowercase;
+}
+
+.img {
+    /*max-width: 170%;*/
+    max-height: 180px;
+    /*height: auto;
+    width: auto*/;
+}
