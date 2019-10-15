@@ -17,7 +17,7 @@ namespace WebApp.Models
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime Fecha { get; set; }
+        public DateTime? Fecha { get; set; }
 
         [DataType(DataType.MultilineText)]
         public string Observacion { get; set; }

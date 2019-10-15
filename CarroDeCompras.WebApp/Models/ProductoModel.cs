@@ -22,6 +22,7 @@ namespace WebApp.Models
     public class Producto
     {
         [Key]
+        [DisplayName("Código")]
         public int Codigo { get; set; }
 
         [Required(ErrorMessage = "El campo {0} es Obligatorio")]
@@ -32,6 +33,7 @@ namespace WebApp.Models
         [DataType(DataType.MultilineText)]
         [Required(ErrorMessage = "El campo {0} es Obligatorio")]
         [StringLength(255, MinimumLength = 4, ErrorMessage = "Debe contener un rango minimo de 4 digitos")]
+        [Display(Name = "Descripción")]
         public string Descripcion { get; set; }
 
         //[Required(ErrorMessage = "El campo {0} es Obligatorio")]
@@ -41,14 +43,14 @@ namespace WebApp.Models
         [Required(ErrorMessage = "El campo {0} es Obligatorio")]
         [Column(TypeName = "decimal(18,2)")]
         [DataType(DataType.Currency)]
-        
+        [Display(Name = "Precio Unitario")]
         public decimal PrecioUnitario { get; set; }
 
-        //[Required(ErrorMessage = "el campo {0} es obligatorio")]
+        [Display(Name = "Imagen")]
         [DataType(DataType.Upload, ErrorMessage = "el formato no es valido")]
         public string UrlImange { get; set; }
 
-       
+
         [Display(Name = "Archivo")]
         //[Required(ErrorMessage = "seleccione archivo")]
         public HttpPostedFileBase File { get; set; }
@@ -72,7 +74,7 @@ namespace WebApp.Models
             string FileExtension = Path.GetExtension(producto.File.FileName);
 
             //Add Current Date To Attached File Name  
-            FileName = DateTime.Now.ToString("yyyyMMdd") + "-" + FileName.Trim() + FileExtension;
+            FileName = FileName.Trim() + FileExtension;
 
             //Get Upload path from Web.Config file AppSettings.  
             string UploadPath = ConfigurationManager.AppSettings["ProductosUrlImagen"].ToString();
@@ -85,7 +87,7 @@ namespace WebApp.Models
 
 
             //To save Club Member Contact Form Detail to database table.  
-        
+
             //try
             //{
             //    string path = HttpContext.Current.Server.MapPath("~/Images/Productos/");
@@ -97,7 +99,7 @@ namespace WebApp.Models
             //}
             //catch (Exception)
             //{
-                
+
             //    throw;
             //}
 

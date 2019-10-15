@@ -1,7 +1,7 @@
 ﻿@model WebApp.Models.ProductoModel
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Listado de Productos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
 
@@ -42,14 +42,14 @@
         </script>
     }
 
-    <section class="content-header">
+    @*<section class="content-header">
         <h1>
             Administrador
 
             <small>Listado Productos</small>
         </h1>
         <ol class="breadcrumb"></ol>
-    </section>
+    </section>*@
 
 
     <section class="content">
@@ -102,7 +102,7 @@
                                             @Html.DisplayFor(modelItem => item.Activo)
                                         </td>
                                         <td>
-                                            @Html.ActionLink("Editar", "Editar", new { Codigo = item.Codigo }, new { @class = "btn btn-primary btn-sm btn-block icon ion-edit" })
+                                            @Html.ActionLink("Editar", "Editar", new { Codigo = item.Codigo }, new { @class = "btn btn-primary btn-sm btn-block ", span = "icon ion-edit" })
                                         </td>
                                     </tr>
                                 }
@@ -111,7 +111,7 @@
 
                         </div>
                         <div>
-                            <a href="@Url.Action("Crear","Producto")" class="col-md-3 btn btn-primary icon ion-ios-plus-outline">Agregar Producto</a>
+                            <a href="@Url.Action("Crear","Producto")" class="col-md-3 btn btn-primary "> <span class="icon ion-plus-round"> Agregar Producto</span></a>
                         </div>
 
                     </div>

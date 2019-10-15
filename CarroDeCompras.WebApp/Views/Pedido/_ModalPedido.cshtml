@@ -28,32 +28,33 @@
 
             <tbody>
                 @foreach (var item in Model.DetallesPedido)
-                    {
-                        <tr id="tbody">
+                {
+                    <tr id="tbody">
 
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Producto.Nombre)
-                            </td>
-                            <td>
-                                <div style="float: right;" class="precioUnitario">
-                                    @Html.DisplayFor(model => item.Producto.PrecioUnitario)
-                                </div>
-                            </td>
-                            <td id="cantidad">
-                                @Html.DisplayFor(modelItem => item.Cantidad, new { type = "number", min = "1", @class = "cantidad" })
-                            </td>
-                            <td>
-                                <div style="float: right;" class="subtotal">
-                                    @Html.DisplayFor(model => item.SubTotal)
-                                </div>
-                            </td>
-                            <td>
-                                <div style="float: right;">
-                                </div>
-                            </td>
-                        </tr>
-                    }
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Producto.Nombre)
+                        </td>
+                        <td>
+                            <div style="float: right;" class="precioUnitario">
+                                @Html.DisplayFor(model => item.Producto.PrecioUnitario)
+                            </div>
+                        </td>
+                        <td id="cantidad">
+                            @Html.DisplayFor(modelItem => item.Cantidad, new { type = "number", min = "1", @class = "cantidad" })
+                        </td>
+                        <td>
+                            <div style="float: right;" class="subtotal">
+                                @Html.DisplayFor(model => item.SubTotal)
+                            </div>
+                        </td>
+                        <td>
+                            <div style="float: right;">
+                            </div>
+                        </td>
+                    </tr>
+                }
             </tbody>
+
 
             <tfoot id="tfoot" data-total="@Model.Total">
                 <tr>
@@ -67,7 +68,14 @@
                         </div>
                     </th>
                 </tr>
-            </tfoot>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Observacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Observacion)
+                    </td>
+                </tr>
         </table>
     </div>
 </div>

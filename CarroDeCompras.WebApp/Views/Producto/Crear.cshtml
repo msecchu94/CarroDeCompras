@@ -1,19 +1,19 @@
 ﻿@model WebApp.Models.Producto
 
 @{
-    ViewBag.Title = "Crear";
+    ViewBag.Title = "Agregar Producto";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="content-wrapper">
 
-    <section class="content-header">
+    @*<section class="content-header">
         <h1>
             Administrador
             <small>Agregar Producto</small>
         </h1>
         <ol class="breadcrumb"></ol>
-    </section>
+    </section>*@
 
 
     <section class="content">
@@ -93,7 +93,10 @@
                         </div>
                         }
                         <div class="box-footer">
-                            <a href="@Url.Action("Index","Producto")" class="col-md-3 pull-right btn btn-primary icon ion-ios-arrow-forward bordes">  Volver al Listado</a>
+                            <a href="@Url.Action("Index","Producto")" class="col-md-3 pull-right btn btn-primary bordes">
+                                <i class="fa fa-undo" aria-hidden="true"></i>
+                                <span> Volver al Listado</span>
+                            </a>
                         </div> 
                             
                             @section Scripts {

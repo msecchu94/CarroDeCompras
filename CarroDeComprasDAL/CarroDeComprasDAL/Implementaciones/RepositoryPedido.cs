@@ -90,7 +90,7 @@ namespace CarroDeComprasDAL.Implementaciones
                                 INNER JOIN Productos p  ON dp.[CodigoProducto]=p.Codigo";
 
 
-            string getNumeroPedido = @"Select NumeroPedido,CodigoCliente,Fecha,Observacion FROM Pedidos";
+            string getNumeroPedido = @"Select NumeroPedido,CodigoCliente,Fecha,Observacion FROM Pedidos ORDER BY Fecha DESC";
 
             #endregion
 
@@ -150,7 +150,7 @@ namespace CarroDeComprasDAL.Implementaciones
 
             string getCodigoCliente = @"Select Codigo FROM Clientes WHERE IdUsuario=@IdUsuario";
 
-            string getNumeroPedido = @"Select NumeroPedido,CodigoCliente,Fecha,Observacion FROM Pedidos WHERE CodigoCliente=@CodigoCliente";
+            string getNumeroPedido = @"Select NumeroPedido,CodigoCliente,Fecha,Observacion FROM Pedidos WHERE CodigoCliente=@CodigoCliente ORDER BY Fecha ASC";
 
             #endregion
 
@@ -196,7 +196,7 @@ namespace CarroDeComprasDAL.Implementaciones
         public PedidoBE ObtenerPedido(int numPedido)
         {
 
-            string getNumeroPedido = @"Select NumeroPedido,CodigoCliente,Fecha,Observacion FROM Pedidos WHERE NumeroPedido=@NumeroPedido";
+            string getNumeroPedido = @"Select NumeroPedido,CodigoCliente,Fecha,Observacion FROM Pedidos WHERE NumeroPedido=@NumeroPedido ORDER BY Fecha ASC";
 
             string getDetallesPedidos = @"Select 
                                 dp.[CodigoProducto]

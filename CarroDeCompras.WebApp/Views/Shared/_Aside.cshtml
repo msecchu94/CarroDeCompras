@@ -4,14 +4,14 @@
     <section class="sidebar" style="height: auto;">
         <!-- Sidebar user panel -->
         @*<div class="user-panel">
-            <div class="pull-left image">
-                <img  class="img-circle" alt="User Image">
-            </div>
-            <div class="pull-left info">
-                <p>@User.Identity.Name</p>
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-            </div>
-        </div>*@
+                <div class="pull-left image">
+                    <img  class="img-circle" alt="User Image">
+                </div>
+                <div class="pull-left info">
+                    <p>@User.Identity.Name</p>
+                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                </div>
+            </div>*@
         <!-- search form -->
         <form action="#" method="get" class="sidebar-form">
             <div class="input-group">
@@ -39,8 +39,19 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="@Url.Action("Index", "Producto")"><i class="icon ion-ios-pricetags"> </i> Listado de Productos</a></li>
-                        <li><a href="@Url.Action("Crear", "Producto")"><i class="icon ion-plus-round"> </i> Agregar Producto</a></li>
+                        <li>
+                            <a href="@Url.Action("Crear", "Producto")">
+                                <i class="icon ion-plus-round"></i>
+                                <span>Agregar Producto</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("Index", "Producto")">
+                                <i class="icon ion-ios-pricetags"></i>
+                                <span>Listado de Productos</span>
+                            </a>
+                        </li>
                     </ul>
 
 
@@ -67,7 +78,7 @@
                     <span>Pedidos</span>
                 </a>
             </li>
-         
+
 
         </ul>
     </section>
