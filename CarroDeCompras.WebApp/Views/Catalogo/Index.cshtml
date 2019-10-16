@@ -76,19 +76,19 @@
 
 
                         <div class="box-header with-border">
-                            <h1 class="box-title text-aling-center">@item.Nombre</h1>
+                            <h1 class="box-title text-center">@item.Nombre</h1>
 
 
                         </div>
-                        <div class="box-body">
+                        <div class="box-body description-block border-right">
                             @if (item.UrlImange != null)
                             {
                                 <img src="@Url.Content(item.UrlImange)" class="img" />
                             }
                           
-                            <p class="info-box-text text-center">$ @item.PrecioUnitario.ToString("#,#.00")</p>
+                            <h5 class=" text-center description-header">$ @item.PrecioUnitario.ToString("#,#.00")</h5>
 
-                            <p class="">@item.Descripcion</p>
+                            <p class="description-text descripcion">@item.Descripcion</p>
                         </div>
                         <div class="box-footer">
                             <button class="btn btn-primary btn-block btnCarro" data-producto-codigo="@item.Codigo" data-producto-descripcion="@item.Descripcion" data-producto-nombre="@item.Nombre">Agregar a Carrito</button>

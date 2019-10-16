@@ -21,7 +21,6 @@ namespace WebApp.Controllers
         private IProductoBLL _productoBLL;
         private IMarcaBLL _marcaBLL;
 
-
         public ProductoController(IProductoBLL ProductoBLL, IMarcaBLL MarcaBLL)
         {
             this._productoBLL = ProductoBLL;
@@ -110,7 +109,7 @@ namespace WebApp.Controllers
 
 
 
-            if (producto.File == null)
+            if (producto.File != null)
             {
                 producto.SubirArchivo(producto);
 
@@ -190,6 +189,5 @@ namespace WebApp.Controllers
             }
 
         }
-
     }
 }

@@ -1,0 +1,43 @@
+﻿.bordes {
+    border-radius: 5px;
+}
+
+.modal-header {
+    padding: 9px 15px;
+    border-bottom: 1px solid #eee;
+    background-color: InfoBackground;
+}
+
+.modal-header .close {
+        margin-top: 2px
+    }
+
+.modal-header h3 {
+        margin: 0;
+        line-height: 30px
+    }
+
+.mayus {
+    text-transform: lowercase;
+}
+
+.img {
+    width: 70%;
+    height: 170px;
+}
+
+.botones-carro {
+    margin: 10px 5px;
+    border-radius: 5px;
+}
+
+.centrado {
+    text-align: center;
+}
+
+.descripcion {
+    width: 230px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

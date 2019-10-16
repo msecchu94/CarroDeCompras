@@ -33,7 +33,7 @@ $('#form-carro').on('submit', function (e) {
 
     $.ajax({
         method: 'POST',
-        url: 'Carro/Index',
+        url: 'Carro/Agregar',
         data: {
             cantidad: cantidad,
             codigoProducto: codigoProducto
@@ -47,7 +47,7 @@ $('#form-carro').on('submit', function (e) {
 
                 Swal.fire({
                     type: 'success',
-                    title: 'Pedido Enviado con Exito',
+                    title: 'Producto Agreagdo con Exito',
                     showConfirmButton: true,
                     timer: 1500
                 });
@@ -58,7 +58,7 @@ $('#form-carro').on('submit', function (e) {
             Swal.fire({
                 type: 'error',
                 title: 'Oops...',
-                text: 'Error al agregar al Pedido',
+                text: 'Error al agregar al Producto',
                 footer: '<a href>Why do I have this issue?</a>'
             });
             console.log(data);

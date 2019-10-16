@@ -29,13 +29,13 @@ $('#form-pedido').on('submit', function (e) {
     console.log(pedidoModel);
 
     Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
+        title: 'Seguro de Enviar Pedido?',
+        text: "Una vez confirmado no podra revertirlo!",
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
+        confirmButtonText: 'Yes, Enviar!'
 
     }).then((result) => {
 
@@ -70,7 +70,7 @@ $('#form-pedido').on('submit', function (e) {
                     Swal.fire({
                         type: 'error',
                         title: 'Oops...',
-                        text: 'Error al agregar el Pedido',
+                        text: 'Error al agregar el Pedido'
                     });
                     console.log(data);
 
@@ -99,4 +99,4 @@ $('.btnVerPedido').on('click', function () {
 
         });
 
-})
+});

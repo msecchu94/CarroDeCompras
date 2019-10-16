@@ -52,7 +52,7 @@ namespace WebApp.Models
 
 
         [Display(Name = "Archivo")]
-        //[Required(ErrorMessage = "seleccione archivo")]
+        [Required(ErrorMessage = "Seleccione archivo")]
         public HttpPostedFileBase File { get; set; }
 
         //[DataType()]

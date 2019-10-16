@@ -57,7 +57,7 @@ namespace WebApp
              "~/Content/SweetAlert2/sweetalert2.scss",
               "~/Content/SweetAlert2/toasts.scss",
                 "~/Content/SweetAlert2/variables.scss",
-               "~/Content/css/Login.css" ));
+               "~/Content/css/General.css" ));
 
 
         }

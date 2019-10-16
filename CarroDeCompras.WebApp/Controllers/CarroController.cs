@@ -28,8 +28,15 @@ namespace WebApp.Controllers
         }
 
         [HttpGet]
-        public ActionResult Index()
+        [Authorize]
+        public ActionResult Index(string permiso)
         {
+            if (permiso!=null)
+            {
+                ViewBag.Permiso = permiso;
+                return View();
+            }
+
             UsuarioDTO usuarioDTO = new UsuarioDTO()
             {
                 Usuario = User.Identity.Name
@@ -45,8 +52,15 @@ namespace WebApp.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(string cantidad, string codigoProducto)
+        [Authorize,ValidateAntiForgeryToken]
+        public ActionResult Agregar(string cantidad, string codigoProducto)
         {
+            if (User.IsInRole("ADMIN"))
+            {
+                string permiso = "Permiso Restringido, funcionalidad solo para Clientes";
+                return RedirectToAction("Index", permiso);
+            }
+
             var codigo = Convert.ToInt32(codigoProducto);
             var cantidadProducto = Convert.ToInt32(cantidad);
 
@@ -71,8 +85,9 @@ namespace WebApp.Controllers
             }
 
         }
-
+        
         [HttpPost]
+        [Authorize]
         public ActionResult EliminarItem(int codigo)
         {
             UsuarioDTO usuarioDTO = new UsuarioDTO()

@@ -2,8 +2,6 @@
     $('#form-crear').submit();
 });
 
-
-
 $('#form-crear').on('submit', function (e) {
 
     e.preventDefault();
@@ -11,8 +9,8 @@ $('#form-crear').on('submit', function (e) {
     var formData = new FormData(this);
 
     Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
+        title: 'Estas seguro de Agregar?',
+
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -24,12 +22,12 @@ $('#form-crear').on('submit', function (e) {
         if (result.value) {
 
             $.ajax({
-                method:'POST',
-            url:this.attributes.action.value,
-            data: formData,
-            contentType: false,
-            cache: false,
-            processData: false
+                method: 'POST',
+                url: this.attributes.action.value,
+                data: formData,
+                contentType: false,
+                cache: false,
+                processData: false
 
             })
                 .done(function (data) {
@@ -39,7 +37,7 @@ $('#form-crear').on('submit', function (e) {
 
                         Swal.fire({
                             type: 'success',
-                            title: 'Pedido Agregado con Exito',
+                            title: 'Producto Agregado con Exito',
                             showConfirmButton: false,
                             timer: 3000
                         });
@@ -47,12 +45,12 @@ $('#form-crear').on('submit', function (e) {
                     }
 
                 })
-                .fail(function(data) {
+                .fail(function (data) {
 
                     Swal.fire({
                         type: 'error',
                         title: 'Oops...',
-                        text: 'Error al agregar el Pedido'
+                        text: 'Error al agregar el Producto'
                     });
                     console.log(data);
 
@@ -67,8 +65,6 @@ $('#editar').on('click', function (e) {
     $('.form-editar').submit();
 });
 
-
-
 $('.form-editar').on('submit', function (e) {
 
     e.preventDefault();
@@ -77,21 +73,21 @@ $('.form-editar').on('submit', function (e) {
 
 
     Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
+        title: 'Estas seguro de Editar?',
+       
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
+        confirmButtonText: 'Si, Editar!'
 
     }).then((result) => {
 
         if (result.value) {
 
             $.ajax({
-                method:'POST',
-                url:this.attributes.action.value,
+                method: 'POST',
+                url: this.attributes.action.value,
                 data: formData,
                 contentType: false,
                 cache: false,
