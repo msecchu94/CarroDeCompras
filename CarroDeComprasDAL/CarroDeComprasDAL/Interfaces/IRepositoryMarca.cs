@@ -9,7 +9,7 @@ namespace CarroDeComprasDAL.Interfaces
 {
     public interface IRepositoryMarca
     {
-        IEnumerable<MarcaBE> CargarMarca();
+        IEnumerable<MarcaBE> CargarMarcas();
 
         MarcaBE ObtenerPorId(int Codigo);
 

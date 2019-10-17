@@ -9,9 +9,9 @@ namespace CarroDeComprasBLL.Interfaces
 {
     public interface ICarroBLL
     {
-        void AgregarCarro(int codigo, int cantidadProducto,int id);
+        void AgregarCarro(int _codigoProducto,int cantidadProducto,int idUsuario);
         PedidoDTO ObtenerCarro(int IdUsuario);
-        void EliminarItem(int codigo, int IdUsuario);
+        void EliminarItem(int codigoProducto,int IdUsuario);
         void VaciarCarro(int IdUsuario);
 
     }

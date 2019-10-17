@@ -31,7 +31,7 @@ namespace WebApp.Controllers
         [Authorize]
         public ActionResult Index(string permiso)
         {
-            if (permiso!=null)
+            if (permiso != null)
             {
                 ViewBag.Permiso = permiso;
                 return View();
@@ -47,21 +47,20 @@ namespace WebApp.Controllers
 
             var pedidoModels = Mapper.Map<PedidoModel>(getcarro);
 
-
             return View(pedidoModels);
         }
 
         [HttpPost]
-        [Authorize,ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Agregar(string cantidad, string codigoProducto)
         {
             if (User.IsInRole("ADMIN"))
             {
                 string permiso = "Permiso Restringido, funcionalidad solo para Clientes";
-                return RedirectToAction("Index", permiso);
+                return View("Index", permiso);
             }
 
-            var codigo = Convert.ToInt32(codigoProducto);
+            var _codigoProducto = Convert.ToInt32(codigoProducto);
             var cantidadProducto = Convert.ToInt32(cantidad);
 
             UsuarioModel usuarioModel = new UsuarioModel();
@@ -71,24 +70,34 @@ namespace WebApp.Controllers
             {
                 Usuario = usuarioModel.Usuario
             };
-
             var getIdUsuario = _usuarioBLL.ObtenerUsuario(usuarioDTO);
+
+            #region sumar item
+
+            var carroDTO = _carroBLL.ObtenerCarro(getIdUsuario.Id);
+            var carroModel = Mapper.Map<PedidoBE>(carroDTO);
+
+            foreach (var item in carroModel.DetallesPedido)
+            {
+                carroModel.DetallesPedido.First(x => x.CodigoProducto == _codigoProducto).Cantidad = cantidadProducto;
+            }
+
+            #endregion
 
             try
             {
-                _carroBLL.AgregarCarro(codigo, cantidadProducto, getIdUsuario.Id);
+                _carroBLL.AgregarCarro(_codigoProducto, cantidadProducto, getIdUsuario.Id);
                 return Json(new { Success = true });
             }
             catch (Exception)
             {
                 return Json(new { Success = false });
             }
-
         }
-        
+
         [HttpPost]
         [Authorize]
-        public ActionResult EliminarItem(int codigo)
+        public ActionResult EliminarItem(int codigoProducto)
         {
             UsuarioDTO usuarioDTO = new UsuarioDTO()
             {
@@ -99,7 +108,7 @@ namespace WebApp.Controllers
 
             try
             {
-                _carroBLL.EliminarItem(codigo, getid.Id);
+                _carroBLL.EliminarItem(codigoProducto, getid.Id);
                 return Json(new { Success = true });
             }
             catch (Exception)

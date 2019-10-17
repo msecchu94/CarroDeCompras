@@ -71,8 +71,7 @@ namespace CarroDeComprasBLL.Implementaciones
 
             return pedidosDTO;
         }
-
-
+        
         public PedidoDTO ObtenerPedido(int numPedido)
         {
             var getpedidoBE = _repositoryPedido.ObtenerPedido(numPedido);

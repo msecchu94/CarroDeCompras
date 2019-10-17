@@ -196,6 +196,8 @@ namespace CarroDeComprasDAL.Implementaciones
         public PedidoBE ObtenerPedido(int numPedido)
         {
 
+            #region Query
+          
             string getNumeroPedido = @"Select NumeroPedido,CodigoCliente,Fecha,Observacion FROM Pedidos WHERE NumeroPedido=@NumeroPedido ORDER BY Fecha ASC";
 
             string getDetallesPedidos = @"Select 
@@ -212,6 +214,8 @@ namespace CarroDeComprasDAL.Implementaciones
                                 ,p.[PrecioUnitario]
                                 FROM [DetallesPedidos] dp
                                 INNER JOIN Productos p  ON dp.[CodigoProducto]=p.Codigo ";
+
+            #endregion
 
             using (var Connection = _connectionFactory.CreateConnection())
             {
@@ -231,19 +235,14 @@ namespace CarroDeComprasDAL.Implementaciones
                     };
 
                 }, param: new { NumeroPedido = numPedido }, splitOn: "Split").ToList();
-
-
+                
                 foreach (var item in getpedido)
                 {
-
                     item.DetallesPedido = pedido.DetallesPedido.Where(d => d.NumeroPedido == item.NumeroPedido);
-
                 }
+
                 pedido = getpedido.First();
                 return pedido;
-
-
-
             }
         }
     }

@@ -31,7 +31,6 @@ namespace WebApp.Controllers
         public ActionResult Index(string mensaje)
         {
             ViewBag.Mensaje = mensaje;
-
             ProductoModel productoModel = new ProductoModel();
 
             try
@@ -61,7 +60,6 @@ namespace WebApp.Controllers
             {
                 throw ex;
             }
-
         }
 
         [HttpGet]
@@ -72,7 +70,7 @@ namespace WebApp.Controllers
 
             try
             {
-                var listamarcaDTO = _marcaBLL.CargarMarca();
+                var listamarcaDTO = _marcaBLL.CargarMarcas();
                 producto.ListaMarca = listamarcaDTO.Select(item => new Marca
                 {
                     Id = item.Id,
@@ -92,10 +90,9 @@ namespace WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Crear(Producto producto)
         {
-
             if (!ModelState.IsValid)
             {
-                var listamarcaDTO = _marcaBLL.CargarMarca();
+                var listamarcaDTO = _marcaBLL.CargarMarcas();
                 producto.ListaMarca = listamarcaDTO.Select(item => new Marca
                 {
                     Id = item.Id,
@@ -104,11 +101,7 @@ namespace WebApp.Controllers
                 }).ToList();
                 return View("Crear", producto);
             }
-
             #region File
-
-
-
             if (producto.File != null)
             {
                 producto.SubirArchivo(producto);
@@ -116,7 +109,6 @@ namespace WebApp.Controllers
                 ViewBag.Message = "Archivo cargado exitosamente !!!";
                 ModelState.Clear();
             }
-
             #endregion
 
             try
@@ -134,19 +126,19 @@ namespace WebApp.Controllers
                 return Json(new { Success = false });
 
             }
-            return Json(new { Success = true });
 
+            return Json(new { Success = true });
         }
 
         [HttpGet]
-        public ActionResult Editar(int codigo)
+        public ActionResult Editar(int códigoProducto)
         {
             try
             {
-                var productoDTO = _productoBLL.ObtenerPorId(codigo);
+                var productoDTO = _productoBLL.ObtenerPorCodigo(códigoProducto);
                 var producto = Mapper.Map<Producto>(productoDTO);
 
-                ViewBag.lista = _marcaBLL.CargarMarca();
+                ViewBag.lista = _marcaBLL.CargarMarcas();
                 return View(producto);
             }
             catch (Exception)
@@ -161,7 +153,7 @@ namespace WebApp.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ViewBag.lista = _marcaBLL.CargarMarca();
+                ViewBag.lista = _marcaBLL.CargarMarcas();
                 return View("Editar", producto);
             }
 
@@ -180,7 +172,6 @@ namespace WebApp.Controllers
                     return Json(new { Success = false });
                 }
                 return Json(new { Success = true });
-
             }
             catch (Exception ex)
             {

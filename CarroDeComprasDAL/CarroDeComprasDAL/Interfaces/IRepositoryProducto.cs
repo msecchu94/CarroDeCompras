@@ -20,7 +20,7 @@ namespace CarroDeComprasDAL.Interfaces
 
         bool AltaProducto(ProductoBE productoBE);
 
-        ProductoBE ObtenerPorId(int Codigo);
+        ProductoBE ObtenerPorCodigo(int códigoProducto);
 
         bool EditarProducto(ProductoBE productoBE);
 

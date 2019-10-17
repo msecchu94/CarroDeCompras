@@ -46,7 +46,7 @@ namespace WebApp.Controllers
         }
 
         [HttpPost, AllowAnonymous]
-        public ActionResult Login(UsuarioModel usuarioModel)       //   MODELO uSUARIO
+        public ActionResult Login(UsuarioModel usuarioModel)
         {
             string permiso = "";
 
@@ -57,10 +57,10 @@ namespace WebApp.Controllers
 
             try
             {
-                var usuarioDTO = Mapper.Map<UsuarioDTO>(usuarioModel);   //   MODELO DTO  NVO
-                var getUsuario = _usuarioBLL.ObtenerUsuario(usuarioDTO); //  METODO DTO
+                var usuarioDTO = Mapper.Map<UsuarioDTO>(usuarioModel);   //MODELO DTO NVO
+                var getUsuario = _usuarioBLL.ObtenerUsuario(usuarioDTO); //METODO DTO
 
-                var usuarioResult = Mapper.Map<UsuarioModel>(getUsuario);       //MODELO uSUARIO  NVO
+                var usuarioResult = Mapper.Map<UsuarioModel>(getUsuario); //MODELO uSUARIO resultante
 
                 if (!usuarioResult.Activo)
                 {
@@ -73,20 +73,19 @@ namespace WebApp.Controllers
                 {
                     usuarioModel.GenerarTicketCookie(Response, usuarioResult);
 
+                    permiso = "Bienvenido ";
                     if (usuarioResult.IdRol == "CLI")
                     {
-                        permiso = "Bienvenido ";
                         return RedirectToAction("Index", "Catalogo", new { mensaje = permiso });
                     }
-                    permiso = "Bienvenido ";
                     return RedirectToAction("Index", "Producto", new { mensaje = permiso });
                 }
-
                 else
                 {
                     permiso = "Contraseña no válida";
                     return RedirectToAction("Index", new { permiso });
                 }
+
             }
             catch (Exception)
             {
@@ -100,7 +99,6 @@ namespace WebApp.Controllers
         [Authorize]
         public ActionResult LogOut()
         {
-
             #region Opciones
 
             //1
@@ -123,12 +121,12 @@ namespace WebApp.Controllers
 
             #endregion
 
-            //3
-
             FormsAuthentication.SignOut();
             Response.Cookies.Remove(FormsAuthentication.FormsCookieName);
+
             Response.Cache.SetExpires(DateTime.Now.AddSeconds(-1));
             HttpCookie cookie = HttpContext.Request.Cookies[FormsAuthentication.FormsCookieName];
+
             if (cookie != null)
             {
                 cookie.Expires = DateTime.Now.AddDays(-1);
@@ -141,12 +139,10 @@ namespace WebApp.Controllers
         [HttpGet, Authorize]
         public ActionResult ModificarPassword()
         {
-
             UsuarioModel usuario = new UsuarioModel();
             usuario.Usuario = User.Identity.GetUserName();
 
             return View(usuario);
-
         }
 
         [Authorize, HttpPost]
@@ -159,6 +155,7 @@ namespace WebApp.Controllers
             {
                 usuarioModel.Password = string.Empty;
                 usuarioModel.PasswordNueva = string.Empty;
+
                 usuarioModel.PasswordConfirmada = string.Empty;
                 return View("ModificarPassword", usuarioModel);
             }
@@ -183,10 +180,10 @@ namespace WebApp.Controllers
 
             try
             {
-                var usuarioDTO = Mapper.Map<UsuarioDTO>(usuarioModel);     //model a dto
+                var usuarioDTO = Mapper.Map<UsuarioDTO>(usuarioModel);
                 var getUsuario = _usuarioBLL.ObtenerUsuario(usuarioDTO);
 
-                var usuarioResult = Mapper.Map<UsuarioModel>(getUsuario);     //DTO A MODEL
+                var usuarioResult = Mapper.Map<UsuarioModel>(getUsuario);
 
                 if (usuarioModel.VerificarHashedPassword(usuarioModel.Password, usuarioResult.Password, usuarioResult.PasswordSalt) == true)
                 {
@@ -237,6 +234,7 @@ namespace WebApp.Controllers
         public ActionResult Registro(UsuarioModel usuariomodel)
         {
             string mensaje = "";
+
             UsuarioDTO usuarioDTO = null;
             string passwordHash, passwordSalt;
 
@@ -282,7 +280,6 @@ namespace WebApp.Controllers
                 ViewBag.msjExito = TempData["msjExito"];
 
                 return RedirectToAction("Registro");
-
             }
             catch (Exception)
             {

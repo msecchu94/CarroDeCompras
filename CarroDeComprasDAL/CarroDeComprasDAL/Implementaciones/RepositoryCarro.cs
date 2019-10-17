@@ -23,16 +23,16 @@ namespace CarroDeComprasDAL.Implementaciones
             this._connectionFactory = ConnectionFactory;
         }
         
-        public void AgragarCarro(int codigo, int cantidadProducto, int id)
+        public void AgragarCarro(int codigoProducto, int cantidadProducto, int idUsuario)
         {
-            string InsertCarro = @"INSERT INTO Carro(IdUsuario,Cantidad,CodigoProducto) VALUES(@id,@cantidadProducto,@codigo)";
+            string InsertCarro = @"INSERT INTO Carro(IdUsuario,Cantidad,CodigoProducto) VALUES(@idUsuario,@cantidadProducto,@codigoProducto)";
 
             using (var Connection = _connectionFactory.CreateConnection())
             {
 
                 try
                 {
-                    var result = Connection.Execute(InsertCarro, param: new { id, cantidadProducto, codigo });
+                    var result = Connection.Execute(InsertCarro, param: new { idUsuario,cantidadProducto, codigoProducto });
                 }
                 catch (Exception ex)
                 {
@@ -65,7 +65,7 @@ namespace CarroDeComprasDAL.Implementaciones
                 try
                 {
                     PedidoBE pedidoBE = new PedidoBE();
-                    pedidoBE.DetallesPedido = Connection.Query<CarroBE, ProductoBE, DetallePedidoBE>(ObtenerCarro + " WHERE c.[IdUsuario]=@IdUsuario", (carro, producto) =>
+                    pedidoBE.DetallesPedido = Connection.Query<CarroBE, ProductoBE, DetallePedidoBE>(ObtenerCarro + " WHERE c.[IdUsuario]=@IdUsuario",(carro, producto) =>
                               {
                                   return new DetallePedidoBE
                                   {
@@ -86,16 +86,16 @@ namespace CarroDeComprasDAL.Implementaciones
             }
         }
 
-        public void EliminarItem(int codigo, int IdUsuario)
+        public void EliminarItem(int codigoProducto, int IdUsuario)
         {
-            string EliminarItem = @"DELETE FROM Carro WHERE CodigoProducto=@codigo AND IdUsuario=@IdUsuario ";
+            string EliminarItem = @"DELETE FROM Carro WHERE CodigoProducto=@codigoProducto AND IdUsuario=@IdUsuario ";
 
             using (var Connection = _connectionFactory.CreateConnection())
             {
 
                 try
                 {
-                    var Eliminar = Connection.Execute(EliminarItem, param: new { codigo, IdUsuario });
+                    var Eliminar = Connection.Execute(EliminarItem, param: new { codigoProducto, IdUsuario });
                 }
                 catch (Exception E)
                 {

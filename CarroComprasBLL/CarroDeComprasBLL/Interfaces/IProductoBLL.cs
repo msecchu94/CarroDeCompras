@@ -16,9 +16,8 @@ namespace CarroDeComprasBLL.Interfaces
 
         bool AltaProducto(ProductoDTO productosDTO);
 
-        ProductoDTO ObtenerPorId(int codigo);
+        ProductoDTO ObtenerPorCodigo(int códigoProducto);
 
         bool EditarProducto(ProductoDTO productoDTO);
-
     }
 }

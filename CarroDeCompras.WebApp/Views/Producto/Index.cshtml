@@ -17,7 +17,6 @@
                 let timerInterval
                 Swal.fire({
                     title:  '@ViewBag.Mensaje @User.Identity.Name!',
-                    //html: 'I will close in <strong></strong> milliseconds.',
                     timer: 2000,
                     onBeforeOpen: ()=>{
                         Swal.showLoading()
@@ -31,8 +30,7 @@
             }
             }).then((result) => {
                 if (
-                    /* Read more about handling dismissals below */
-                    result.dismiss === Swal.DismissReason.timer
+                result.dismiss === Swal.DismissReason.timer
                 ) {
                 console.log('I was closed by the timer')
             }
@@ -43,14 +41,13 @@
     }
 
     @*<section class="content-header">
-        <h1>
-            Administrador
+            <h1>
+                Administrador
 
-            <small>Listado Productos</small>
-        </h1>
-        <ol class="breadcrumb"></ol>
-    </section>*@
-
+                <small>Listado Productos</small>
+            </h1>
+            <ol class="breadcrumb"></ol>
+        </section>*@
 
     <section class="content">
         <div class="row">
@@ -102,7 +99,7 @@
                                             @Html.DisplayFor(modelItem => item.Activo)
                                         </td>
                                         <td>
-                                            @Html.ActionLink("Editar", "Editar", new { Codigo = item.Codigo }, new { @class = "btn btn-primary btn-sm btn-block ", span = "icon ion-edit" })
+                                            @Html.ActionLink("Editar", "Editar", new { códigoProducto = item.Codigo }, new { @class = "btn btn-primary btn-sm btn-block ", span = "icon ion-edit" })
                                         </td>
                                     </tr>
                                 }

@@ -19,6 +19,7 @@ namespace WebApp.Models
         }
 
         public int Id { get; set; }
+
         public string IdRol { get; set; }
 
         [DataType(DataType.Text)]
@@ -61,32 +62,29 @@ namespace WebApp.Models
             }
         }
 
-
-
         public bool VerificarHashedPassword(string password, string hashedPasswordBase64, string saltBase64)
         {
-            var salt = Convert.FromBase64String(saltBase64);// string de salt obtenido de db transf bytes[]
+            var salt = Convert.FromBase64String(saltBase64); // string de salt obtenido de db transf bytes[]
 
             using (var hmac = new HMACSHA512(salt))
             {
-                var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password)); // hashea pass ingresado  con salt 
-                var computedHashBase64 = Convert.ToBase64String(computedHash);// convierte this  hash en string 
+                var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));  //hashea pass ingresado con salt 
+                var computedHashBase64 = Convert.ToBase64String(computedHash); //convierte this hash en string 
 
-                return hashedPasswordBase64 == computedHashBase64;//compara password hasheada de db con hash de contraseña ingresado
+                return hashedPasswordBase64 == computedHashBase64; //compara password hasheada de db con hash de contraseña ingresado
             }
         }
 
-
         public void GenerarTicketCookie(HttpResponseBase response, UsuarioModel usuariomodel)
         {
-            // generar ticket
+           
             FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(
                 version: 1,
                 name: usuariomodel.Usuario,
                 issueDate: DateTime.Now,
                 expiration: DateTime.Now.AddMinutes(20),
                 isPersistent: false,
-                userData: usuariomodel.IdRol.ToString(), //chequear el user data
+                userData: usuariomodel.IdRol.ToString(),
                 cookiePath: "/");
 
             // guardar cookie

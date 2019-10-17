@@ -26,6 +26,7 @@ namespace WebApp.Controllers
             this._pedidoBLL = PedidoBLL;
         }
 
+        [HttpGet,]
         public ActionResult Index()
         {
             UsuarioDTO usuarioDTO = new UsuarioDTO()
@@ -35,7 +36,7 @@ namespace WebApp.Controllers
 
             if (User.IsInRole("ADMIN"))
             {
-                var getIdUsuario = _usuarioBLL.ObtenerUsuario(usuarioDTO);
+                //var getIdUsuario = _usuarioBLL.ObtenerUsuario(usuarioDTO);
                 var getPedidos = _pedidoBLL.ObtenerPedidos();
                 var pedidoModel = Mapper.Map<IEnumerable<PedidoModel>>(getPedidos);
 
@@ -45,7 +46,9 @@ namespace WebApp.Controllers
             {
                 var getIdUsuario = _usuarioBLL.ObtenerUsuario(usuarioDTO);
                 var getPedidos = _pedidoBLL.ObtenerPedidosXusuario(getIdUsuario.Id);
+
                 var pedidoModel = Mapper.Map<IEnumerable<PedidoModel>>(getPedidos);
+
                 return View(pedidoModel);
             }
 
@@ -100,8 +103,7 @@ namespace WebApp.Controllers
             }
 
         }
-
-
+        
         [HttpPost]
         public ActionResult _ModalPedido(int numeroPedido)
         {
@@ -114,7 +116,7 @@ namespace WebApp.Controllers
             var pedidoDTO = _pedidoBLL.ObtenerPedido(numeroPedido);
             var pedidoModel = Mapper.Map<PedidoModel>(pedidoDTO);
 
-            return PartialView("_ModalPedido", pedidoModel);
+            return PartialView("_ModalPedido",pedidoModel);
         }
     }
 }

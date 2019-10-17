@@ -69,12 +69,11 @@ $('.form-editar').on('submit', function (e) {
 
     e.preventDefault();
     console.log(this);
-    var formData = new FormData(this);
 
+    var formData = new FormData(this);
 
     Swal.fire({
         title: 'Estas seguro de Editar?',
-       
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -82,7 +81,6 @@ $('.form-editar').on('submit', function (e) {
         confirmButtonText: 'Si, Editar!'
 
     }).then((result) => {
-
         if (result.value) {
 
             $.ajax({
@@ -95,8 +93,8 @@ $('.form-editar').on('submit', function (e) {
 
             })
                 .done(function (data) {
-                    console.log(data);
 
+                    console.log(data);
                     if (data.Success) {
 
                         Swal.fire({
@@ -117,7 +115,6 @@ $('.form-editar').on('submit', function (e) {
                     });
                     console.log(data);
                 });
-
         }
     });
 

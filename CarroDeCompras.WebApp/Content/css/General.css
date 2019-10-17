@@ -8,11 +8,11 @@
     background-color: InfoBackground;
 }
 
-.modal-header .close {
+    .modal-header .close {
         margin-top: 2px
     }
 
-.modal-header h3 {
+    .modal-header h3 {
         margin: 0;
         line-height: 30px
     }
@@ -36,7 +36,6 @@
 }
 
 .descripcion {
-    width: 230px;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;

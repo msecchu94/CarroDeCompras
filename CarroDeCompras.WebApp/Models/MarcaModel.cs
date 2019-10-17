@@ -13,7 +13,7 @@ namespace WebApp.Models
 
     public class Marca 
     {
-
+        [Key]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "El campo {0} es Obligatorio")]

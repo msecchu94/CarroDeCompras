@@ -20,12 +20,12 @@ namespace CarroDeComprasBLL.Implementaciones
             this._repositoryMarca = repositoryMarca;
         }
 
-        public IEnumerable<MarcaDTO> CargarMarca()
+        public IEnumerable<MarcaDTO> CargarMarcas()
         {
 
             try
             {
-                var marcaBE = _repositoryMarca.CargarMarca();
+                var marcaBE = _repositoryMarca.CargarMarcas();
                 var marcaDTO = marcaBE.Select(itemBE => new MarcaDTO
                       {
                           Id = itemBE.Id,

@@ -17,8 +17,7 @@ namespace WebApp.Controllers
     {
         private IProductoBLL _productoBLL;
         private IMarcaBLL _MarcaBLL;
-
-
+        
         public CatalogoController(IProductoBLL productoBLL, IMarcaBLL MarcaBLL, IPedidoBLL PedidoBLL)
         {
             this._productoBLL = productoBLL;
@@ -29,42 +28,32 @@ namespace WebApp.Controllers
         public ActionResult Index(string mensaje)
         {
             ViewBag.Mensaje = mensaje;
-
             if (!User.Identity.IsAuthenticated)
             {
                 return RedirectToAction("Index", "Login");
             }
-
+            
             ProductoModel productoModel = new ProductoModel();
-            try
-            {
-                var productoDTO = _productoBLL.ObtenerProductosActivos();
+            var productoDTO = _productoBLL.ObtenerProductosActivos();
 
-                productoModel.ListaDeProductos = productoDTO.Select(item => new Producto
+            productoModel.ListaDeProductos = productoDTO.Select(item => new Producto
+            {
+                Activo = item.Activo,
+                Codigo = item.Codigo,
+                Descripcion = item.Descripcion,
+                IdMarca = item.IdMarca,
+                Nombre = item.Nombre,
+                PrecioUnitario = item.PrecioUnitario,
+                UrlImange = item.UrlImange,
+                Marca = new Marca
                 {
-                    Activo = item.Activo,
-                    Codigo = item.Codigo,
-                    Descripcion = item.Descripcion,
-                    IdMarca = item.IdMarca,
-                    Nombre = item.Nombre,
-                    PrecioUnitario = item.PrecioUnitario,
-                    UrlImange = item.UrlImange,
-                    Marca = new Marca
-                    {
-                        Id = item.Marca.Id,
-                        Nombre = item.Marca.Nombre
-                    }
+                    Id = item.Marca.Id,
+                    Nombre = item.Marca.Nombre
+                }
 
-                });
+            });
 
-                return View(productoModel);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            return View(productoModel);
         }
-
-
     }
 }

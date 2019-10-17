@@ -1,7 +1,7 @@
 ﻿@model WebApp.Models.PedidoModel
 
 @{
-        ViewBag.Title ="Mi Carro de Compras";
+    ViewBag.Title = "Mi Carro de Compras";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -25,7 +25,6 @@
     <section class="content-header">
         <h1>
             Carrito de Compras
-
             <i class="fa fa-cart-plus" aria-hidden="true"></i>
         </h1>
         <ol class="breadcrumb"></ol>
@@ -74,7 +73,6 @@
                                                 <th></th>
                                             </tr>
                                         </thead>
-
                                         <tbody>
                                             @foreach (var item in Model.DetallesPedido)
                                             {

@@ -10,10 +10,11 @@ namespace CarroDeComprasBLL.Interfaces
     public interface IPedidoBLL
     {
         bool AgregarPedido(PedidoDTO pedidoDTO);
+
         IEnumerable<PedidoDTO> ObtenerPedidosXusuario(int idUsuario);
+
         IEnumerable<PedidoDTO> ObtenerPedidos();
 
         PedidoDTO ObtenerPedido(int numPedido);
-
     }
 }

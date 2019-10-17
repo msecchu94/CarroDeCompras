@@ -50,22 +50,12 @@ namespace CarroDeComprasBLL.Implementaciones
             }
         }
 
-        public ProductoDTO ObtenerPorId(int codigo)
+        public ProductoDTO ObtenerPorCodigo(int códigoProducto)
         {
+            var productosBE = _repositoryProducto.ObtenerPorCodigo(códigoProducto);
+            var productosDTO = Mapper.Map<ProductoDTO>(productosBE);
 
-            try
-            {
-                var productosBE = _repositoryProducto.ObtenerPorId(codigo);
-
-                var productosDTO = Mapper.Map<ProductoDTO>(productosBE);
-
-                return productosDTO;
-
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            return productosDTO;
         }
 
         public bool EditarProducto(ProductoDTO productoDTO)
@@ -85,17 +75,10 @@ namespace CarroDeComprasBLL.Implementaciones
 
         public IEnumerable<ProductoDTO> ObtenerProductosActivos()
         {
-            try
-            {
-                var productosBE = _repositoryProducto.ObtenerProductosActivos();
-                var productosDTO = Mapper.Map<IEnumerable<ProductoDTO>>(productosBE);
+            var productosBE = _repositoryProducto.ObtenerProductosActivos();
+            var productosDTO = Mapper.Map<IEnumerable<ProductoDTO>>(productosBE);
 
-                return productosDTO;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            return productosDTO;
         }
     }
 }

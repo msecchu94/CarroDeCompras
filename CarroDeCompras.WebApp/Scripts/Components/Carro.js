@@ -21,7 +21,6 @@
 $('.btnAgregarCarro').on('click', function (e) {
     $('#form-carro').submit();
 });
-//Agregar Carrito
 
 $('#form-carro').on('submit', function (e) {
 
@@ -30,6 +29,7 @@ $('#form-carro').on('submit', function (e) {
 
     const cantidad = $(".Cantidad").val();
     const codigoProducto = $(".codigoProducto").val();
+    console.log(codigoProducto);
 
     $.ajax({
         method: 'POST',
@@ -59,21 +59,18 @@ $('#form-carro').on('submit', function (e) {
                 type: 'error',
                 title: 'Oops...',
                 text: 'Error al agregar al Producto',
-                footer: '<a href>Why do I have this issue?</a>'
             });
             console.log(data);
-
         });
 });
 
-//eliminar item carro
 $('.eliminar').on('click', function (e) {
     e.preventDefault();
 
     console.log(this);
 
     var tr = $(this).closest('tr');
-    const codigo = tr.data('codigo-producto');
+    const codigoProducto = tr.data('codigo-producto');
     console.log(codigo);
 
     Swal.fire({
@@ -89,40 +86,39 @@ $('.eliminar').on('click', function (e) {
 
             $.ajax({
                 method: 'POST',
-            url: 'Carro/EliminarItem',
-            data: {
-                codigo: codigo
-            }
-        }).done(function (data) {
-            console.log(data);
+                url: 'Carro/EliminarItem',
+                data: {
+                    codigoProducto: codigoProducto
+                }
+            }).done(function (data) {
+                console.log(data);
 
-            if (data.Success) {
-                tr.remove();
-                location.reload();
+                if (data.Success) {
+                    tr.remove();
+                    location.reload();
 
-                Swal.fire({
-                    type: 'success',
-                    title: 'Producto Eliminado con Exito',
-                    showConfirmButton: true,
-                    timer: 1500
-                });
-            }
-        })
-                        .fail(function (data) {
+                    Swal.fire({
+                        type: 'success',
+                        title: 'Producto Eliminado con Exito',
+                        showConfirmButton: true,
+                        timer: 1500
+                    });
+                }
+            })
+                .fail(function (data) {
 
                     Swal.fire({
                         type: 'error',
                         title: 'Oops...',
                         text: 'Error al Eliminar al Producto'
-                                            
+
                     });
                     console.log(data);
                 });
-}
-});
+        }
+    });
 });
 
-// modificar cantidad en carro
 $('.cantidad').on('change', function () {
 
 

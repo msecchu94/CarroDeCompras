@@ -6,8 +6,8 @@ $('#form-pedido').on('submit', function (e) {
 
     e.preventDefault();
     console.log(this);
-    console.log('Submit form carrito');
 
+    console.log('Submit form carrito');
 
     let DetallesPedido = [];
     let pedidoModel = {
@@ -75,7 +75,6 @@ $('#form-pedido').on('submit', function (e) {
                     console.log(data);
 
                 });
-
         }
     });
 

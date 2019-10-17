@@ -23,17 +23,15 @@ namespace CarroDeComprasBLL.Implementaciones
             this._productoBLL = productoBLL;
         }
 
-        public void AgregarCarro(int codigo, int cantidadProducto, int id)
+        public void AgregarCarro(int _codigoProducto, int cantidadProducto,int idUsuario)
         {
-            _repositoryCarro.AgragarCarro(codigo, cantidadProducto, id);
+            _repositoryCarro.AgragarCarro(_codigoProducto,cantidadProducto,idUsuario);
         }
 
         public PedidoDTO ObtenerCarro(int IdUsuario)
         {
             var carroBE = _repositoryCarro.ObtenerCarro(IdUsuario);
-
             var pedidoDTO = Mapper.Map<PedidoDTO>(carroBE);
-
 
             return pedidoDTO;
         }
@@ -43,10 +41,9 @@ namespace CarroDeComprasBLL.Implementaciones
             _repositoryCarro.VaciarCarro(IdUsuario);
         }
 
-
-        public void EliminarItem(int codigo, int IdUsuario)
+        public void EliminarItem(int codigoProducto, int IdUsuario)
         {
-            _repositoryCarro.EliminarItem(codigo, IdUsuario);
+            _repositoryCarro.EliminarItem(codigoProducto, IdUsuario);
         }
     }
 }

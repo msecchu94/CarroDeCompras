@@ -15,7 +15,7 @@ namespace CarroDeComprasDAL.Implementaciones
     {
         public SqlConnection ConnectionString = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionTable"].ConnectionString);
 
-        public IEnumerable<MarcaBE> CargarMarca()
+        public IEnumerable<MarcaBE> CargarMarcas()
         {
             try
             {

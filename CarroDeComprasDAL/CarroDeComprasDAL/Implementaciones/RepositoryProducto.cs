@@ -15,8 +15,6 @@ namespace CarroDeComprasDAL.Implementaciones
 {
     public class RepositoryProducto : IRepositoryProducto
     {
-
-
         private readonly IConnectionFactory _connectionFactory;
 
         #region QueryObtener
@@ -43,10 +41,9 @@ namespace CarroDeComprasDAL.Implementaciones
             this._connectionFactory = ConnectionFactory;
         }
 
-
         public IEnumerable<ProductoBE> ObtenerProductos()
         {
- 
+
 
             using (var Connection = _connectionFactory.CreateConnection())
             {
@@ -76,13 +73,12 @@ namespace CarroDeComprasDAL.Implementaciones
             string sqlInsert = @"INSERT into Productos(Activo,Nombre,Descripcion,IdMarca,PrecioUnitario,UrlImange)
                  VALUES(@Activo,@Nombre,@Descripcion,@IdMarca,@PrecioUnitario,@UrlImange)";
 
-             #endregion
+            #endregion
 
             using (var Connection = _connectionFactory.CreateConnection())
             {
                 try
                 {
-
                     var result = Connection.Execute(sqlInsert, param: productoBE);
 
                     if (result == 1)
@@ -93,7 +89,6 @@ namespace CarroDeComprasDAL.Implementaciones
                     {
                         return false;
                     }
-
                 }
                 catch (Exception ex)
                 {
@@ -102,7 +97,7 @@ namespace CarroDeComprasDAL.Implementaciones
             }
         }
 
-        public ProductoBE ObtenerPorId(int codigo)
+        public ProductoBE ObtenerPorCodigo(int códigoProducto)
         {
             #region Query
 
@@ -123,8 +118,7 @@ namespace CarroDeComprasDAL.Implementaciones
                 try
                 {
                     ProductoBE productoBE = new ProductoBE();
-
-                    productoBE = Connection.Query<ProductoBE>(sqlObtenerId, param: new { Codigo = codigo }).Single();
+                    productoBE = Connection.Query<ProductoBE>(sqlObtenerId, param: new { Codigo = códigoProducto }).Single();
 
                     return productoBE;
                 }
@@ -133,9 +127,6 @@ namespace CarroDeComprasDAL.Implementaciones
                     throw ex;
                 }
             }
-
-
-
         }
 
         public bool EditarProducto(ProductoBE productoBE)
@@ -183,12 +174,12 @@ namespace CarroDeComprasDAL.Implementaciones
             {
                 try
                 {
-                    var lista = Connection.Query<ProductoBE, MarcaBE, ProductoBE>(sqlObtener+ " WHERE p.[Activo]=1", (producto, marca) =>
-                    {
-                        producto.Marca = marca;
-                        return producto;
+                    var lista = Connection.Query<ProductoBE, MarcaBE, ProductoBE>(sqlObtener + " WHERE p.[Activo]=1", (producto, marca) =>
+                     {
+                         producto.Marca = marca;
+                         return producto;
 
-                    }, splitOn: "Split");
+                     }, splitOn: "Split");
 
                     return lista;
                 }

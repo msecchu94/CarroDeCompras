@@ -9,9 +9,9 @@ namespace CarroDeComprasBLL.Interfaces
 {
     public interface IMarcaBLL
     {
-      IEnumerable <MarcaDTO> CargarMarca();
+      IEnumerable <MarcaDTO> CargarMarcas();
 
-        MarcaDTO ObtenerPorId(int Codigo);
+      MarcaDTO ObtenerPorId(int Codigo);
 
     }
 }
