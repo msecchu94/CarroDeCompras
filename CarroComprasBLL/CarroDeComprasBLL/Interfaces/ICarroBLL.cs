@@ -13,6 +13,8 @@ namespace CarroDeComprasBLL.Interfaces
         PedidoDTO ObtenerCarro(int IdUsuario);
         void EliminarItem(int codigoProducto,int IdUsuario);
         void VaciarCarro(int IdUsuario);
+        void ModificarCarro(int _codigoProducto, int suma);
+
 
     }
 }

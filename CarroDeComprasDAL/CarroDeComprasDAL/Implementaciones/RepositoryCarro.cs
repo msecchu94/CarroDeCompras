@@ -22,7 +22,7 @@ namespace CarroDeComprasDAL.Implementaciones
         {
             this._connectionFactory = ConnectionFactory;
         }
-        
+
         public void AgragarCarro(int codigoProducto, int cantidadProducto, int idUsuario)
         {
             string InsertCarro = @"INSERT INTO Carro(IdUsuario,Cantidad,CodigoProducto) VALUES(@idUsuario,@cantidadProducto,@codigoProducto)";
@@ -32,11 +32,11 @@ namespace CarroDeComprasDAL.Implementaciones
 
                 try
                 {
-                    var result = Connection.Execute(InsertCarro, param: new { idUsuario,cantidadProducto, codigoProducto });
+                    var result = Connection.Execute(InsertCarro, param: new { idUsuario, cantidadProducto, codigoProducto });
                 }
                 catch (Exception ex)
                 {
-                    throw ex ;
+                    throw ex;
                 }
             }
         }
@@ -65,7 +65,7 @@ namespace CarroDeComprasDAL.Implementaciones
                 try
                 {
                     PedidoBE pedidoBE = new PedidoBE();
-                    pedidoBE.DetallesPedido = Connection.Query<CarroBE, ProductoBE, DetallePedidoBE>(ObtenerCarro + " WHERE c.[IdUsuario]=@IdUsuario",(carro, producto) =>
+                    pedidoBE.DetallesPedido = Connection.Query<CarroBE, ProductoBE, DetallePedidoBE>(ObtenerCarro + " WHERE c.[IdUsuario]=@IdUsuario", (carro, producto) =>
                               {
                                   return new DetallePedidoBE
                                   {
@@ -73,7 +73,7 @@ namespace CarroDeComprasDAL.Implementaciones
                                       ProductoBE = producto
                                   };
 
-                              }, param: new { IdUsuario = IdUsuario }, splitOn: "Split");
+                              }, param: new { IdUsuario }, splitOn: "Split");
 
                     return pedidoBE;
                 }
@@ -105,7 +105,7 @@ namespace CarroDeComprasDAL.Implementaciones
 
             }
         }
-        
+
         public void VaciarCarro(int IdUsuario)
         {
             string VaciarCarro = @"DELETE FROM Carro WHERE  IdUsuario=@IdUsuario";
@@ -115,6 +115,26 @@ namespace CarroDeComprasDAL.Implementaciones
                 try
                 {
                     Connection.Execute(VaciarCarro, param: new { IdUsuario });
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+        }
+
+
+        public void ModificarCarro(int _codigoProducto, int suma)
+        {
+            string ActualizarCarro = @"UPDATE Carro 
+                                SET Cantidad=@suma
+                                WHERE CodigoProducto=@_codigoProducto";
+
+            using (var Connection = _connectionFactory.CreateConnection())
+            {
+                try
+                {
+                    Connection.Execute(ActualizarCarro, param: new { _codigoProducto, suma });
                 }
                 catch (Exception)
                 {

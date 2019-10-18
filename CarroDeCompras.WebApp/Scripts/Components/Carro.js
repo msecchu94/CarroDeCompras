@@ -54,7 +54,6 @@ $('#form-carro').on('submit', function (e) {
             }
         })
         .fail(function (data) {
-
             Swal.fire({
                 type: 'error',
                 title: 'Oops...',
@@ -71,10 +70,10 @@ $('.eliminar').on('click', function (e) {
 
     var tr = $(this).closest('tr');
     const codigoProducto = tr.data('codigo-producto');
-    console.log(codigo);
+    console.log(codigoProducto);
 
     Swal.fire({
-        title: 'Estas Seguro?',
+        title:'Estas Seguro?',
         text: "Una vez confirmado, no podrás revertir !",
         type: 'warning',
         showCancelButton: true,
@@ -85,26 +84,26 @@ $('.eliminar').on('click', function (e) {
         if (result.value) {
 
             $.ajax({
-                method: 'POST',
-                url: 'Carro/EliminarItem',
-                data: {
-                    codigoProducto: codigoProducto
-                }
-            }).done(function (data) {
-                console.log(data);
+        method: 'POST',
+    url: 'Carro/EliminarItem',
+    data: {
+        codigoProducto: codigoProducto
+    }
+}).done(function (data) {
+    console.log(data);
 
-                if (data.Success) {
-                    tr.remove();
-                    location.reload();
+    if (data.Success) {
+        tr.remove();
+        location.reload();
 
-                    Swal.fire({
-                        type: 'success',
-                        title: 'Producto Eliminado con Exito',
-                        showConfirmButton: true,
-                        timer: 1500
-                    });
-                }
-            })
+        Swal.fire({
+            type: 'success',
+            title: 'Producto Eliminado con Exito',
+            showConfirmButton: true,
+            timer: 1500
+        });
+    }
+})
                 .fail(function (data) {
 
                     Swal.fire({
@@ -115,8 +114,8 @@ $('.eliminar').on('click', function (e) {
                     });
                     console.log(data);
                 });
-        }
-    });
+}
+});
 });
 
 $('.cantidad').on('change', function () {

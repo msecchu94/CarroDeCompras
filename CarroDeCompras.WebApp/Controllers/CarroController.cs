@@ -71,23 +71,32 @@ namespace WebApp.Controllers
                 Usuario = usuarioModel.Usuario
             };
             var getIdUsuario = _usuarioBLL.ObtenerUsuario(usuarioDTO);
-
-            #region sumar item
-
-            var carroDTO = _carroBLL.ObtenerCarro(getIdUsuario.Id);
-            var carroModel = Mapper.Map<PedidoBE>(carroDTO);
-
-            foreach (var item in carroModel.DetallesPedido)
-            {
-                carroModel.DetallesPedido.First(x => x.CodigoProducto == _codigoProducto).Cantidad = cantidadProducto;
-            }
-
-            #endregion
-
             try
             {
-                _carroBLL.AgregarCarro(_codigoProducto, cantidadProducto, getIdUsuario.Id);
+                #region sumar item
+
+                //traemos carro 
+
+                var carroDTO = _carroBLL.ObtenerCarro(getIdUsuario.Id);
+                var carroModel = Mapper.Map<PedidoBE>(carroDTO);
+
+                //comparamos
+
+                foreach (var item in carroModel.DetallesPedido)
+                {
+                    if (carroModel.DetallesPedido.First().CodigoProducto == _codigoProducto)
+                    {
+                        int suma = carroModel.DetallesPedido.First().Cantidad + cantidadProducto;
+                        _carroBLL.ModificarCarro(_codigoProducto, suma);
+                    }
+                    else
+                    {
+                        _carroBLL.AgregarCarro(_codigoProducto, cantidadProducto, getIdUsuario.Id);
+                    }
+                }
+
                 return Json(new { Success = true });
+                #endregion
             }
             catch (Exception)
             {
