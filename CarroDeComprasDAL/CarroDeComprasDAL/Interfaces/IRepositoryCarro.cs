@@ -14,5 +14,6 @@ namespace CarroDeComprasDAL.Interfaces
         void EliminarItem(int codigo, int IdUsuario);
         void VaciarCarro(int IdUsuario);
         void ModificarCarro(int _codigoProducto, int suma);
+        bool CompararContenido(int _codigoProducto,int idUsuario);
     }
 }

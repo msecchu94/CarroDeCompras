@@ -46,6 +46,7 @@ namespace WebApp.Controllers
         }
 
         [HttpPost, AllowAnonymous]
+        [ValidateAntiForgeryToken]
         public ActionResult Login(UsuarioModel usuarioModel)
         {
             string permiso = "";

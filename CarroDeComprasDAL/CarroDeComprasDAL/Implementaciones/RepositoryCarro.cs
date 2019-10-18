@@ -123,7 +123,6 @@ namespace CarroDeComprasDAL.Implementaciones
             }
         }
 
-
         public void ModificarCarro(int _codigoProducto, int suma)
         {
             string ActualizarCarro = @"UPDATE Carro 
@@ -141,6 +140,30 @@ namespace CarroDeComprasDAL.Implementaciones
                     throw;
                 }
             }
+        }
+
+        public bool CompararContenido(int _codigoProducto,int idUsuario)
+        {
+            string sqlComparar = @"Select COUNT (*) FROM Carro WHERE CodigoProducto=@_codigoProducto AND IdUsuario=@idUsuario";
+
+            using (var Connection = _connectionFactory.CreateConnection())
+            {
+                try
+                {
+                   var result =Connection.ExecuteScalar<int>(sqlComparar, param: new { _codigoProducto, idUsuario });
+                    if (result!=0)
+                    {
+                        return true;
+                    }
+                    return false;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                    return false;
+                }
+            }
+
         }
     }
 }

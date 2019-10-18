@@ -150,7 +150,7 @@ namespace CarroDeComprasDAL.Implementaciones
 
             string getCodigoCliente = @"Select Codigo FROM Clientes WHERE IdUsuario=@IdUsuario";
 
-            string getNumeroPedido = @"Select NumeroPedido,CodigoCliente,Fecha,Observacion FROM Pedidos WHERE CodigoCliente=@CodigoCliente ORDER BY Fecha ASC";
+            string getNumeroPedido = @"Select NumeroPedido,CodigoCliente,Fecha,Observacion FROM Pedidos WHERE CodigoCliente=@CodigoCliente ORDER BY Fecha DESC";
 
             #endregion
 
@@ -175,8 +175,8 @@ namespace CarroDeComprasDAL.Implementaciones
                             ProductoBE = product,
                             Cantidad = detail.Cantidad,
                             NumeroItem = detail.NumeroItem,
-                            NumeroPedido = detail.NumeroPedido
-
+                            NumeroPedido = detail.NumeroPedido,
+                            
                         };
 
                     }, param: new { NumeroPedido = getpedidos.Select(x => x.NumeroPedido) }, splitOn: "Split").ToList();

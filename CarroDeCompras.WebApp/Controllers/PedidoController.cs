@@ -55,7 +55,7 @@ namespace WebApp.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public ActionResult CargarPedido(PedidoModel pedidoModel)
         {
             if (pedidoModel == null)

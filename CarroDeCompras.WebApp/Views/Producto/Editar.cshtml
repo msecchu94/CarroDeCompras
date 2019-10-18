@@ -28,6 +28,7 @@
                         @using (Html.BeginForm("Editar", "Producto", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-editar" }))
                         {
                             @Html.AntiForgeryToken()
+
                             <div>
                                 <img src="@Url.Content(Model.UrlImange)"/>
                             </div>

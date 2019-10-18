@@ -28,6 +28,7 @@ $('#form-carro').on('submit', function (e) {
     console.log(this);
 
     const cantidad = $(".Cantidad").val();
+    console.log(cantidad);
     const codigoProducto = $(".codigoProducto").val();
     console.log(codigoProducto);
 

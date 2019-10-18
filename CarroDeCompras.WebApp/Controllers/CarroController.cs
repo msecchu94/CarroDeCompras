@@ -50,8 +50,8 @@ namespace WebApp.Controllers
             return View(pedidoModels);
         }
 
-        [HttpPost]
-        [Authorize]
+        [HttpPost, Authorize]
+        //[ValidateAntiForgeryToken]
         public ActionResult Agregar(string cantidad, string codigoProducto)
         {
             if (User.IsInRole("ADMIN"))
@@ -63,16 +63,17 @@ namespace WebApp.Controllers
             var _codigoProducto = Convert.ToInt32(codigoProducto);
             var cantidadProducto = Convert.ToInt32(cantidad);
 
-            UsuarioModel usuarioModel = new UsuarioModel();
-            usuarioModel.Usuario = User.Identity.Name;
-
-            UsuarioDTO usuarioDTO = new UsuarioDTO()
-            {
-                Usuario = usuarioModel.Usuario
-            };
-            var getIdUsuario = _usuarioBLL.ObtenerUsuario(usuarioDTO);
             try
             {
+                UsuarioModel usuarioModel = new UsuarioModel();
+                usuarioModel.Usuario = User.Identity.Name;
+
+                UsuarioDTO usuarioDTO = new UsuarioDTO()
+                {
+                    Usuario = usuarioModel.Usuario
+                };
+                var getIdUsuario = _usuarioBLL.ObtenerUsuario(usuarioDTO);
+
                 #region sumar item
 
                 //traemos carro 
@@ -80,19 +81,16 @@ namespace WebApp.Controllers
                 var carroDTO = _carroBLL.ObtenerCarro(getIdUsuario.Id);
                 var carroModel = Mapper.Map<PedidoBE>(carroDTO);
 
-                //comparamos
+                //comparamos si producto esta dentro de carro  
 
-                foreach (var item in carroModel.DetallesPedido)
+                if (_carroBLL.CompararContenido(_codigoProducto, getIdUsuario.Id))
                 {
-                    if (carroModel.DetallesPedido.First().CodigoProducto == _codigoProducto)
-                    {
-                        int suma = carroModel.DetallesPedido.First().Cantidad + cantidadProducto;
-                        _carroBLL.ModificarCarro(_codigoProducto, suma);
-                    }
-                    else
-                    {
-                        _carroBLL.AgregarCarro(_codigoProducto, cantidadProducto, getIdUsuario.Id);
-                    }
+                    int suma = carroModel.DetallesPedido.First().Cantidad + cantidadProducto;
+                    _carroBLL.ModificarCarro(_codigoProducto, suma);
+                }
+                else
+                {
+                    _carroBLL.AgregarCarro(_codigoProducto, cantidadProducto, getIdUsuario.Id);
                 }
 
                 return Json(new { Success = true });
@@ -104,8 +102,8 @@ namespace WebApp.Controllers
             }
         }
 
-        [HttpPost]
-        [Authorize]
+        [HttpPost, Authorize]
+        [ValidateAntiForgeryToken]
         public ActionResult EliminarItem(int codigoProducto)
         {
             UsuarioDTO usuarioDTO = new UsuarioDTO()

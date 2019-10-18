@@ -45,5 +45,14 @@ namespace CarroDeComprasBLL.Implementaciones
         {
            _repositoryCarro.ModificarCarro(_codigoProducto,suma);
         }
+
+        public bool CompararContenido(int _codigoProducto,int idUsuario)
+        {
+            if (_repositoryCarro.CompararContenido(_codigoProducto,idUsuario))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
