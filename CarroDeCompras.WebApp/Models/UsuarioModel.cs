@@ -18,6 +18,7 @@ namespace WebApp.Models
             this.Password = usuarioModel.Password;
         }
 
+        [Key]
         public int Id { get; set; }
 
         public string IdRol { get; set; }
@@ -28,7 +29,7 @@ namespace WebApp.Models
 
 
         public string Nombre { get; set; }
-         
+
         public string Apellido { get; set; }
 
         [DataType(DataType.Password)]
@@ -37,12 +38,10 @@ namespace WebApp.Models
 
         [DataType(DataType.Password)]
         [Compare("PasswordConfirmada", ErrorMessage = "Las contraseñas no coincide")]
-
         public string PasswordNueva { get; set; }
 
         [DataType(DataType.Password)]
         [Compare("PasswordNueva", ErrorMessage = "Las contraseñas no coincide")]
-
         public string PasswordConfirmada { get; set; }
 
         public string PasswordSalt { get; set; }
@@ -77,7 +76,7 @@ namespace WebApp.Models
 
         public void GenerarTicketCookie(HttpResponseBase response, UsuarioModel usuariomodel)
         {
-           
+
             FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(
                 version: 1,
                 name: usuariomodel.Usuario,

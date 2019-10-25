@@ -8,46 +8,45 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper;
+using CarroDeComprasBLL.Interfaces;
 
 namespace CarroDeComprasDAL.Implementaciones
 {
     public class RepositoryMarca : IRepositoryMarca
     {
-        public SqlConnection ConnectionString = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionTable"].ConnectionString);
+        private readonly IConnectionFactory _connectionFactory;
+
+        #region Querys
+
+        private const string sqlCargarMarcas = "Select ID,Nombre from Marcas";
+
+        private readonly string sqlObtenerPorId = "Select * From Marcas WHERE Codigo=";
+
+        #endregion
+
+        public RepositoryMarca(IConnectionFactory connectionFactory)
+        {
+            this._connectionFactory = connectionFactory;
+        }
 
         public IEnumerable<MarcaBE> CargarMarcas()
         {
-            try
+            using (var conn = _connectionFactory.CreateConnection())
             {
-                string sql = "Select ID,Nombre from Marcas";
-                var lista = ConnectionString.Query<MarcaBE>(sql);
+                var lista = conn.Query<MarcaBE>(sqlCargarMarcas);
                 return lista;
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
         }
 
         public MarcaBE ObtenerPorId(int Codigo)
         {
-            try
+            using (var conn = _connectionFactory.CreateConnection())
             {
-                string sql = "Select * From Marcas WHERE Codigo=" + Codigo;
                 MarcaBE marcaBE = new MarcaBE();
-
-                marcaBE = ConnectionString.QueryFirst<MarcaBE>(sql);
+                marcaBE = conn.QueryFirst<MarcaBE>(sqlObtenerPorId + Codigo);
 
                 return marcaBE;
-
             }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-
         }
     }
 }

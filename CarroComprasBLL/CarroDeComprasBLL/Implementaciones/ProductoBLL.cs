@@ -22,32 +22,18 @@ namespace CarroDeComprasBLL.Implementaciones
 
         public IEnumerable<ProductoDTO> ObtenerProductos()
         {
-            try
-            {
-                var productosBE = _repositoryProducto.ObtenerProductos();
-                var productosDTO = Mapper.Map<IEnumerable<ProductoDTO>>(productosBE);
+            var productosBE = _repositoryProducto.ObtenerProductos();
+            var productosDTO = Mapper.Map<IEnumerable<ProductoDTO>>(productosBE);
 
-                return productosDTO;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            return productosDTO;
         }
 
         public bool AltaProducto(ProductoDTO productosDTO)
         {
-            try
-            {
-                var productoBE = Mapper.Map<ProductoBE>(productosDTO);
-                var altaOK = _repositoryProducto.AltaProducto(productoBE);
+            var productoBE = Mapper.Map<ProductoBE>(productosDTO);
+            var altaOK = _repositoryProducto.AltaProducto(productoBE);
 
-                return altaOK;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            return altaOK;
         }
 
         public ProductoDTO ObtenerPorCodigo(int códigoProducto)
@@ -60,17 +46,10 @@ namespace CarroDeComprasBLL.Implementaciones
 
         public bool EditarProducto(ProductoDTO productoDTO)
         {
-            try
-            {
-                var productoBE = Mapper.Map<ProductoBE>(productoDTO);
+            var productoBE = Mapper.Map<ProductoBE>(productoDTO);
+            var altaOK = _repositoryProducto.EditarProducto(productoBE);
 
-                var altaOK = _repositoryProducto.EditarProducto(productoBE);
-                return altaOK;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            return altaOK;
         }
 
         public IEnumerable<ProductoDTO> ObtenerProductosActivos()

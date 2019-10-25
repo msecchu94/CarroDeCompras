@@ -22,23 +22,14 @@ namespace CarroDeComprasBLL.Implementaciones
 
         public IEnumerable<MarcaDTO> CargarMarcas()
         {
-
-            try
+            var marcaBE = _repositoryMarca.CargarMarcas();
+            var marcaDTO = marcaBE.Select(itemBE => new MarcaDTO
             {
-                var marcaBE = _repositoryMarca.CargarMarcas();
-                var marcaDTO = marcaBE.Select(itemBE => new MarcaDTO
-                      {
-                          Id = itemBE.Id,
-                          Nombre=itemBE.Nombre
-                      });
+                Id = itemBE.Id,
+                Nombre = itemBE.Nombre
+            });
 
-                return marcaDTO;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-
-            }
+            return marcaDTO;
         }
 
         public MarcaDTO ObtenerPorId(int codigo)
@@ -46,28 +37,17 @@ namespace CarroDeComprasBLL.Implementaciones
             MarcaDTO marcaDTO = null;
             MarcaBE marcaBE = null;
 
-
-            try
+            marcaBE = _repositoryMarca.ObtenerPorId(codigo);
+            if (marcaBE != null)
             {
-                marcaBE = _repositoryMarca.ObtenerPorId(codigo);
-                if (marcaBE != null)
+                marcaDTO = new MarcaDTO()
                 {
-                    marcaDTO = new MarcaDTO()
-                    {
-                        Id = marcaBE.Id,
-                        Nombre = marcaBE.Nombre
+                    Id = marcaBE.Id,
+                    Nombre = marcaBE.Nombre
 
-                    };
-                }
-                return marcaDTO;
+                };
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            return marcaDTO;
         }
-
     }
-
-
 }

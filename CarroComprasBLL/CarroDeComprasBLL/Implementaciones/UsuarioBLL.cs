@@ -22,36 +22,20 @@ namespace CarroDeComprasBLL.Implementaciones
 
         public UsuarioDTO AltaUsuario(UsuarioDTO usuarioDTO)
         {
-            try
-            {
-                var usuarioBE = Mapper.Map<UsuarioBE>(usuarioDTO);
-                var result = _repositoryUsuario.AltaUsuario(usuarioBE);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            var usuarioBE = Mapper.Map<UsuarioBE>(usuarioDTO);
+            var result = _repositoryUsuario.AltaUsuario(usuarioBE);
 
             return usuarioDTO;
         }
 
         public UsuarioDTO ObtenerUsuario(UsuarioDTO usuarioDTO)
         {
+            var usuarioBE = Mapper.Map<UsuarioBE>(usuarioDTO);
+            var getUsuario = _repositoryUsuario.ObtenerUsuario(usuarioBE);
 
-            try
-            {
-                var usuarioBE = Mapper.Map<UsuarioBE>(usuarioDTO);
-                var getUsuario = _repositoryUsuario.ObtenerUsuario(usuarioBE);
+            var usuarioResult = Mapper.Map<UsuarioDTO>(getUsuario);
 
-                var usuarioResult = Mapper.Map<UsuarioDTO>(getUsuario);
-                return usuarioResult;
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-
+            return usuarioResult;
         }
 
         public UsuarioDTO ModificarPassword(UsuarioDTO usuarioDTO)
@@ -63,7 +47,6 @@ namespace CarroDeComprasBLL.Implementaciones
 
             return modificacionResult;
         }
-
     }
 }
 

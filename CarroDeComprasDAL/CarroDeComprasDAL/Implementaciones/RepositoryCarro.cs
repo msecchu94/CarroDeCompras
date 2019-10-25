@@ -14,38 +14,14 @@ namespace CarroDeComprasDAL.Implementaciones
 {
     public class RepositoryCarro : IRepositoryCarro
     {
-        //public SqlConnection ConnectionString = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionTable"].ConnectionString);
-
         private readonly IConnectionFactory _connectionFactory;
 
-        public RepositoryCarro(IConnectionFactory ConnectionFactory)
-        {
-            this._connectionFactory = ConnectionFactory;
-        }
+        #region Querys
 
-        public void AgragarCarro(int codigoProducto, int cantidadProducto, int idUsuario)
-        {
-            string InsertCarro = @"INSERT INTO Carro(IdUsuario,Cantidad,CodigoProducto) VALUES(@idUsuario,@cantidadProducto,@codigoProducto)";
+        private const string InsertCarro = @"INSERT INTO Carro(IdUsuario,Cantidad,CodigoProducto) 
+                                           VALUES(@idUsuario,@cantidadProducto,@codigoProducto)";
 
-            using (var Connection = _connectionFactory.CreateConnection())
-            {
-
-                try
-                {
-                    var result = Connection.Execute(InsertCarro, param: new { idUsuario, cantidadProducto, codigoProducto });
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-            }
-        }
-
-        public PedidoBE ObtenerCarro(int IdUsuario)
-        {
-            #region Query
-
-            string ObtenerCarro = @"SELECT   
+        private const string GetCarro = @"SELECT   
                     c.[Cantidad] 
                     ,c.[IdUsuario]
                     ,c.[CodigoProducto]
@@ -58,14 +34,37 @@ namespace CarroDeComprasDAL.Implementaciones
                     FROM [Carro] c
                     INNER JOIN Productos p ON c.[CodigoProducto] = p.Codigo";
 
-            #endregion
+        private const string deleteItem = @"DELETE FROM Carro WHERE CodigoProducto=@codigoProducto AND IdUsuario=@IdUsuario ";
 
+        private const string deleteCarro = @"DELETE FROM Carro WHERE IdUsuario=@IdUsuario";
+
+        private const string ActualizarCarro = @"UPDATE Carro SET Cantidad=@suma WHERE CodigoProducto=@_codigoProducto";
+
+        private const string sqlComparar = @"Select COUNT (*) FROM Carro WHERE CodigoProducto=@_codigoProducto AND IdUsuario=@idUsuario";
+
+        #endregion
+
+        public RepositoryCarro(IConnectionFactory ConnectionFactory)
+        {
+            this._connectionFactory = ConnectionFactory;
+        }
+
+        public void AgragarCarro(int codigoProducto, int cantidadProducto, int idUsuario)
+        {
+            using (var Connection = _connectionFactory.CreateConnection())
+            {
+                var result = Connection.Execute(InsertCarro, param: new { idUsuario, cantidadProducto, codigoProducto });
+            }
+        }
+
+        public PedidoBE ObtenerCarro(int IdUsuario)
+        {
             using (var Connection = _connectionFactory.CreateConnection())
             {
                 try
                 {
                     PedidoBE pedidoBE = new PedidoBE();
-                    pedidoBE.DetallesPedido = Connection.Query<CarroBE, ProductoBE, DetallePedidoBE>(ObtenerCarro + " WHERE c.[IdUsuario]=@IdUsuario", (carro, producto) =>
+                    pedidoBE.DetallesPedido = Connection.Query<CarroBE, ProductoBE, DetallePedidoBE>(GetCarro + " WHERE c.[IdUsuario]=@IdUsuario", (carro, producto) =>
                               {
                                   return new DetallePedidoBE
                                   {
@@ -80,7 +79,7 @@ namespace CarroDeComprasDAL.Implementaciones
 
                 catch (Exception)
                 {
-                    System.Diagnostics.Debug.WriteLine(ObtenerCarro + "WHERE c.[IdUsuario]=@IdUsuario");
+                    System.Diagnostics.Debug.WriteLine(GetCarro + "WHERE c.[IdUsuario]=@IdUsuario");
                     throw;
                 }
             }
@@ -88,82 +87,39 @@ namespace CarroDeComprasDAL.Implementaciones
 
         public void EliminarItem(int codigoProducto, int IdUsuario)
         {
-            string EliminarItem = @"DELETE FROM Carro WHERE CodigoProducto=@codigoProducto AND IdUsuario=@IdUsuario ";
-
             using (var Connection = _connectionFactory.CreateConnection())
             {
-
-                try
-                {
-                    var Eliminar = Connection.Execute(EliminarItem, param: new { codigoProducto, IdUsuario });
-                }
-                catch (Exception E)
-                {
-                    System.Diagnostics.Debug.WriteLine(EliminarItem + "DELETE FROM Carro WHERE CodigoProducto=@codigo");
-                    throw E;
-                }
-
+                var Eliminar = Connection.Execute(deleteItem, param: new { codigoProducto, IdUsuario });
             }
         }
 
         public void VaciarCarro(int IdUsuario)
         {
-            string VaciarCarro = @"DELETE FROM Carro WHERE  IdUsuario=@IdUsuario";
-
             using (var Connection = _connectionFactory.CreateConnection())
             {
-                try
-                {
-                    Connection.Execute(VaciarCarro, param: new { IdUsuario });
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
+                Connection.Execute(deleteCarro, param: new { IdUsuario });
             }
         }
 
         public void ModificarCarro(int _codigoProducto, int suma)
         {
-            string ActualizarCarro = @"UPDATE Carro 
-                                SET Cantidad=@suma
-                                WHERE CodigoProducto=@_codigoProducto";
-
             using (var Connection = _connectionFactory.CreateConnection())
             {
-                try
-                {
-                    Connection.Execute(ActualizarCarro, param: new { _codigoProducto, suma });
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
+                Connection.Execute(ActualizarCarro, param: new { _codigoProducto, suma });
             }
         }
 
-        public bool CompararContenido(int _codigoProducto,int idUsuario)
+        public bool CompararContenido(int _codigoProducto, int idUsuario)
         {
-            string sqlComparar = @"Select COUNT (*) FROM Carro WHERE CodigoProducto=@_codigoProducto AND IdUsuario=@idUsuario";
-
             using (var Connection = _connectionFactory.CreateConnection())
             {
-                try
+                var result = Connection.ExecuteScalar<int>(sqlComparar, param: new { _codigoProducto, idUsuario });
+                if (result != 0)
                 {
-                   var result =Connection.ExecuteScalar<int>(sqlComparar, param: new { _codigoProducto, idUsuario });
-                    if (result!=0)
-                    {
-                        return true;
-                    }
-                    return false;
+                    return true;
                 }
-                catch (Exception ex)
-                {
-                    throw ex;
-                    return false;
-                }
+                return false;
             }
-
         }
     }
 }

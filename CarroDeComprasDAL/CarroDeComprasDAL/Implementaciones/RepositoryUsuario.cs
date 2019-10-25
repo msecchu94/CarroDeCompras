@@ -16,6 +16,18 @@ namespace CarroDeComprasDAL.Implementaciones
     {
         private readonly IConnectionFactory _connectionFactory;
 
+        #region Querys
+
+        private const string queryInsert = @"INSERT INTO Usuarios (Usuario,Nombre,Apellido,Activo,PasswordSalt,Password,IdRol)
+                                           VALUES(@Usuario,@Nombre,@Apellido,@Activo,@PasswordSalt,@Password,@IdRol)";
+
+        private const string queryObtenerUsuario = @"SELECT [Id],[Activo],[Usuario],[Password],[PasswordSalt],[Nombre],[IdRol]
+                                                   FROM [Usuarios] WHERE [Usuario]=@Usuario";
+
+        private const string queryEditPassword = @"UPDATE Usuarios SET Password=@Password,PasswordSalt=@PasswordSalt WHERE [Usuario]=@Usuario";
+
+        #endregion
+
         public RepositoryUsuario(IConnectionFactory ConnectionFactory)
         {
 
@@ -24,88 +36,31 @@ namespace CarroDeComprasDAL.Implementaciones
 
         public UsuarioBE AltaUsuario(UsuarioBE usuarioBE)
         {
-
-            #region Query
-
-
-            string queryUsuarioInsert = @"INSERT INTO Usuarios 
-                                    (Usuario,Nombre,Apellido,Activo,PasswordSalt,Password,IdRol)
-                                    VALUES(@Usuario,@Nombre,@Apellido,@Activo,@PasswordSalt,@Password,@IdRol)";
-
-            #endregion
-
             using (var Connection = _connectionFactory.CreateConnection())
             {
                 UsuarioBE usuario = null;
-                try
-                {
-                    usuario = Connection.QueryFirstOrDefault<UsuarioBE>(queryUsuarioInsert, param: usuarioBE);
-                }
-                catch (Exception)
-                {
+                usuario = Connection.QueryFirstOrDefault<UsuarioBE>(queryInsert, param: usuarioBE);
 
-                    throw;
-                }
                 return usuario;
-
             }
         }
 
         public UsuarioBE ObtenerUsuario(UsuarioBE usuarioBE)
         {
-
-            #region Query
-
-            string queryUsuario = @"SELECT 
-                                       [Id]
-                                       ,[Activo]
-                                       ,[Usuario]
-                                       ,[Password]
-                                       ,[PasswordSalt]
-                                       ,[Nombre]
-                                       ,[IdRol]
-                                       FROM [Usuarios]
-                                       WHERE [Usuario]=@Usuario";
-            #endregion
-
             using (var Connection = _connectionFactory.CreateConnection())
             {
-                try
-                {
-                   var usuarioResult = Connection.QueryFirstOrDefault<UsuarioBE>(queryUsuario, param: usuarioBE);
+                var usuarioResult = Connection.QueryFirstOrDefault<UsuarioBE>(queryObtenerUsuario, param: usuarioBE);
 
-                   return usuarioResult;
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
+                return usuarioResult;
             }
         }
 
         public UsuarioBE ModificarPassword(UsuarioBE usuarioBE)
         {
-            #region Query
-
-            string queryEditPassword = @"UPDATE Usuarios
-                                   SET Password=@Password,
-                                   PasswordSalt=@PasswordSalt
-                                   WHERE [Usuario]=@Usuario";
-            #endregion
-
             using (var Connection = _connectionFactory.CreateConnection())
             {
-
                 UsuarioBE usuario = null;
-
-                try
-                {
-                    usuario = Connection.QueryFirstOrDefault<UsuarioBE>(queryEditPassword, param: usuarioBE);
-                }
-                catch (Exception)
-                {
-                    throw new Exception("No se pudo obtener Usuario");
-                }
+                usuario = Connection.QueryFirstOrDefault<UsuarioBE>(queryEditPassword, param: usuarioBE);
 
                 return usuarioBE;
             }

@@ -15,15 +15,13 @@ namespace CarroDeComprasBLL.Implementaciones
     {
         private readonly IRepositoryProducto _repositoryProducto;
         private readonly IRepositoryPedido _repositoryPedido;
-
-
-        public PedidoBLL(IRepositoryProducto RepositoryProducto, IRepositoryPedido RepositoryPedido)
+        
+        public PedidoBLL(IRepositoryProducto RepositoryProducto,IRepositoryPedido RepositoryPedido)
         {
             this._repositoryProducto = RepositoryProducto;
             this._repositoryPedido = RepositoryPedido;
         }
-
-
+        
         public bool AgregarPedido(PedidoDTO pedidoDTO)
         {
             var res = false;
@@ -46,9 +44,8 @@ namespace CarroDeComprasBLL.Implementaciones
                 _repositoryPedido.AgregarPedido(pedidoBE);
                 return res = true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
                 return res = false;
             }
 
@@ -71,7 +68,7 @@ namespace CarroDeComprasBLL.Implementaciones
 
             return pedidosDTO;
         }
-        
+
         public PedidoDTO ObtenerPedido(int numPedido)
         {
             var getpedidoBE = _repositoryPedido.ObtenerPedido(numPedido);
