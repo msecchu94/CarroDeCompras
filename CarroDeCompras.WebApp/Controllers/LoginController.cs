@@ -29,7 +29,7 @@ namespace WebApp.Controllers
         [HttpGet, AllowAnonymous]
         public ActionResult Index(string mensaje, string permiso)
         {
-            if (permiso != null)
+            if (!string.IsNullOrEmpty(permiso))
             {
                 ViewBag.Permiso = permiso;
                 return View();
@@ -150,7 +150,7 @@ namespace WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult ModificarPassword(UsuarioModel usuarioModel)
         {
-            string mensaje = "";
+            string mensaje;
 
             if (!ModelState.IsValid)
             {

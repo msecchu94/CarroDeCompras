@@ -1,14 +1,11 @@
-﻿using CarroDeComprasCommon.Entidad;
+﻿using CarroDeComprasBLL.Interfaces;
+using CarroDeComprasCommon.Entidad;
 using CarroDeComprasDAL.Interfaces;
+using Dapper;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Dapper;
-using CarroDeComprasBLL.Interfaces;
 
 namespace CarroDeComprasDAL.Implementaciones
 {
@@ -23,11 +20,13 @@ namespace CarroDeComprasDAL.Implementaciones
 
         public bool AgregarPedido(PedidoBE pedidoBE)
         {
-            using (var Connection = _connectionFactory.CreateConnection())
-            {
+            IDbConnection conn = null;
+            IDbTransaction trans = null;
 
-                Connection.Open();
-                using (var trans = Connection.BeginTransaction())
+            try
+            {
+                using (conn = _connectionFactory.CreateConnection(abierta: true))
+                using (trans = conn.BeginTransaction())
                 {
                     #region Query
 
@@ -39,33 +38,32 @@ namespace CarroDeComprasDAL.Implementaciones
 
                     #endregion
 
-                    var res = false;
+                    pedidoBE.NumeroPedido = conn.ExecuteScalar<int>(addPedido, param: pedidoBE, transaction: trans);
 
-                    try
+                    foreach (var item in pedidoBE.DetallesPedido)
                     {
-
-                        pedidoBE.NumeroPedido = Connection.ExecuteScalar<int>(addPedido, param: pedidoBE, transaction: trans);
-
-                        foreach (var item in pedidoBE.DetallesPedido)
-                        {
-                            item.NumeroPedido = pedidoBE.NumeroPedido;
-                        }
-
-                        Connection.Execute(addDetallePedido, param: pedidoBE.DetallesPedido, transaction: trans);
-                        trans.Commit();
-                        res = true;
-                    }
-                    catch (Exception ex)
-                    {
-                        trans.Rollback();
-                        res = false;
-                    }
-                    finally
-                    {
-                        Connection.Close();
+                        item.NumeroPedido = pedidoBE.NumeroPedido;
                     }
 
-                    return res;
+                    conn.Execute(addDetallePedido, param: pedidoBE.DetallesPedido, transaction: trans);
+                    trans.Commit();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                if (trans != null)
+                {
+                    trans.Rollback();
+                }
+
+                return false;
+            }
+            finally
+            {
+                if(conn != null && conn.State != ConnectionState.Closed)
+                {
+                    conn.Close();
                 }
             }
         }
@@ -176,7 +174,7 @@ namespace CarroDeComprasDAL.Implementaciones
                             Cantidad = detail.Cantidad,
                             NumeroItem = detail.NumeroItem,
                             NumeroPedido = detail.NumeroPedido,
-                            
+
                         };
 
                     }, param: new { NumeroPedido = getpedidos.Select(x => x.NumeroPedido) }, splitOn: "Split").ToList();
@@ -197,7 +195,7 @@ namespace CarroDeComprasDAL.Implementaciones
         {
 
             #region Query
-          
+
             string getNumeroPedido = @"Select NumeroPedido,CodigoCliente,Fecha,Observacion FROM Pedidos WHERE NumeroPedido=@NumeroPedido ORDER BY Fecha ASC";
 
             string getDetallesPedidos = @"Select 
@@ -235,7 +233,7 @@ namespace CarroDeComprasDAL.Implementaciones
                     };
 
                 }, param: new { NumeroPedido = numPedido }, splitOn: "Split").ToList();
-                
+
                 foreach (var item in getpedido)
                 {
                     item.DetallesPedido = pedido.DetallesPedido.Where(d => d.NumeroPedido == item.NumeroPedido);

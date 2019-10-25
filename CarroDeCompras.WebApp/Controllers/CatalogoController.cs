@@ -15,7 +15,7 @@ namespace WebApp.Controllers
 
     public class CatalogoController : Controller
     {
-        private IProductoBLL _productoBLL;
+        private readonly IProductoBLL _productoBLL;
         private IMarcaBLL _MarcaBLL;
         
         public CatalogoController(IProductoBLL productoBLL, IMarcaBLL MarcaBLL, IPedidoBLL PedidoBLL)

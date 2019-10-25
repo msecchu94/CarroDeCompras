@@ -10,7 +10,7 @@ namespace CarroDeComprasBLL.Interfaces
    public interface IConnectionFactory
     {
 
-         IDbConnection CreateConnection();
+         IDbConnection CreateConnection(bool abierta = false);
 
     }
 }

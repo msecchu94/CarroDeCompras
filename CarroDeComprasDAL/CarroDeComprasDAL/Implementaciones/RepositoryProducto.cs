@@ -19,7 +19,7 @@ namespace CarroDeComprasDAL.Implementaciones
 
         #region QueryObtener
 
-        string sqlObtener = @"SELECT 
+        private const string sqlObtener = @"SELECT 
                     p.[Codigo] 
                     ,p.[Nombre]
                     ,p.[Descripcion]
@@ -43,25 +43,17 @@ namespace CarroDeComprasDAL.Implementaciones
 
         public IEnumerable<ProductoBE> ObtenerProductos()
         {
-
-
             using (var Connection = _connectionFactory.CreateConnection())
             {
-                try
-                {
-                    var lista = Connection.Query<ProductoBE, MarcaBE, ProductoBE>(sqlObtener, (producto, marca) =>
-                                         {
-                                             producto.Marca = marca;
-                                             return producto;
+                    var lista = Connection.Query<ProductoBE, MarcaBE, ProductoBE>(sqlObtener, 
+                        (producto, marca) =>
+                        {
+                            producto.Marca = marca;
+                            return producto;
 
-                                         }, splitOn: "Split");
+                        }, splitOn: "Split");
 
                     return lista;
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
             }
 
         }
@@ -151,14 +143,7 @@ namespace CarroDeComprasDAL.Implementaciones
                 try
                 {
                     var result = Connection.Execute(sql, param: productoBE);
-                    if (result == 1)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
+                    return result == 1;
                 }
                 catch (Exception ex)
                 {
