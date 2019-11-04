@@ -1,0 +1,5 @@
+1)Las query deben ser private y constantes.- OK
+
+2)TRY CATCH - solo cuando genere ex. OK
+
+3)MODELO LOGIN -

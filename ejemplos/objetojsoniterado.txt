@@ -1,0 +1,17 @@
+   const detallePedido = [];
+
+    $('#tablaPedido tbody tr').each(function (el, index) {
+
+        const itemDetalle = {
+            cantidad: $(el).find('td.col-cantidad input').val(),
+        };
+
+        //cantidad = $('.Cantidad').val(),
+        //    producto = {
+        //        nombre: $('.Nombre').val(),
+        //        preciounitario: $('.PrecioUnitario').val()
+        //    },
+        //    subtotal = $('.SubTotal').val()
+
+        detallePedido.push(itemDetalle);
+    });
